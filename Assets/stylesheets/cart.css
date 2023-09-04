@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
+.shoppingCartCtn{
+    min-height: 100vh;
+}
+.shoppingCartCtn .container{
+    background-color: #fff;
+}
+.shoppingCartCtn img{
+    width: 150px;
+}
+.shoppingCartCtn .quantity i {
+    padding: 6px 8px;
+    font-size: 14px;
+}
+.shoppingCartCtn .quantity i:hover{
+    cursor: pointer;
+}
+.shoppingCartCtn .info i{
+    padding: 6px 12px;
+    font-size: 14px;
+}
+.shoppingCartCtn .info i:hover{
+    cursor: pointer;
+}
+.quantity{
+    width: fit-content;
+}
+@media only screen and (max-width: 576px) {
+    .shoppingCartCtn .quantityCtn {
+      width: 100%;
+    }
+  }
+/*  */

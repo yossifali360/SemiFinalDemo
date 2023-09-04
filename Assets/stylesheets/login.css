@@ -1,0 +1,136 @@
+.main{
+    min-height: 100vh;
+    background-image: url(../images/Dark-Blue-Background-HD.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    backdrop-filter: blur(0);
+    height: 600px;
+}
+.slide{
+    background-image: url(../images/f0939cb4-78b3-412a-9727-fe55fefca0cb.jpg);
+    width: 50%;
+    left: 0;
+    transition: 2s;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.signUp{
+    background-image: url(../images/f0939cb4-78b3-412a-9727-fe55fefca0cb.jpg);
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    opacity: 0;
+    transition: 2s;
+}
+.login{
+    background-image: url(../images/f0939cb4-78b3-412a-9727-fe55fefca0cb.jpg);
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    transition: 1s;
+}
+.slide,
+.signUp,
+.login{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.signUpCtn{
+    background-color: rgba(255, 255, 255, 0.89);
+}
+.loginCtn{
+    background-color: rgba(255, 255, 255, 0.89);
+    width: 70%;
+}
+.signUpCtn,
+.loginCtn{
+    border-radius: 15px;
+    padding: 50px;
+}
+.login input,
+.signUp input{
+    border: 2px solid #000000;
+    color: #000000;
+}
+.signUp ::placeholder{
+    color: #000000;
+}
+input{
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 24px;
+    background-color: transparent;
+    width: 100%;
+}
+.fa-user-plus{
+    background-color: rgba(168, 165, 165, 0.861);
+
+}
+.fa-user{
+    background-color: rgba(168, 165, 165, 0.861);
+}
+.fa-user-plus,
+.fa-user{
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40px;
+}
+.eye{
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.fa-eye-slash{
+    display: none;
+}
+.fa-eye{
+    display: block;
+}
+.social i{
+    transition: 1s;
+    cursor: pointer;
+}
+.fa-facebook-f{
+    padding:  9px 13px;
+}
+.fa-facebook-f:hover{
+    background-color: #1877F2;
+}
+.fa-twitter:hover{
+    background-color: #1DA1F2;
+}
+.fa-google:hover{
+    background-color: #DB4437;
+}
+#slideLoginBtn{
+display: none;
+}
+@keyframes load {
+    0% {
+        filter: brightness(0);
+    }
+    100% {
+        filter: brightness(1);
+    }
+}
+@media (max-width: 960px) {
+    .container{
+        height: auto;
+        overflow: visible !important;
+    }
+    .login{
+        background-image: none;
+    }
+    .loginCtn{
+        width: 90%;
+    }
+    .signUp{
+        display: none;
+    }
+    .fa-user-plus{
+        top: -30px;
+    }
+}

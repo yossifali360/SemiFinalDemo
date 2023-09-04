@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="Assets/stylesheets/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="Assets/stylesheets/bootstrap.min.css" />
+    <!-- WOW -->
+    <link rel="stylesheet" href="Assets/stylesheets/animate.css" />
+    <!-- Own Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/productAleart.css" />
+    <link rel="stylesheet" href="Assets/stylesheets/category.css" />
+    <link rel="stylesheet" href="Assets/stylesheets/global.css" />
+    <!-- Splide -->
+    <link rel="stylesheet" href="Assets/stylesheets/splide.min.css">
+    <!-- Title -->
+    <title>Document</title>
+</head>
+<body>
+  <aside class="shoppingCart position-fixed d-none">
+    <div class="details position-absolute">
+      <div class="cartHeader p-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <h4 class="m-0">Your Cart</h4>
+          <i class="fas fa-x closeCart"></i>
+        </div>
+      </div>
+      <hr>  
+      <div class="carts">
+
+      </div>
+      <div class="btns p-3 w-100">
+        <hr>
+        <div class="d-flex gap-2 align-items-center justify-content-end px-3">
+          <h6 class="text-muted">Total :</h6>
+          <h6 class="totalCartsPrice">0</h6>
+        </div>
+        <a href="cart.html" class="btn btn-outline-info w-100 my-2 text-decoration-none">View Cart</a>
+        <a href="checkout.html" class="btn btn-outline-primary w-100 my-2 text-decoration-none">Checkout</a>
+      </div>
+      </div>
+  </aside>
+  <aside class="wishListCtn position-fixed d-none">
+    <div class="details position-absolute">
+      <div class="cartHeader p-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <h4 class="m-0">Wishlist</h4>
+          <i class="fas fa-x closeCart"></i>
+        </div>
+      </div>
+      <hr>  
+      <div class="Wishes">
+
+      </div>
+      </div>
+  </aside>
+  <!-- Loading Icon -->
+  <div class="loadingIcon"><img src="Assets/images/load.gif" alt=""></div>
+  <!-- First Nav -->
+  <nav class="firstNav text-white  w-100 d-flex align-items-center justify-content-between px-4 py-2">
+    <div class="login position-relative d-flex align-items-center">
+      <div class="nav-item dropdown">
+        <a
+          class="nav-link menu"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle=""
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+        <i class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"><img class="rounded-pill" src="" alt=""></i>
+      </a>
+        <div class="dropdown-menu userSettings " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item logout" href="#">Logout</a>
+          <a class="dropdown-item" href="profile.html">Edit Profile</a>
+          <a class="dropdown-item" href="orderhistory.html">Order History</a>
+      </div>
+    </div>
+      <a href="login.html" class="text-decoration-none text-white userName mx-2">Login</a>
+    </div>
+    <select name="currency" id="currency" class="rounded-2">
+      <option hidden value="">Choose a currency</option>
+      <option value="Egy">Egy</option>
+      <option value="dolar">USD</option>
+      <option value="Euro">Euro</option>
+      <option value="CAD">CAD</option>
+    </select>
+  </nav>
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-dark px-3" id="nav">
+    <div class="navbar-brand fs-2 logo position-relative">
+        Modern <span class="position-absolute">Tech</span>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon  navbar-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item m-2 active">
+          <a class="nav-link position-relative" href="index.html"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item m-2 dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="category.html">All Categories</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="category.html?category=Motherboard">Motherboard</a>
+            <a class="dropdown-item" href="category.html?category=Processors">Processors</a>
+            <a class="dropdown-item" href="category.html?category=Ram">Ram</a>
+            <a class="dropdown-item" href="category.html?category=SSD">SSD & HDD</a>
+            <a class="dropdown-item" href="category.html?category=Graphic%20Card">Graphic Card</a>
+            <a class="dropdown-item" href="category.html?category=Cases">Cases</a>
+            <a class="dropdown-item" href="#"></a>
+          </div>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">Special Offer</a>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">About Us</a>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div class="cartCtn d-flex align-items-center gap-2 text-white">
+        <div class="shopIcon position-relative py-2">
+          <i class="fa-solid fa-cart-shopping text-secondary fs-4 text-white bg-transparent rounded-pill p-2 shoppingCartIcon"></i>
+          <span class="cartCount position-absolute rounded-pill"></span>
+        </div>
+        <div class="wishListIcon position-relative py-2">
+          <i class="fas fa-heart text-secondary fs-4 text-white bg-transparent rounded-pill p-2"></i>
+          <span class="WishListCount position-absolute rounded-pill"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- To Top Button -->
+  <button id="toTop" class="btn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <!-- Products -->
+    <div class="row mr-0 flex-column flex-md-row">
+      <aside class="col-12 col-md-3 filter px-4">
+        <div class="mt-5 text-center">
+          <h4>Search items</h4>
+          <div class="searchbar">
+            <input type="text" name="" class="searchBar w-100" placeholder="Search By Name">
+            <i class="fas fa-magnifying-glass searchIcon h-100"></i>
+          </div>
+          <h4 class="mt-5">Filter items</h4>
+            <div class="byPrice py-4 rounded-2">
+                      <div class="item">
+                        <label class="d-block">Min Price</label>
+                        <input class="bg-white rounded-2" id="minPrice" name="minPrice" type="number">
+                      </div>
+                      <div class="item">
+                        <label class="d-block">Max Price</label>
+                        <input class="bg-white rounded-2" id="maxPrice" name="maxPrice" type="number">
+                      </div>
+                        <!-- <input type="number" id="minPrice" name="minPrice" step="0.01" min="0" placeholder="Min Price" class="rounded-2"> -->
+                    <button class="btn btn-outline-info m-auto d-block w-75 mt-4 filterBtn" type="submit">Filter</button>
+            </div>
+            <div class="byBrand py-4  rounded-2">
+                <h4>By Brand</h4>
+                <select name="brand" id="brand" class="rounded-2">
+                    <option value="All">All</option>
+                </select>
+            </div>
+        </div>
+      </aside>
+      <div class="col-12 col-md-9 mt-5">
+          <ul class="nav nav-pills mb-3 gap-3" id="pills-tab" role="tablist">
+            <li class="nav-item box d-flex align-items-center justify-content-around">
+              <a class="nav-link text-dark fs-4 d-flex align-items-center justify-content-center gap-3 w-100 active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                <div class="tooltip1 position-relative">
+                  <span class="tooltiptext1 px-1 position-absolute text-white bg-black">Grid View</span>
+                  <i class="fa-solid fa-grip"></i>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item box d-flex align-items-center justify-content-around">
+              <a class="nav-link text-dark fs-4 d-flex align-items-center justify-content-center gap-3 w-100" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                <div class="tooltip2 position-relative">
+                  <span class="tooltiptext2 px-1 position-absolute text-white bg-black">List View</span>
+                  <i class="fa-solid fa-list-ul listStyle"></i>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+              <div class="gridView">
+                <h3 class="text-center">Products in Category</h3>
+                <div class="products row g-3 align-items-stretch mr-0">
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+              <div class="listView">
+                <h3 class="text-center">Products in Category</h3>
+                <div class="products row g-3 align-items-stretch mr-0">
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  <!-- Products Overlay-->
+  <div class="container">
+    <div class="productCtn d-flex g-3 mt-5 align-items-stretch ms-0">
+      <div class="productOverlay" id="productOverlay">
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Bootstrap js -->
+<script src="Assets/javascript/bootstrap.bundle.min.js"></script>
+<!-- WOW -->
+<script src="Assets/javascript/wow.min.js"></script>
+<!-- Sweet Aleart JS -->
+<script src="Assets/javascript/sweetalert2.all.min.js"></script>
+<!-- Splide JS -->
+<script src="Assets/javascript/splide.min.js"></script>
+<!-- Category Js -->
+<script type="module" src="Assets/javascript/category.js"></script>
+<!-- Global Js -->
+<script type="module" src="Assets/javascript/global.js"></script>
+</html>

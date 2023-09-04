@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="Assets/stylesheets/all.min.css" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="Assets/stylesheets/bootstrap.min.css" />
+    <!-- WOW -->
+    <link rel="stylesheet" href="Assets/stylesheets/animate.css" />
+    <!-- Own Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/global.css" />
+    <link rel="stylesheet" href="Assets/stylesheets/dash.css" />
+    <!-- Splide -->
+    <link rel="stylesheet" href="Assets/stylesheets/splide.min.css">
+     <!-- Sweet Aleart Toast -->
+		<link rel="stylesheet" href="Assets/stylesheets/toastSweeralert.css" />
+    <!-- <link rel="stylesheet" href="Assets/stylesheets/splide-sea-green.min.css"> -->
+    <!-- Title -->
+    <title>Document</title>
+</head>
+<body> 
+  <aside class="shoppingCart position-fixed d-none">
+    <div class="details position-absolute">
+      <div class="cartHeader p-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <h4 class="m-0">Your Cart</h4>
+          <i class="fas fa-x closeCart"></i>
+        </div>
+      </div>
+      <hr>  
+      <div class="carts">
+
+      </div>
+      <div class="btns p-3 w-100">
+        <hr>
+        <div class="d-flex gap-2 align-items-center justify-content-end px-3">
+          <h6 class="text-muted">Total :</h6>
+          <h6 class="totalCartsPrice">0</h6>
+        </div>
+        <a href="cart.html" class="btn btn-outline-info w-100 my-2 text-decoration-none">View Cart</a>
+        <a href="checkout.html" class="btn btn-outline-primary w-100 my-2 text-decoration-none">Checkout</a>
+      </div>
+      </div>
+  </aside>
+  <aside class="wishListCtn position-fixed d-none">
+    <div class="details position-absolute">
+      <div class="cartHeader p-3">
+        <div class="d-flex align-items-center justify-content-between">
+          <h4 class="m-0">Wishlist</h4>
+          <i class="fas fa-x closeCart"></i>
+        </div>
+      </div>
+      <hr>  
+      <div class="Wishes">
+
+      </div>
+      </div>
+  </aside>
+  <!-- Loading Icon -->
+  <div class="loadingIcon"><img src="Assets/images/load.gif" alt=""></div>
+  <!-- First Nav -->
+  <nav class="firstNav text-white  w-100 d-flex align-items-center justify-content-between px-4 py-2">
+    <div class="login position-relative d-flex align-items-center">
+      <div class="nav-item dropdown">
+        <a
+          class="nav-link menu"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-bs-toggle=""
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+        <i class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"><img class="rounded-pill" src="" alt=""></i>
+      </a>
+        <div class="dropdown-menu userSettings " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item logout" href="#">Logout</a>
+          <a class="dropdown-item" href="profile.html">Edit Profile</a>
+          <a class="dropdown-item" href="orderhistory.html">Order History</a>
+      </div>
+    </div>
+      <a href="login.html" class="text-decoration-none text-white userName mx-2">Login</a>
+    </div>
+    <select name="currency" id="currency" class="rounded-2">
+      <option hidden value="">Choose a currency</option>
+      <option value="Egy">Egy</option>
+      <option value="dolar">USD</option>
+      <option value="Euro">Euro</option>
+      <option value="CAD">CAD</option>
+    </select>
+  </nav>
+  <!-- NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-dark px-3" id="nav">
+    <div class="navbar-brand fs-2 logo position-relative">
+        Modern <span class="position-absolute">Tech</span>
+    </div>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon  navbar-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav m-auto">
+        <li class="nav-item m-2 active">
+          <a class="nav-link position-relative" href="index.html"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+        <li class="nav-item m-2 dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Categories
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="category.html">All Categories</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="category.html?category=Motherboard">Motherboard</a>
+            <a class="dropdown-item" href="category.html?category=Processors">Processors</a>
+            <a class="dropdown-item" href="category.html?category=Ram">Ram</a>
+            <a class="dropdown-item" href="category.html?category=SSD">SSD & HDD</a>
+            <a class="dropdown-item" href="category.html?category=Graphic%20Card">Graphic Card</a>
+            <a class="dropdown-item" href="category.html?category=Cases">Cases</a>
+            <a class="dropdown-item" href="#"></a>
+          </div>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">Special Offer</a>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">About Us</a>
+        </li>
+        <li class="nav-item m-2">
+          <a class="nav-link position-relative" href="#">Contact Us</a>
+        </li>
+      </ul>
+      <div class="cartCtn d-flex align-items-center gap-2 text-white">
+        <div class="shopIcon position-relative py-2">
+          <i class="fa-solid fa-cart-shopping text-secondary fs-4 text-white bg-transparent rounded-pill p-2 shoppingCartIcon"></i>
+          <span class="cartCount position-absolute rounded-pill"></span>
+        </div>
+        <div class="wishListIcon position-relative py-2">
+          <i class="fas fa-heart text-secondary fs-4 text-white bg-transparent rounded-pill p-2"></i>
+          <span class="WishListCount position-absolute rounded-pill"></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- To Top Button -->
+  <button id="toTop" class="btn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+    <div class="content p-3">
+      <ul class="nav nav-pills mb-3 gap-3" id="pills-tab" role="tablist">
+        <li class="nav-item box d-flex align-items-center justify-content-around bg-primary text-white">
+          <a class="nav-link text-white d-flex align-items-center justify-content-center gap-3 w-100 active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+            <!--  -->
+                <i class="fa-solid fa-shop"></i>
+                <div class="count text-center">
+                    <span class="productCount"></span>
+                    <p>Product</p>
+                </div>
+            <!--  -->
+          </a>
+        </li>
+        <li class="nav-item box d-flex align-items-center justify-content-around bg-primary">
+          <a class="nav-link text-white d-flex align-items-center justify-content-center gap-3 w-100" id="pills-profile-tab" data-bs-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+            <!--  -->
+                <i class="fa-solid fa-user"></i>
+                <div class="count text-center">
+                    <span class="usersCount"></span>
+                    <p>Accounts</p>
+                </div>
+            <!--  -->
+          </a>
+        </li>
+        <li class="nav-item box d-flex align-items-center justify-content-around bg-primary text-white">
+          <a class="nav-link text-white d-flex align-items-center justify-content-center gap-3 w-100" id="pills-contact-tab" data-bs-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                <i class="fas fa-ticket"></i>
+                <div class="count text-center">
+                    <span class="ordersCount">0</span>
+                    <p>Orders</p>
+                </div>
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div style="overflow-x:auto;">
+              <span class="addNewProductBtn text-success float-end"><i class="fas fa-plus mx-2"></i>Add New Product?</span>
+              <div class="AddProductDiv w-75 my-5 mx-auto text-uppercase text-muted">
+                <label for="productNameInput">product Name</label>
+                <input type="text" id="productNameInput" class=" form-control  mb-3">
+                <label for="">product Price</label>
+                <input type="number" id="productPriceInput" class=" form-control  mb-3">
+                <label for="">product stock</label>
+                <input type="number" id="productStockInput" class=" form-control  mb-3">
+                <label for="">product Category</label>
+                <input type="text" id="productCategoryInput" class=" form-control  mb-3">
+                <label for="">product Brand</label>
+                <input type="text" id="productBrandInput" class=" form-control  mb-3">
+                <label for="">product Description (img link)</label>
+                <input type="text" id="productDescInput" class=" form-control  mb-3">
+                <div class="links position-relative">
+                  <div class="input link">
+                    <label for="link">Insert Image Link:</label>
+                    <input type="text" placeholder="Put Link Here" class="form-control mb-3" />
+                  </div>
+                </div>
+                <a class="btn btn-success" id="moreLink">Add More Link</a>
+                <a class="btn btn-danger" id="removeLink">Remove Link</a>
+                <br><hr>
+                <button class="btn bg-success" id="addBtn">Add Product</button>
+                <button class="btn bg-secondary-subtle" id="updateProductBtn">Update Product</button>
+            </div>
+                <table class="text-center">
+                    <thead>
+                        <tr class="bg-secondary">
+                            <th>Product</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="productsTable text-white">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="text-center">
+                <span class="text-dark">Admins(<span class="admins"></span>) , </span>
+                <span class="text-dark">Members(<span class="members"></span>)</span>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="text-center">
+                    <thead>
+                        <tr class="bg-secondary">
+                            <th>Name</th>
+                            <th>Mail</th>
+                            <th>Account Status</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="usersTable">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+          <div class="ordersData">
+
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+    <!-- Bootstrap js -->
+    <script src="Assets/javascript/bootstrap.bundle.min.js"></script>
+    <!-- Sweet Aleart -->
+	<script src="Assets/javascript/sweetalert2.all.min.js"></script>
+    <!-- Toast -->
+    <script src="Assets/javascript/toastSweetalert.js"></script>
+    <!-- Own Js -->
+    <script type="module" src="Assets/javascript/dash.js"></script>
+    <script type="module" src="Assets/javascript/global.js"></script>
+</html>

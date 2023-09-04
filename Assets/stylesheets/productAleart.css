@@ -1,0 +1,51 @@
+/* Sweet Alert Edited */
+.colored-toast.swal2-icon-success {
+	background-color: #fefefe !important;
+}
+
+.colored-toast.swal2-icon-error {
+	background-color: #f27474 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+	background-color: #f8bb86 !important;
+}
+
+.colored-toast.swal2-icon-info {
+	background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+	background-color: #87adbd !important;
+}
+
+.colored-toast .swal2-title {
+	color: rgb(8, 8, 8);
+}
+
+.colored-toast .swal2-close {
+	color: white;
+}
+.colored-toast .swal2-html-container {
+	color: white !important;
+	background-color: white !important;
+}
+.swal2-container {
+	width: 300px !important;
+	height: 420px;
+	z-index: 9999;
+}
+.swal2-image {
+	margin: 0;
+}
+.swal2-icon {
+	display: none !important;
+}
+.swal2-popup {
+	display: flex !important;
+	flex-direction: column !important;
+}
+.swal2-top-right{
+	top: 70px !important;
+}
+ 

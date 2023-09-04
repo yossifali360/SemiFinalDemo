@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Font awesome -->
+		<link rel="stylesheet" href="Assets/stylesheets/all.min.css" />
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="Assets/stylesheets/bootstrap.min.css" />
+		<!-- WOW -->
+		<link rel="stylesheet" href="Assets/stylesheets/animate.css" />
+		<!-- Own Style -->
+		<link rel="stylesheet" href="Assets/stylesheets/login.css" />
+        <!-- Sweet Aleart Toast -->
+		<link rel="stylesheet" href="Assets/stylesheets/toastSweeralert.css" />
+		<!-- Title -->
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="main d-flex align-items-center justify-content-center">
+			<div
+				class="container d-flex align-content-center justify-content-between overflow-hidden flex-column flex-lg-row"
+			>
+				<div
+					class="signUp col-12 col-lg-6 h-100 d-lg-flex align-items-center justify-content-center flex-column rounded-3"
+				>
+					<div class="signUpCtn position-relative">
+						<i
+							class="fa-solid fa-user-plus position-absolute rounded-pill p-3 text-white fs-1"
+						></i>
+						<div class="Name d-flex gap-2">
+							<input
+								class="my-3"
+								type="text"
+								placeholder="First Name"
+								id="fName"
+							/>
+							<input
+								class="my-3"
+								type="text"
+								placeholder="Last Name"
+								id="lName"
+							/>
+						</div>
+						<div class="email">
+							<input
+								class="my-3"
+								type="email"
+								placeholder="Email"
+							/>
+						</div>
+						<div class="d-flex gap-lg-2 flex-column flex-lg-row">
+							<div class="pass1 position-relative">
+								<input
+									class="my-3 signUpPass"
+									type="password"
+									placeholder="Password"
+									id="signUpPass"
+								/>
+								<i
+									class="eye fas fa-eye-slash position-absolute"
+								></i>
+								<i
+									class="eye fas fas fa-eye position-absolute"
+								></i>
+							</div>
+							<div class="pass2 position-relative">
+								<input
+									class="my-3 signUpPass"
+									type="password"
+									placeholder="Confirm Password"
+									id="signUpPass2"
+								/>
+								<i
+									class="eye fas fa-eye-slash position-absolute"
+								></i>
+								<i
+									class="eye fas fas fa-eye position-absolute"
+								></i>
+							</div>
+						</div>
+						<button class="btn btn-info w-100 my-3" id="signUpBtn">
+							Sign up
+						</button>
+						<div class="social text-dark text-center">
+							<h5>Or SignUp Using</h5>
+							<i class="fab fa-facebook-f rounded-pill mx-2"></i>
+							<i class="fab fa-twitter rounded-pill p-2 mx-2"></i>
+							<i class="fab fa-google rounded-pill p-2 mx-2"></i>
+							<div class="d-flex"></div>
+						</div>
+						<div class="oldMember py-2 d-block d-lg-none">
+							<span
+								>Have an account ?
+								<a class="text-decoration-none">Login</a></span
+							>
+						</div>
+					</div>
+				</div>
+				<div
+					class="login col-12 col-lg-6 h-100 d-flex align-items-center justify-content-center flex-column rounded-3 border-left-0"
+				>
+					<div class="loginCtn position-relative">
+						<i
+							class="fas fa-user position-absolute rounded-pill p-4 fs-1"
+						></i>
+						<div class="email">
+							<input
+								class="my-3"
+								type="text"
+								placeholder="User name / Email"
+                                id="loginEmail"
+							/>
+						</div>
+						<div class="pass position-relative">
+							<input
+								class="my-3"
+								type="password"
+								placeholder="Password"
+								id="pass"
+							/>
+							<i
+								class="eye fas fa-eye-slash position-absolute"
+							></i>
+							<i
+								class="eye fas fas fa-eye position-absolute"
+							></i>
+						</div>
+						<button class="btn btn-info w-100 my-3" id="loginBtn">
+							Login
+						</button>
+						<div class="social text-center">
+							<h5>Or Login Using</h5>
+							<i class="fab fa-facebook-f rounded-pill mx-2"></i>
+							<i class="fab fa-twitter rounded-pill p-2 mx-2"></i>
+							<i class="fab fa-google rounded-pill p-2 mx-2"></i>
+							<div class="d-flex"></div>
+						</div>
+						<div
+							class="newMember text-white py-2 d-block d-lg-none"
+						>
+							<span
+								>New to our family?
+								<a class="text-decoration-none"
+									>Sign up</a
+								></span
+							>
+						</div>
+					</div>
+				</div>
+				<div
+					class="slide h-100 position-absolute col-6 text-white rounded-3 d-none d-lg-flex align-items-center justify-content-center flex-column"
+				>
+					<h3>Not a member ?</h3>
+					<p>You can sign up and be one of our family</p>
+					<button class="btn btn-info" id="slidesignUpBtn">
+						Sign up
+					</button>
+					<button class="btn btn-info" id="slideLoginBtn">
+						Login
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+    <!-- Sweet Aleart -->
+	<script src="Assets/javascript/sweetalert2.all.min.js"></script>
+    <!-- Sweet Aleart Toast -->
+    <script src="Assets/javascript/toastSweetalert.js"></script>
+	<script type="module" src="Assets/javascript/login.js"></script>
+</html>

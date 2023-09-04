@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
+.mainImg{
+    width: 40%;
+}
+.hover-container div{
+    border: 2px solid rgba(252, 160, 175, 0.7);
+}
+.productOverlay .active{
+	background-color: rgba(12, 0, 2, 0.696);
+	padding: 5px;
+}
+.hover-container div:hover{
+    border-color: rgb(255, 145, 163);
+}
+.hover-container div img{
+    width: 80px;
+    cursor: pointer;
+}
+.product-name{
+    font-size: 26px;
+    margin-bottom: 22px;
+    font-weight: 700;
+	opacity: 0.9;
+    letter-spacing: 1px;
+}
+.mainCtn .active{
+	border: rgba(12, 0, 2, 0.326) 2px solid;
+	padding: 5px;
+}
+@media screen and (max-width: 768px) {
+	.details{
+		width: 90%;
+		height: 100%;
+		background-color: #fff;
+		right: -400px;
+		transition: 1s;
+	}
+	.productCard{
+		overflow: scroll !important;
+	}
+	.left,
+	.right{
+		width: 100% !important;
+	}
+	.hover-container div img{
+		width: 50px;
+	}
+	.right .product-name{
+		font-size: 16px;
+	}
+	.right .text-muted{
+		font-size: 16px !important;
+	}
+  }

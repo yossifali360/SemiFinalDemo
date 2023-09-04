@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
+.row {
+    margin-right: 0 !important;
+  }
+.tooltip1 .tooltiptext1,
+.tooltip2 .tooltiptext2 {
+  visibility: hidden;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 6px;
+  top: -25px;
+  left: -19px;
+  white-space: nowrap;
+  z-index: 1;
+}
+.tooltip1:hover .tooltiptext1,
+.tooltip2:hover .tooltiptext2 {
+  visibility: visible;
+}
+.navbar{
+  height: 80px;
+}
+.filter{
+  height: 100vh;
+  top: 80px;
+  border-right: 1px rgba(226,226,226,1) solid;
+}
+.searchbar{
+  width: 100%;
+  border: rgba(226,226,226,1) 1px solid;
+  border-radius: 3px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+input{
+  border: none;
+  outline: none;
+  background: none;
+}
+.filter input{
+  border: rgba(226,226,226,1) 1px solid;
+}
+.searchbar input{
+  border: none;
+}
+.searchIcon:hover{
+  color: orangered;
+  cursor: pointer;
+}
+.displayIcons i {
+  font-size: 20px;
+}
+.listImg{
+width: 30%;
+}
+.addToCart{
+  width: fit-content;
+}
+.listView .productCard:hover .card-img-top {
+	transform: scale(1, 1);
+}
+.listView .productCard:hover .cardIcons {
+	right: 0;
+	opacity: 0;
+}
+.listImg:hover .cardIcons {
+	right: 88% !important;
+	opacity: 1 !important;
+}
+.byPrice label{
+  padding: 0 10px;
+}
+.box .active{
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 768px) {
+  .filter{
+    height: auto;
+  }
+  .listView .card-title {
+    font-size: 14px !important;
+  }
+  .listView .card-body{
+    width: 50%;
+  }
+  .listView .card-img-top{
+    width: 100% !important;
+  }
+  .listImg{
+    width: 50%;
+  }
+  }
