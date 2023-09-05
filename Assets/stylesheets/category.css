@@ -1,11 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
 .row {
     margin-right: 0 !important;
-  }
+}
 .tooltip1 .tooltiptext1,
 .tooltip2 .tooltiptext2 {
   visibility: hidden;
@@ -21,9 +16,7 @@
 .tooltip2:hover .tooltiptext2 {
   visibility: visible;
 }
-.navbar{
-  height: 80px;
-}
+
 .filter{
   height: 100vh;
   top: 80px;
@@ -43,6 +36,10 @@ input{
   outline: none;
   background: none;
 }
+.form-control:focus{
+  border: rgba(0, 0, 0, 0.249) 1px solid;
+  box-shadow: 0 0 2px -2px grey !important;
+}
 .filter input{
   border: rgba(226,226,226,1) 1px solid;
 }
@@ -61,6 +58,9 @@ width: 30%;
 }
 .addToCart{
   width: fit-content;
+}
+.listView .btnSpan{
+  margin: 0;
 }
 .listView .productCard:hover .card-img-top {
 	transform: scale(1, 1);

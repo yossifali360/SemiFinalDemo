@@ -1,7 +1,6 @@
 let productCards = document.querySelectorAll(".productCard");
 const productCtn = document.querySelector(".productCtn");
 const loadingIcon = document.querySelector(".loadingIcon");
-const originalPrices = [];
 // Wish List
 		let WishlistData = JSON.parse(localStorage.getItem("Wishlist")) ?? [];
 		const WishListCount = document.querySelector(".WishListCount");
@@ -51,12 +50,12 @@ closeShopAndWish(wishList,wishListDetails,wishListCtnCloseCart);
 document.addEventListener("DOMContentLoaded", function() {
 	viewIconsFunction(viewIcons);
 	heartIconFunction(heartIcons);
-	changeCurrency(currency);
-	storeOrginalPrice(productCards);
 	addToCartBtn = document.querySelectorAll(".addToCartBtn")
 	addToCart(addToCartBtn);
 	checkWishList(productCards);
-	SearchStock(".addToCartBtn");
+	SearchStock(".addToCartBtn")
+	productClick(".productCard");
+	productClick(".cartItem");
 });
 
 // Functions
@@ -247,7 +246,7 @@ function cartItemData(item){
 	return `<div class="cartItem px-3" data-id="${item.id}">
 	<div class="d-flex align-items-center justify-content-between">
 	  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
-	  <div class="cartText px-3">
+	  <div class="card-title px-3">
 		<h4>${item.title}</h4>
 	  </div>
 	  <span class="text-muted">${item.quantity}X</span>
@@ -262,7 +261,7 @@ function wishItemData(item){
 	<div class="d-flex align-items-center justify-content-between position-relative productLabel">
 	  <i class="fas fa-x position-absolute deleteFromWishList"></i>
 	  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
-	  <div class="cartText px-3">
+	  <div class="card-title px-3">
 	  <h4>${splitCardTitle(item).cardTitle}</h4>
 	  </div>
 	  <span class="btnSpan"><button class = "btn btn-outline-success p-2 text-capitalize  addToCartFromWishListBtn">add to cart</button></span>
@@ -329,50 +328,7 @@ function addToWishList(btn) {
 	WishListCount.textContent=WishlistData.length
 	localStorage.setItem("Wishlist", JSON.stringify(WishlistData));
 }
-// Change Currency Function
-function changeCurrency(currency){
-	productCards = document.querySelectorAll(".productCard");
-	currency.addEventListener("change", function() {
-		if (currency.value == "Egy") {
-			productCards.forEach((product, index) => {
-				const priceElement = product.querySelector(".price");
-				const priceSign = product.querySelector(".priceSign");
-				priceSign.textContent = " EGP";
-				priceElement.textContent = originalPrices[index];
-			});
-		}
-		if (currency.value == "dolar") {
-			productCards.forEach((product, index) => {
-				const priceElement = product.querySelector(".price");
-				const priceSign = product.querySelector(".priceSign");
-				priceSign.textContent = " $";
-				const originalPrice = originalPrices[index];
-				let newPrice = (originalPrice / 30.84);
-				priceElement.textContent = newPrice.toFixed(2);
-			});
-		}
-		if (currency.value == "Euro") {
-			productCards.forEach((product, index) => {
-				const priceElement = product.querySelector(".price");
-				const priceSign = product.querySelector(".priceSign");
-				priceSign.textContent = " €";
-				const originalPrice = originalPrices[index];
-				let newPrice = originalPrice / 33.59;
-				priceElement.textContent = newPrice.toFixed(2);
-			});
-		}
-		if (currency.value == "CAD") {
-			productCards.forEach((product, index) => {
-				const priceElement = product.querySelector(".price");
-				const priceSign = product.querySelector(".priceSign");
-				priceSign.textContent = " c$";
-				const originalPrice = originalPrices[index];
-				let newPrice = originalPrice / 22.73;
-				priceElement.textContent = newPrice.toFixed(2);
-			});
-		}
-	});
-}
+
 // Get Session Data Function
 function getSessionData() {
 	return JSON.parse(localStorage.getItem("session"));
@@ -431,13 +387,7 @@ function checkWishList(producsArray){
 		}
 	});
 }
-// Store Original Price Function
-function storeOrginalPrice(producsArray){
-	producsArray.forEach(product => {
-		const priceElement = product.querySelector(".price");
-		originalPrices.push((priceElement.textContent));
-	});
-}
+
 // Check User Image Function
 function CheckUserImage(){
 	if(getSessionData() != null){
@@ -617,3 +567,17 @@ toTopButton.addEventListener("click", function () {
 	window.scrollTo({top: 0 , behavior: "smooth"});
 });
 
+
+// Product
+function productClick(titleName){
+	let cardTitle = document.querySelectorAll(".card-title")
+	cardTitle.forEach(product => {
+		product.addEventListener("click",function(event){
+			event.preventDefault();
+			const parent = product.closest(titleName);
+			const id = parent.dataset.id;
+			const url = `/product.html?id=${encodeURIComponent(id)}`;
+			window.location.href = url;
+		})
+	});
+}

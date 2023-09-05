@@ -3,7 +3,6 @@ const category = urlParams.get('category');
 const productsData = JSON.parse(localStorage.getItem("products"));
 let data = productsData.filter((product) => product.category == category);
 let viewIcons = document.querySelectorAll(".viewIcon");
-const listStyle = document.querySelector(".listStyle")
 let heartIcons = document.querySelectorAll(".heartIcon");
 let addToCartBtn = document.querySelectorAll(".addToCart");
 
@@ -12,7 +11,6 @@ if (category == null){
 }
 const listViewproducts = document.querySelector(".listView .products")
 const gridViewproducts = document.querySelector(".gridView .products")
-const filterForm = document.getElementById('filterForm');
 const minPriceInput = document.getElementById('minPrice');
 const maxPriceInput = document.getElementById('maxPrice');
 const filterBtn = document.querySelector(".filterBtn");
@@ -100,14 +98,16 @@ function filterByBrand(divName,viewtype){
 	selectElement.addEventListener("change", function() {
 		const selectedBrand = selectElement.value;
 		divName.innerHTML = ""; 
+		let loadElements="";
 		data.forEach(product => {
 		  if (selectedBrand === "All"){
-			divName.innerHTML += viewtype(product);
+			loadElements += viewtype(product);
 		  }
 		  else if (product.Brand === selectedBrand) {
-			divName.innerHTML += viewtype(product);
+			loadElements += viewtype(product);
 		  }
 		});
+		divName.innerHTML = loadElements;
 		reloadIcons()
 	  });
 }

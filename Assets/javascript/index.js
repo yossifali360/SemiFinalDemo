@@ -172,22 +172,17 @@ catElements.forEach(element => {
 		element.href = url;
 	})
 });
-// Product
-const cardTitle = document.querySelectorAll(".card-title")
-cardTitle.forEach(product => {
-	product.addEventListener("click",function(event){
-		event.preventDefault();
-		const parent = product.closest(".productCard");
-		console.log(product);
-		const id = parent.dataset.id;
-		console.log(id);
-		const url = `/product.html?id=${encodeURIComponent(id)}`;
-		window.location.href = url;
-	})
-});
 import {splitCardTitle} from './global.js';
 $(document).ready(function(){
   $(".hero .owl-carousel").owlCarousel({
+	responsive: true,
+    items : 1,
+	autoplay:true,
+	autoplayTimeout:5000,
+	autoplayHoverPause:false,
+	loop:true,
+  });
+  $(".mHero .owl-carousel").owlCarousel({
 	responsive: true,
     items : 1,
 	autoplay:true,

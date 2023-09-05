@@ -4,22 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Owl Carousel Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/owl.carousel.min.css">
+    <!-- Owl Carousel Theme Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/owl.theme.default.min.css">
     <!-- Font awesome -->
     <link rel="stylesheet" href="Assets/stylesheets/all.min.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="Assets/stylesheets/bootstrap.min.css" />
     <!-- WOW -->
     <link rel="stylesheet" href="Assets/stylesheets/animate.css" />
-    <!-- Own Style -->
-    <link rel="stylesheet" href="Assets/stylesheets/productAleart.css" />
-    <link rel="stylesheet" href="Assets/stylesheets/category.css" />
+    <!-- Global Style -->
     <link rel="stylesheet" href="Assets/stylesheets/global.css" />
-    <!-- Splide -->
-    <link rel="stylesheet" href="Assets/stylesheets/splide.min.css">
+    <!-- File Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/category.css" />
+    <!-- Product Aleart Style -->
+    <link rel="stylesheet" href="Assets/stylesheets/productAleart.css" />
     <!-- Title -->
-    <title>Document</title>
-</head>
+    <title>Categories | Modern Tech</title>
+    <!-- Icon -->
+    <link rel="icon" type="image/x-icon" href="Assets/images/blacklogo.png">
+  </head>
 <body>
+  <!-- Shoppingcart -->
   <aside class="shoppingCart position-fixed d-none">
     <div class="details position-absolute">
       <div class="cartHeader p-3">
@@ -30,7 +37,6 @@
       </div>
       <hr>  
       <div class="carts">
-
       </div>
       <div class="btns p-3 w-100">
         <hr>
@@ -38,11 +44,12 @@
           <h6 class="text-muted">Total :</h6>
           <h6 class="totalCartsPrice">0</h6>
         </div>
-        <a href="cart.html" class="btn btn-outline-info w-100 my-2 text-decoration-none">View Cart</a>
+        <a href="cart.html" class="btn btn-outline-info w-100 my-2 text-decoration-none">Edit Cart</a>
         <a href="checkout.html" class="btn btn-outline-primary w-100 my-2 text-decoration-none">Checkout</a>
       </div>
       </div>
   </aside>
+  <!-- Wishlist -->
   <aside class="wishListCtn position-fixed d-none">
     <div class="details position-absolute">
       <div class="cartHeader p-3">
@@ -82,7 +89,7 @@
     </div>
       <a href="login.html" class="text-decoration-none text-white userName mx-2">Login</a>
     </div>
-    <select name="currency" id="currency" class="rounded-2">
+    <select name="currency" id="currency" class="rounded-2 p-1">
       <option hidden value="">Choose a currency</option>
       <option value="Egy">Egy</option>
       <option value="dolar">USD</option>
@@ -164,37 +171,34 @@
     <i class="fas fa-arrow-up"></i>
   </button>
   <!-- Products -->
-    <div class="row mr-0 flex-column flex-md-row">
-      <aside class="col-12 col-md-3 filter px-4">
-        <div class="mt-5 text-center">
-          <h4>Search items</h4>
+  <div class="row mr-0 flex-column flex-md-row">
+    <aside class="col-12 col-md-3 filter px-4 sticky-top">
+      <div class="mt-5 text-center">
+        <h4>Search items</h4>
           <div class="searchbar">
             <input type="text" name="" class="searchBar w-100" placeholder="Search By Name">
             <i class="fas fa-magnifying-glass searchIcon h-100"></i>
-          </div>
-          <h4 class="mt-5">Filter items</h4>
-            <div class="byPrice py-4 rounded-2">
-                      <div class="item">
-                        <label class="d-block">Min Price</label>
-                        <input class="bg-white rounded-2" id="minPrice" name="minPrice" type="number">
-                      </div>
-                      <div class="item">
-                        <label class="d-block">Max Price</label>
-                        <input class="bg-white rounded-2" id="maxPrice" name="maxPrice" type="number">
-                      </div>
-                        <!-- <input type="number" id="minPrice" name="minPrice" step="0.01" min="0" placeholder="Min Price" class="rounded-2"> -->
-                    <button class="btn btn-outline-info m-auto d-block w-75 mt-4 filterBtn" type="submit">Filter</button>
-            </div>
-            <div class="byBrand py-4  rounded-2">
-                <h4>By Brand</h4>
-                <select name="brand" id="brand" class="rounded-2">
-                    <option value="All">All</option>
-                </select>
-            </div>
         </div>
-      </aside>
-      <div class="col-12 col-md-9 mt-5">
-          <ul class="nav nav-pills mb-3 gap-3" id="pills-tab" role="tablist">
+        <h4 class="mt-4">Filter items</h4>
+          <div class="byPrice rounded-2 card p-2">
+            <h4>By Price</h4>
+                    <div class="item">
+                      <label class="d-block">Min Price</label>
+                      <input class="bg-white rounded-2 form-control" id="minPrice" name="minPrice" type="number">
+                    </div>
+                    <div class="item">
+                      <label class="d-block">Max Price</label>
+                      <input class="bg-white rounded-2 form-control" id="maxPrice" name="maxPrice" type="number">
+                    </div>
+                  <button class="btn btn-outline-info m-auto d-block w-75 mt-4 filterBtn" type="submit">Filter</button>
+          </div>
+          <div class="byBrand my-4 p-2  rounded-2 card">
+              <h4>By Brand</h4>
+              <select name="brand" id="brand" class="rounded-2 form-select">
+                  <option value="All">All </option>
+              </select>
+          </div>
+          <ul class="pt-2 d-flex flex-row nav-pills mb-3 gap-4 align-items-center justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item box d-flex align-items-center justify-content-around">
               <a class="nav-link text-dark fs-4 d-flex align-items-center justify-content-center gap-3 w-100 active" id="pills-home-tab" data-bs-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
                 <div class="tooltip1 position-relative">
@@ -212,24 +216,27 @@
               </a>
             </li>
           </ul>
-          <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-              <div class="gridView">
-                <h3 class="text-center">Products in Category</h3>
-                <div class="products row g-3 align-items-stretch mr-0">
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-              <div class="listView">
-                <h3 class="text-center">Products in Category</h3>
-                <div class="products row g-3 align-items-stretch mr-0">
-                </div>
+      </div>
+    </aside>
+    <div class="col-12 col-md-9 mt-5">
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="gridView">
+              <h3 class="text-center">Products in Category</h3>
+              <div class="products row g-3 align-items-stretch mr-0">
               </div>
             </div>
           </div>
-      </div>
+          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+            <div class="listView">
+              <h3 class="text-center">Products in Category</h3>
+              <div class="products row g-3 align-items-stretch mr-0">
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
+  </div>
   <!-- Products Overlay-->
   <div class="container">
     <div class="productCtn d-flex g-3 mt-5 align-items-stretch ms-0">
@@ -237,17 +244,105 @@
       </div>
     </div>
   </div>
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-white">
+    <div class="d-flex justify-content-between p-4 getConected">
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="#" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Compu Tech</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              With more than 10 years of experience in computer components,
+              which helps us to meet your needs in purchasing
+              the best components at the lowest prices.
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="profile.html" class="text-white text-decoration-none">Your Account</a>
+            </p>
+                     <p>
+              <a href="orderhistory.html" class="text-white text-decoration-none">Order History</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white text-decoration-none">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white text-decoration-none">Help</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright :
+      <span class="text-white mx-2 text-decoration-none">Yossif Ali</span>
+        <a href="https://github.com/yossifali360" class="text-white me-4 text-decoration-none">
+          <i class="fab fa-github"></i>
+        </a>
+    </div>
+  </footer>
+    <!-- Js Files -->
+    <!-- Jquery Js -->
+    <script src="Assets/javascript/jquery-1.9.1.min.js"></script>
+    <!-- Owl Carousel Js -->
+    <script src="Assets/javascript/owl.carousel.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="Assets/javascript/bootstrap.bundle.min.js"></script>
+    <!-- WOW Js -->
+    <script src="Assets/javascript/wow.min.js"></script>
+    <!-- Start Wow js -->
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Products Data -->
+    <script type="module" src="Assets/javascript/productsdata.js"></script>
+    <!-- Sweetaleart Js -->
+    <script src="Assets/javascript/sweetalert2.all.min.js"></script>
+    <!-- Global Js -->
+    <script type="module" src="Assets/javascript/global.js" defer></script>
+    <!-- Category Js -->
+    <script type="module" src="Assets/javascript/category.js"></script>
+    <!-- Change Currency Js -->
+    <script src="Assets/javascript/changeCurrency.js"></script>
 </body>
-<!-- Bootstrap js -->
-<script src="Assets/javascript/bootstrap.bundle.min.js"></script>
-<!-- WOW -->
-<script src="Assets/javascript/wow.min.js"></script>
-<!-- Sweet Aleart JS -->
-<script src="Assets/javascript/sweetalert2.all.min.js"></script>
-<!-- Splide JS -->
-<script src="Assets/javascript/splide.min.js"></script>
-<!-- Category Js -->
-<script type="module" src="Assets/javascript/category.js"></script>
-<!-- Global Js -->
-<script type="module" src="Assets/javascript/global.js"></script>
 </html>

@@ -163,6 +163,10 @@ body {
 	background-color: transparent !important;
 	color: var(--primary);
 }
+.mHero .owl-item img{
+	height: 85vh !important;
+	width: 100vw;
+}
 @keyframes sparkle {
   0% {
       background-position: 0 0
