@@ -10,7 +10,7 @@ const loadingIcon = document.querySelector(".loadingIcon");
 		const wishListCtnCloseCart = document.querySelector(".wishListCtn .closeCart");
 		let deleteFromWishList = document.querySelectorAll(".deleteFromWishList")
 	// Shopping Cart
-		const shoppingcartData = JSON.parse(localStorage.getItem("cart")) ?? [];
+		let shoppingcartData = JSON.parse(localStorage.getItem("cart")) ?? [];
 		const shoppingCart = document.querySelector(".shoppingCart");
 		const shoppingCartDetails = shoppingCart.querySelector(".shoppingCart .details");
 		const shoppingCartIcon = document.querySelector(".shoppingCartIcon");
@@ -22,7 +22,6 @@ const cartCount = document.querySelector(".cartCount");
 const shoppingcarts = document.querySelector(".carts");
 const Wishes = document.querySelector(".Wishes");
 let addToCartBtn = document.querySelectorAll(".addToCartBtn");
-const currency = document.getElementById("currency");
 const totalCartsPrice = document.querySelector(".totalCartsPrice");
 let totalPrice = 0;
 const menu = document.querySelector(".menu");
@@ -400,12 +399,15 @@ function CheckUserImage(){
 }
 // Load Shopping Carts Function
 function loadShoppingCarts(){
+	totalPrice=0;
+	shoppingcartData = JSON.parse(localStorage.getItem("cart")) ?? [];
 	if (shoppingcartData.length == 0){
 		shoppingcarts.innerHTML=emptyCartAndWish("Shopping Cart is Empty!");
 	}
 	else{
 	shoppingcarts.innerHTML="";
 	shoppingcartData.forEach(element => {
+		cartCount.textContent=shoppingcartData.length;
 		shoppingcarts.innerHTML += cartItemData(element)
 		totalPrice += (element.quantity * element.price)
 	});
@@ -429,6 +431,7 @@ function loadWishlist(){
 			Wishes.innerHTML += wishItemData(element)
 		});
 		SearchStockInWishList()
+		deleteFromWishListFunction()
 	}
 }
 // Create Product Overlay Function
@@ -448,7 +451,7 @@ function createProductOverlay(productObject){
 	});
 }
 
-deleteFromWishListFunction()
+
 function deleteFromWishListFunction(){
 	deleteFromWishList = document.querySelectorAll(".deleteFromWishList")
 	deleteFromWishList.forEach(item => {
@@ -495,7 +498,7 @@ function splitCardTitle(product) {
 	}
 	return { cardTitle };
 }
-export {heartIconFunction , viewIconsFunction , addToCart , addToWishList , success , WishListCount , loadWishlist ,splitCardTitle,SearchStock};
+export {heartIconFunction , viewIconsFunction , addToCart , addToWishList , success , WishListCount , loadWishlist ,splitCardTitle,SearchStock,loadShoppingCarts};
 // fixed navbar
 const navbar = document.querySelector(".navbar")
 
@@ -533,7 +536,7 @@ function SearchStockInWishList(){
 		if(item.dataset.stock == 0){
 			const productLabel = item.querySelector(".productLabel")
 			const newLabel = document.createElement("div");
-			newLabel.innerHTML = outOfStockLabel();
+			newLabel.innerHTML = outOfStockWishLabel();
 			productLabel.appendChild(newLabel)
 			const btn = item.querySelector(".addToCartFromWishListBtn")
 			const btnSpan = item.querySelector(".btnSpan")
@@ -544,6 +547,9 @@ function SearchStockInWishList(){
 }
 function outOfStockLabel(){
 	return`<span class="outOfStock">out of stock</span>`
+}
+function outOfStockWishLabel(){
+	return`<span class="outOfStockWish">out of stock</span>`
 }
 // To top Function
 function toTop() {

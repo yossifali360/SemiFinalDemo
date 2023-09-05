@@ -1,3 +1,4 @@
+const currency = document.getElementById("currency");
 const originalPrices = [];
 document.addEventListener("DOMContentLoaded", function() {
     let productCards = document.querySelectorAll(".productCard");

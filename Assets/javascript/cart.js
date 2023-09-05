@@ -22,6 +22,7 @@ plus.forEach(sign => {
         quantity.innerHTML = newQuantity;
         localStorage.setItem("cart", JSON.stringify(shoppingcartData));
         CalcTotal()
+        loadShoppingCarts()
         Toast.fire({
             icon: "success",
             title: `Quantity increased ,  Current quantity is ${newQuantity}`,
@@ -41,6 +42,7 @@ minus.forEach(sign => {
             quantity.innerHTML = newQuantity;
             localStorage.setItem("cart", JSON.stringify(shoppingcartData));
             CalcTotal()
+            loadShoppingCarts()
             Toast.fire({
                 icon: "success",
                 title: `Quantity decresed , Current quantity is ${newQuantity}`,
@@ -61,6 +63,7 @@ remove.forEach(icon => {
         parent.remove();
         localStorage.setItem("cart", JSON.stringify(shoppingcartData));
         CalcTotal();
+        loadShoppingCarts()
         Toast.fire({
             icon: "success",
             title: `Product Removed Successfuly`,
@@ -82,7 +85,7 @@ heart.forEach(icon => {
         loadWishlist()
     })
 });
-import { WishListCount , success , loadWishlist} from './global.js';
+import { WishListCount , success , loadWishlist ,loadShoppingCarts} from './global.js';
 
 function loadCarts(cart){
     return`<div class="itemCtn" data-id="${cart.id}">

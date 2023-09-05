@@ -29,9 +29,9 @@
 .quantity{
     width: fit-content;
 }
-@media only screen and (max-width: 576px) {
+
+@media screen and (max-width: 576px) {
     .shoppingCartCtn .quantityCtn {
       width: 100%;
     }
   }
-/*  */

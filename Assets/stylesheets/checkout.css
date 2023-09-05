@@ -28,3 +28,9 @@ th, td {
     box-shadow: none;
     border-color: var(--black);
 }
+@media screen and (max-width: 768px){
+    .swal2-container{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

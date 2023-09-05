@@ -414,6 +414,21 @@ footer .getConected{
     margin: 0;
     padding: 0;
 }
+  .outOfStockWish{
+	z-index: 999;
+	background-color: #ff0000;
+	color: var(--white);
+	text-transform: capitalize;
+	top: 0;
+    left: 0;
+    width: 300px;
+    transform: translate(-130px,16px) rotate(-45deg);
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+}
 @media screen and (max-width: 360px) {
 	.shoppingCart .details,
 	.wishListCtn .details{
