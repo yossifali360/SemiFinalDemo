@@ -443,3 +443,8 @@ footer .getConected{
 .productOverlay .btnSpan{
 	margin: 0;
 }
+.discount{
+	right: 11px;
+	top: 11px;
+	z-index: 999;
+}

@@ -235,8 +235,15 @@ loginBtn.addEventListener("click",function(){
 		function validatePass(){
 			if(loginObject.pass == userPass){
 				if (loginObject.Role == "Member"){
-				location.href = 'index.html';
-				localStorage.setItem("session", JSON.stringify(loginObject));
+					const urlParameter = new URLSearchParams(window.location.search);
+					const redirect = urlParameter.get("redirect");
+						if (redirect == "checkout") {
+							localStorage.setItem("session", JSON.stringify(loginObject));
+							location.href = 'checkout.html';
+						}
+						else{
+							location.href = 'index.html';
+						}
 				}
 				else{
 					location.href = 'dash.html';

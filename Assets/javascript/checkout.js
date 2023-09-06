@@ -12,6 +12,12 @@ const discountRate = document.querySelector(".discountRate");
 
 const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
 const mastercardPattern = /^5[1-5][0-9]{14}$/;
+if (!loginGetData()){
+    const path = "checkout";
+    const url = `/login.html?redirect=${encodeURIComponent(path )}`;
+    location.href = url;
+}
+
 
 getCartData().forEach(cart => {
     cartList.innerHTML += cartListItem(cart)

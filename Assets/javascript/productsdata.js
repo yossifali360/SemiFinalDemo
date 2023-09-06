@@ -4,6 +4,7 @@ const products = [
 		title: "MSI MAG B660 TOMAHAWK WIFI DDR4 (ONLY BUILD)",
 		price: 6800,
 		Availability: true,
+		discount : 0.1,
 		stock: 15,
 		category: "Motherboard",
 		Brand: "MSI",
@@ -52,6 +53,7 @@ const products = [
 		title: "ProArt Z790-CREATOR WIFI DDR5",
 		price: 23500,
 		Availability: true,
+		discount : 0.07,
 		stock: 4,
 		category: "Motherboard",
 		Brand: "Asus",
@@ -100,6 +102,7 @@ const products = [
 		id: 7,
 		title: "ASUS B450M TUF GAMING PLUS II",
 		price: 2100,
+		discount : 0.05,
 		Availability: true,
 		stock: 6,
 		category: "Motherboard",
@@ -283,6 +286,7 @@ const products = [
 		Availability: true,
 		top: "true",
 		stock: 3,
+		discount : 0.1,
 		category: "Motherboard",
 		Brand: "Gigabyte",
 		description:
@@ -365,7 +369,6 @@ const products = [
 		price: 1700,
 		Availability: false,
 		stock: 0,
-
 		category: "Processors",
 		Brand: "AMD",
 		description:
@@ -381,6 +384,7 @@ const products = [
 		price: 2350,
 		Availability: true,
 		stock: 2,
+		discount : 0.07,
 		top: "true",
 		category: "Processors",
 		Brand: "AMD",
@@ -413,7 +417,7 @@ const products = [
 		price: 2700,
 		Availability: true,
 		stock: 8,
-
+		discount : 0.09,
 		category: "Processors",
 		Brand: "AMD",
 		description:
@@ -430,6 +434,7 @@ const products = [
 		Availability: true,
 		stock: 30,
 		category: "Processors",
+		discount : 0.2,
 		Brand: "AMD",
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/DESCRIPTION/3400d.jpg",
@@ -504,6 +509,7 @@ const products = [
 		id: 32,
 		title: "AMD RYZEN 5 5600 6-Core 12-Thread (Max Boost 4.4 GHz) (Only Build)",
 		price: 5400,
+		discount : 0.05,
 		Availability: true,
 		stock: 22,
 
@@ -583,6 +589,7 @@ const products = [
 		price: 2700,
 		mostViewed: "true",
 		Availability: true,
+		discount : 0.06,
 		stock: 8,
 		category: "Processors",
 		Brand: "Intel",
@@ -740,7 +747,7 @@ const products = [
 		mostViewed: "true",
 		stock: 1,
 		category: "Processors",
-
+		discount : 0.07,
 		Brand: "Intel",
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/AAAQNAP%20TS-932PX-4G%20TOWER/DELL/Screenshot%202023-03-08%20at%2019-19-37%20Intel%C2%AE%20Core%E2%84%A2%20i5-13500%20Processor%20(24M%20Cache%20up%20to%204.80%20GHz)%20-%20Product%20Specifications%20Intel.png",
@@ -804,7 +811,7 @@ const products = [
 		Availability: true,
 		stock: 28,
 		category: "Ram",
-
+		discount : 0.07,
 		Brand: "Corsair",
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/Rams/Corsair/LPX/(2%20x%208GB)%20DDR4%20DRAM%203600MHz%20C16%20Memory%20Kit%20-%20Black.jpg",
@@ -821,6 +828,7 @@ const products = [
 		Availability: true,
 		top: "true",
 		stock: 18,
+		discount : 0.02,
 		category: "Ram",
 		Brand: "Corsair",
 		description:
@@ -953,7 +961,7 @@ const products = [
 		price: 2300,
 		Availability: true,
 		stock: 33,
-
+		discount : 0.02,
 		category: "Ram",
 		Brand: "TEAM ELITE",
 		description:
@@ -987,6 +995,7 @@ const products = [
 		price: 5999,
 		Availability: true,
 		stock: 36,
+		discount : 0.03,
 		category: "Ram",
 		Brand: "TEAM ELITE",
 		description:
@@ -1018,7 +1027,7 @@ const products = [
 		Availability: true,
 		stock: 33,
 		category: "Ram",
-
+		discount : 0.04,
 		Brand: "TEAM ELITE",
 		description:
 			"https://www.teamgroupinc.com/en/upload/product_note_pic/b9a139a79a696360bd8e62f666b53f2d.jpg",
@@ -1051,6 +1060,7 @@ const products = [
 		Availability: true,
 		stock: 24,
 		category: "Ram",
+		discount : 0.08,
 		Brand: "G.SKILL",
 		description: "",
 		images: [
@@ -1093,6 +1103,7 @@ const products = [
 		price: 1700,
 		Availability: true,
 		stock: 23,
+		discount : 0.1,
 		category: "Ram",
 		Brand: "G.SKILL",
 		description: "",
@@ -1108,6 +1119,7 @@ const products = [
 		Availability: true,
 		stock: 23,
 		category: "SSD",
+		discount : 0.03,
 		Brand: "SAMSUNG",
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/SSD/Samsung/870%201TB/870%20EVO%20SATA%202%205%20quot;%20SSD%201TB%20Memory%20amp;%20Storage%20-%20MZ-77E1T0B%20AM%20Samsung%20US.jpg",
@@ -1123,6 +1135,7 @@ const products = [
 		Availability: true,
 		stock: 29,
 		category: "SSD",
+		discount : 0.05,
 		Brand: "SAMSUNG",
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/SSD/Samsung/870%201TB/870%20EVO%20SATA%202%205%20quot;%20SSD%201TB%20Memory%20amp;%20Storage%20-%20MZ-77E1T0B%20AM%20Samsung%20US.jpg",
@@ -1169,6 +1182,7 @@ const products = [
 		price: 2100,
 		Availability: true,
 		stock: 13,
+		discount : 0.07,
 		category: "SSD",
 		Brand: "SAMSUNG",
 		description:
@@ -1244,7 +1258,7 @@ const products = [
 		id: 79,
 		title: "GIGABYTE 120GB Sata 2.5 Inch SS",
 		price: 400,
-
+		discount : 0.05,
 		Availability: true,
 		stock: 12,
 		category: "SSD",
@@ -1321,7 +1335,7 @@ const products = [
 		title: "Seagate Barracuda 2TB 7200 RPM SATA HDD",
 		price: 2100,
 		Availability: true,
-
+		discount : 0.02,
 		stock: 41,
 		category: "SSD",
 		Brand: "Seagate",
@@ -1382,6 +1396,7 @@ const products = [
 		Availability: true,
 		top: "true",
 		stock: 3,
+		discount : 0.03,
 		category: "SSD",
 		Brand: "Transcend",
 		description:
@@ -1456,6 +1471,7 @@ const products = [
 		title: "Western Digital Blue 2TB 5400 RPM SATA HDD",
 		price: 2100,
 		Availability: true,
+		discount : 0.02,
 		stock: 23,
 		category: "SSD",
 		Brand: "Western Digital",
@@ -1485,6 +1501,7 @@ const products = [
 		title: "ASUS RTX 4090 TUF GAMING OC",
 		price: 86000,
 		Availability: true,
+		discount : 0.2,
 		stock: 11,
 		category: "Graphic Card",
 		top: "true",
@@ -1501,6 +1518,7 @@ const products = [
 		id: 96,
 		title: "GALAX GeForce GTX 1650 DUAL OC Edition 4G GDDR6",
 		price: 6850,
+		discount : 0.07,
 		Availability: true,
 		stock: 8,
 		category: "Graphic Card",
@@ -1535,6 +1553,7 @@ const products = [
 		title: "GALAX GeForce RTX 3060 EX (1-Click OC) 12GB GDDR6 Graphics Card(ONLY BUILD)",
 		price: 15500,
 		Availability: true,
+		discount : 0.1,
 		stock: 3,
 		category: "Graphic Card",
 		top: "true",
@@ -1553,6 +1572,7 @@ const products = [
 		price: 41500,
 		Availability: true,
 		stock: 8,
+		discount : 0.09,
 		category: "Graphic Card",
 		top: "true",
 		Brand: "Gigabyte",
@@ -1617,6 +1637,7 @@ const products = [
 		title: "GALAX GeForce RTX™ 3070 TI 8G (1-Click OC)",
 		price: 19500,
 		Availability: true,
+		discount : 0.07,
 		stock: 2,
 		category: "Graphic Card",
 		Brand: "GALAX",
@@ -1666,6 +1687,7 @@ const products = [
 		title: "Gigabyte GeForce RTX 4090 AERO OC 24G",
 		price: 83000,
 		Availability: true,
+		discount : 0.2,
 		stock: 6,
 		category: "Graphic Card",
 		Brand: "Gigabyte",
@@ -1697,6 +1719,7 @@ const products = [
 		id: 108,
 		title: "AORUS MASTER RTX 4090 24G",
 		price: 84000,
+		discount : 0.1,
 		Availability: true,
 		stock: 0,
 		top: "true",
@@ -1730,6 +1753,7 @@ const products = [
 		id: 110,
 		title: "ASUS RTX 4080 TUF GAMING OC",
 		price: 58500,
+		discount : 0.07,
 		Availability: true,
 		stock: 3,
 		category: "Graphic Card",
@@ -1763,6 +1787,7 @@ const products = [
 		id: 112,
 		title: "COOLER MASTER HAF 500 Mid Tower Case WHITE (ONLY BUILD)",
 		price: 4999,
+		discount : 0.07,
 		Availability: false,
 		stock: 0,
 		category: "Cases",
