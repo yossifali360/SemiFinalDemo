@@ -76,7 +76,10 @@ heart.forEach(icon => {
         let cartId = parent.dataset.id;
         let productObject = getProductsData().find((product) => product.id == cartId);
         let searchProduct = WishlistData.find((cart) => cart.id == cartId);
-        success(productObject.images[0], productObject.title, "Added To Wishlist Successfully");
+        Toast.fire({
+            icon: "success",
+            title: `Added To Wishlist Successfuly`,
+        });
         if (searchProduct == undefined) {
             WishlistData.push(productObject);
         }
@@ -85,7 +88,7 @@ heart.forEach(icon => {
         loadWishlist()
     })
 });
-import { WishListCount , success , loadWishlist ,loadShoppingCarts} from './global.js';
+import { WishListCount , loadWishlist ,loadShoppingCarts} from './global.js';
 
 function loadCarts(cart){
     return`<div class="itemCtn" data-id="${cart.id}">

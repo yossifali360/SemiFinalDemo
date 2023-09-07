@@ -294,7 +294,7 @@ nav a {
 }
 .shoppingCart .carts{
 	height: 60%;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .wishListIcon,
 .shoppingCartIcon,
@@ -322,7 +322,7 @@ nav a {
 }
 .wishListCtn .Wishes{
 	height: 90%;
-	overflow-y: scroll;
+	overflow-y: auto;
 }
 .WishListCount,
 .cartCount{
@@ -361,7 +361,7 @@ footer .getConected{
 		transition: 1s;
 	}
 	.overlay .productCard{
-		overflow: scroll !important;
+		overflow: auto !important;
 	}
 	.overlay .left,
 	.overlay .right{
@@ -444,7 +444,7 @@ footer .getConected{
 	margin: 0;
 }
 .discount{
-	right: 11px;
+	left: 11px;
 	top: 11px;
 	z-index: 999;
 }

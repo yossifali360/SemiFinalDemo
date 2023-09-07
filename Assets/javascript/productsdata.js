@@ -1707,6 +1707,7 @@ const products = [
 		stock: 3,
 		category: "Graphic Card",
 		Brand: "Gigabyte",
+		discount : 0.09,
 		description:
 			"https://www.elnekhelytechnology.com/image/catalog/VGA/Gigabyte/3060/Screenshot%202022-02-17%20at%2014-34-26%20AORUS%20GeForce%20RTX%E2%84%A2%203060%20Ti%20ELITE%208G%20(rev%201%200)%20Specification%20Graphics%20Card%20-%20GIGABYTE%20Global.png",
 		images: [
@@ -1719,7 +1720,6 @@ const products = [
 		id: 108,
 		title: "AORUS MASTER RTX 4090 24G",
 		price: 84000,
-		discount : 0.1,
 		Availability: true,
 		stock: 0,
 		top: "true",

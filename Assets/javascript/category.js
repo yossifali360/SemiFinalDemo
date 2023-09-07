@@ -16,10 +16,10 @@ const brandNames = [];
 
 // Get Category Name
 const category = urlParameter.get("category");
+let data = productsData.filter((product) => product.category == category);
 if (category == null) {
 	data = productsData;
 }
-let data = productsData.filter((product) => product.category == category);
 
 // Grid View Products
 loadProducts(gridViewproducts, gridView);
@@ -39,79 +39,79 @@ filterByBrand(listViewproducts, listView);
 function gridView(product) {
 	if (product.discount) {
 		return `<div class=" col-12 col-md-4 col-lg-3">
-		<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${
+			<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${
 			product.stock
 		}" data-discount="${product.discount}">
-		  <div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
-		  <div class="position-relative h-100 productLabel">
-			<span class="bg-danger px-2 discount position-absolute rounded-2 text-white"><span>- </span class="discountRate">${
-				(product.discount * 100).toFixed(0) + " %"
-			}</span>
-		  <div class="card-img-top overflow-hidden px-4">
-		  <img class="w-100" src="${product.images[0]}">
-		  <div class="cardIcons position-absolute">
-			<div class="heart position-relative">
-			  <span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
-			  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
-			</div>
-			<div class="view position-relative">
-			  <span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
-			  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
-			</div>
-		  </div>
-		  </div>
-		</div>
-		  <div class="card-body text-center px-2 h-100">
-			<a href="#" class="card-title h4 fs-3 text-decoration-none ">${
-				product.title
-			}</a>
-		  </div>
-		  <div class="text-center h-100">
-			<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline"><span class="text-decoration-line-through text-muted price">${
-				product.price
-			}</span></div><div class="d-inline"><span class="price">${
-			product.price - product.price * product.discount
-		}</span><span class="priceSign"> EGP</span></div></div>
-			<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
-		  </div>
-		  </div>
-		  </div>
-		</div>`;
-	} else {
-		return `<div class=" col-12 col-md-4 col-lg-3">
-		<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${
-			product.stock
-		}">
-		  <div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
-		  <div class="position-relative h-100 productLabel">
-		  <div class="card-img-top overflow-hidden px-4">
-			<img class="w-100" src="${product.images[0]}" alt="Card image cap">
-			<div class="cardIcons position-absolute">
+			  <div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
+			  <div class="position-relative productLabel">
+				<span class="bg-danger px-2 discount position-absolute rounded-2 text-white"><span>- </span class="discountRate">${
+					(product.discount * 100).toFixed(0) + " %"
+				}</span>
+			  <div class="card-img-top overflow-hidden px-4">
+			  <img class="w-100" src="${product.images[0]}">
+			  <div class="cardIcons position-absolute">
 				<div class="heart position-relative">
-					<span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
-					<span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
+				  <span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
+				  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
 				</div>
 				<div class="view position-relative">
-					<span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
-					<span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
+				  <span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
+				  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
 				</div>
+			  </div>
+			  </div>
 			</div>
-		  </div>
-	  </div>
-			<div class="card-body text-center px-2 h-100">
-			  <a href="#" class="card-title h4 fs-3 text-decoration-none ">${
-					splitCardTitle(product).cardTitle
+			  <div class="card-body text-center px-2">
+				<a href="#" class="card-title h4 fs-3 text-decoration-none ">${
+					product.title
 				}</a>
-			</div>
-			<div class="text-center h-100">
-			  <h6 class="text-danger fs-3"><span class="price">${
+			  </div>
+			  <div class="text-center">
+				<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted"><span class=" price">${
 					product.price
-				}</span><span class="priceSign"> EGP</span></h6>
-			  <span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
-			</div>
+				}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
+			product.price - product.price * product.discount
+		}</span><span class="priceSign"> EGP</span></div></div>
+				<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
+			  </div>
+			  </div>
+			  </div>
+			</div>`;
+	} else {
+		return `<div class=" col-12 col-md-4 col-lg-3">
+			<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${
+			product.stock
+		}">
+			  <div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
+			  <div class="position-relative productLabel">
+			  <div class="card-img-top overflow-hidden px-4">
+				<img class="w-100" src="${product.images[0]}" alt="Card image cap">
+				<div class="cardIcons position-absolute">
+					<div class="heart position-relative">
+						<span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
+						<span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
+					</div>
+					<div class="view position-relative">
+						<span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
+						<span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
+					</div>
+				</div>
+			  </div>
 		  </div>
-		  </div>
-	  </div>`;
+				<div class="card-body text-center px-2">
+				  <a href="#" class="card-title h4 fs-3 text-decoration-none ">${
+						splitCardTitle(product).cardTitle
+					}</a>
+				</div>
+				<div class="text-center">
+				  <h6 class="text-danger fs-3"><span class="price">${
+						product.price
+					}</span><span class="priceSign"> EGP</span></h6>
+				  <span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
+				</div>
+			  </div>
+			  </div>
+		  </div>`;
 	}
 }
 // List View Function
@@ -148,9 +148,9 @@ function listView(product) {
 		  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${
 				product.Brand
 			}</a>
-		  <div class="text-danger fs-3 d-flex flex-column"><div class="d-inline"><span class="text-decoration-line-through text-muted price">${
+		  <div class="text-danger fs-3 d-flex flex-column"><div class="d-inline text-decoration-line-through text-muted"><span class="price">${
 				product.price
-			}</span></div><div class="d-inline"><span class="price">${
+			}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
 			product.price - product.price * product.discount
 		}</span><span class="priceSign"> EGP</span></div></div>
 		  <span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
@@ -159,34 +159,35 @@ function listView(product) {
 	  </div>
 	</div>
   </div>`;
-	}
-	return `<div class="col-12 listView">
-	<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${product.stock}" data-discount="${product.discount}">
-	  <div class="overflow-hidden card flex-row h-100 d-flex">
-		<div class="position-relative h-100 listImg productLabel">
-		  <img class="card-img-top rounded-2 p-3" src="${product.images[0]}" alt="Card image cap">
-			  <div class="cardIcons position-absolute">
-				<div class="heart position-relative">
-				  <span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
-				  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
-				</div>
-				<div class="view position-relative">
-				  <span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
-				  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
-				</div>
+	}else{
+		return `<div class="col-12 listView">
+		<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${product.stock}">
+		  <div class="overflow-hidden card flex-row h-100 d-flex">
+			<div class="position-relative h-100 listImg productLabel">
+			  <img class="card-img-top rounded-2 p-3" src="${product.images[0]}" alt="Card image cap">
+				  <div class="cardIcons position-absolute">
+					<div class="heart position-relative">
+					  <span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
+					  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenHeart text-white mx-4 px-2 position-absolute">Add to Wishlist</span>
+					</div>
+					<div class="view position-relative">
+					  <span class="viewIcon"><i class="fas fa-magnifying-glass p-2"></i></span>
+					  <span class="bg-danger m-2 p-1 rounded-4 text-center hiddenVeiw text-white mx-4 px-4 position-absolute">View</span>
+					</div>
+				  </div>
+			</div>
+			<div class="card-body px-2">
+			  <div class="h-100 d-flex flex-column justify-content-around">
+			  <a href="#" class="card-title h4 fs-3 text-decoration-none">${product.title}</a>
+			  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${product.Brand}</a>
+				<h6 class="text-danger fs-3"><span class="price">${product.price}</span><span class="priceSign"> EGP</span></h6>
+				<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
 			  </div>
-		</div>
-		<div class="card-body px-2">
-		  <div class="h-100 d-flex flex-column justify-content-around">
-		  <a href="#" class="card-title h4 fs-3 text-decoration-none">${product.title}</a>
-		  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${product.Brand}</a>
-			<h6 class="text-danger fs-3"><span class="price">${product.price}</span><span class="priceSign"> EGP</span></h6>
-			<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
+			</div>
 		  </div>
 		</div>
-	  </div>
-	</div>
-  </div>`;
+	  </div>`;
+	}
 }
 // Filter by BrandFunction
 function filterByBrand(divName, viewtype) {

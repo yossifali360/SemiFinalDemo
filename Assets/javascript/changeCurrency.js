@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // API
 async function fetchExchangeRates() {
-	const response = await fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_KtwWvEjrT9gWaDJNbdNFLu1nGam9ZejtCd370VYx");
+	// New Api For test
+	// https://api.currencyapi.com/v3/latest?apikey=cur_live_dYzgfLQHA87DUaN7GENi9XWwIIm4SKzCzaT3NkGt
+	const response = await fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_ivEkhCs0xMvwRdzUPBHx5uZ5DokxDsbutb40zLIS");
 	const data = await response.json();
 	return data;
 }
@@ -27,8 +29,10 @@ async function changeCurrency(currency){
 			productCards.forEach((product, index) => {
 				if(product.dataset.discount){
 					const priceElement = product.querySelectorAll(".price");
-					const priceSign = product.querySelector(".priceSign");
-					priceSign.textContent = " EGP";
+					const priceSign = product.querySelectorAll(".priceSign");
+					priceSign.forEach(sign => {
+						sign.textContent = " EGP";
+					});
 					const originalPrice = originalPrices[index];
 					let afterChange = originalPrice
 					let discount = (afterChange * product.dataset.discount)
@@ -77,6 +81,7 @@ async function changeCurrency(currency){
 			productCards.forEach((product, index) => {
 				if(product.dataset.discount){
 					const priceElement = product.querySelectorAll(".price");
+					console.log(priceElement);
 					const priceSign = product.querySelectorAll(".priceSign");
 					priceSign.forEach(sign => {
 						sign.textContent = " €";

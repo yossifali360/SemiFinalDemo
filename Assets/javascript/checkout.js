@@ -63,6 +63,7 @@ redeem.addEventListener("click",function(e){
         discount.style.display="table-row"
         discountRate.textContent= `7% (${parseInt(calcDiscount)})`
         let oldPrice = (parseInt(totalPrice.textContent))
+        promo.value="";
         totalPrice.textContent= (oldPrice - calcDiscount).toLocaleString('en-US');
         Toast.fire({
             icon: "success",
@@ -79,31 +80,22 @@ redeem.addEventListener("click",function(e){
 
 // Validate Card
 cardNumber.addEventListener("input",function(e){
-    if (e.target.value.length>=16){
-        console.log();
-        if (!cardNumber.value.match(mastercardPattern) && (!cardNumber.value.match(visaPattern))){
-            Swal.fire(
-                "Enter a Valid Credit card Data (Master Card or Visa) !",
-                "",
-                "error"
-            );
-            masterCardImg.style.filter="grayscale(100)"
-            visaImg.style.filter="grayscale(100)"
-        }else{
-            if (cardNumber.value.match(visaPattern)) {
-                visaImg.style.filter="none"
-                console.log("Visa");
-            }
-            else if (cardNumber.value.match(mastercardPattern)) {
-                masterCardImg.style.filter="none"
-            }
-        }
-    }
-    else if (e.target.value.length<16){
+    if (e.target.value.length<16){
         masterCardImg.style.filter="grayscale(100)"
         visaImg.style.filter="grayscale(100)"
     }
-
+    if (!cardNumber.value.match(mastercardPattern) && (!cardNumber.value.match(visaPattern))){
+        masterCardImg.style.filter="grayscale(100)"
+        visaImg.style.filter="grayscale(100)"
+    }else{
+        if (cardNumber.value.match(visaPattern)) {
+            visaImg.style.filter="none"
+            console.log("Visa");
+        }
+        else if (cardNumber.value.match(mastercardPattern)) {
+            masterCardImg.style.filter="none"
+        }
+    }
 })
 const fName = document.getElementById("fName")
 const lName = document.getElementById("lName")
@@ -121,6 +113,15 @@ const submitBtn = document.querySelector(".submitBtn")
 var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
 validateForm()
 let AllOrders = JSON.parse(localStorage.getItem("AllOrders")) ?? [];
+
+ccExpiration.addEventListener("input",function(){
+    if(ccExpiration.value.length==2){
+        ccExpiration.value+= "/"
+    }
+    else if (ccExpiration.value.length==4){
+        ccExpiration.value==ccExpiration.value;
+    }
+})
 
 fName.value=loginGetData().fName;
 lName.value=loginGetData().lName;

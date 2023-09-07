@@ -40,7 +40,7 @@
 		transition: 1s;
 	}
 	.productCard{
-		overflow: scroll !important;
+		overflow: auto !important;
 	}
 	.left,
 	.right{
