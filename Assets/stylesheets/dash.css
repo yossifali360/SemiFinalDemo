@@ -3,76 +3,73 @@
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap");
-body{
-    font-family: sans-serif;
+body {
+	font-family: sans-serif;
 }
-.userName{
-	font-size: 24px;
-  }
-.title{
-    background-color: #0481ff;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0;
+.title {
+	background-color: #0481ff;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 10px 0;
 }
-.title p{
-    margin-top: 15px;
+.title p {
+	margin-top: 15px;
 }
-.title span{
-    margin-bottom: 50px;
+.title span {
+	margin-bottom: 50px;
 }
-.count p{
-    margin: 0;
+.count p {
+	margin: 0;
 }
-.box{
-    height: 150px;
-    flex-basis: 150px;
-    flex-grow: 1;
-    border-radius: 10px;
+.box {
+	height: 150px;
+	flex-basis: 150px;
+	flex-grow: 1;
+	border-radius: 10px;
 }
-.box i{
-    font-size: 40px;
+.box i {
+	font-size: 40px;
 }
-.box span{
-    font-size: 30px;
+.box span {
+	font-size: 30px;
 }
-table{
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 8px;
-    overflow-x: auto;
-} 
-th{
-    border-radius: 8px;
-    background-color: #0080ff;
+table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 8px;
+	overflow-x: auto;
+}
+th {
+	border-radius: 8px;
+	background-color: #0080ff;
 }
 td,
-tr{
-background-color: rgb(43, 69, 96);
-height: 50px;
-border-radius: 8px;
+tr {
+	background-color: rgb(43, 69, 96);
+	height: 50px;
+	border-radius: 8px;
 }
-.price{
-    background-color: #008000;
-    padding: 5px;
-    border-radius: 10px;
+.price {
+	background-color: #008000;
+	padding: 5px;
+	border-radius: 10px;
 }
-#removeLink{
-    visibility: hidden;
+#removeLink {
+	visibility: hidden;
 }
-.content{
-    width: 100%;
+.content {
+	width: 100%;
 }
-.itemCtn img{
-    width: 150px;
-    height: 150px;
+.itemCtn img {
+	width: 150px;
+	height: 150px;
 }
-#updateProductBtn{
-    display: none;
+#updateProductBtn {
+	display: none;
 }
-.AddProductDiv{
-    display: none;
+.AddProductDiv {
+	display: none;
 }
-.addNewProductBtn{
-    cursor: pointer;
+.addNewProductBtn {
+	cursor: pointer;
 }

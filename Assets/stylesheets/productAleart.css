@@ -45,12 +45,12 @@
 	display: flex !important;
 	flex-direction: column !important;
 }
-.swal2-top-right{
+.swal2-top-right {
 	top: 70px !important;
 }
 
 @media screen and (max-width: 480px) {
-	.swal2-container{
+	.swal2-container {
 		width: 58% !important;
 	}
 }

@@ -63,7 +63,7 @@ function productSlider(product) {
 	if (product.discount) {
 		return `<div class="productCard  h-100 border-4 rounded-2" data-id="${
 			product.id
-		}" data-stock="${product.stock}" data-discount="${product.discount}">
+		}" data-stock="${product.stock}" >
 		<div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
 			<div class="position-relative h-100 productLabel">
 			<span class="bg-danger px-2 discount position-absolute rounded-2 text-white"><span>- </span class="discountRate">${
@@ -89,7 +89,7 @@ function productSlider(product) {
 				}</a>
 			</div>
 			<div class="text-center h-100">
-			<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted"><span class="price">${
+			<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted oldPrice"><span class="price">${
 				product.price
 			}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
 			product.price - product.price * product.discount
@@ -173,7 +173,7 @@ function loadProducts(product) {
 				}</a>
 			  </div>
 			  <div class="text-center h-100">
-				<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted"><span class=" price">${
+				<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted oldPrice"><span class=" price">${
 					product.price
 				}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
 			product.price - product.price * product.discount

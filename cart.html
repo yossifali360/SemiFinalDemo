@@ -21,247 +21,367 @@
     <title>Shopping Cart</title>
   </head>
 <body>
-  <aside class="shoppingCart position-fixed d-none">
-    <div class="details position-absolute">
-      <div class="cartHeader p-3">
-        <div class="d-flex align-items-center justify-content-between">
-          <h4 class="m-0">Your Cart</h4>
-          <i class="fas fa-x closeCart"></i>
-        </div>
-      </div>
-      <hr>  
-      <div class="carts">
-
-      </div>
-      <div class="btns p-3 w-100">
-        <hr>
-        <div class="d-flex gap-2 align-items-center justify-content-end px-3">
-          <h6 class="text-muted">Total :</h6>
-          <h6 class="totalCartsPrice">0</h6>
-        </div>
-        <a href="cart.html" class="btn btn-outline-info w-100 my-2 text-decoration-none">View Cart</a>
-        <a href="checkout.html" class="btn btn-outline-primary w-100 my-2 text-decoration-none">Checkout</a>
-      </div>
-      </div>
-  </aside>
-  <aside class="wishListCtn position-fixed d-none">
-    <div class="details position-absolute">
-      <div class="cartHeader p-3">
-        <div class="d-flex align-items-center justify-content-between">
-          <h4 class="m-0">Wishlist</h4>
-          <i class="fas fa-x closeCart"></i>
-        </div>
-      </div>
-      <hr>  
-      <div class="Wishes">
-
-      </div>
-      </div>
-  </aside>
-  <!-- Loading Icon -->
-  <div class="loadingIcon"><img src="Assets/images/load.gif" alt=""></div>
-  <!-- First Nav -->
-  <nav class="firstNav text-white  w-100 d-flex align-items-center justify-content-between px-4 py-2">
-    <div class="login position-relative d-flex align-items-center">
-      <div class="nav-item dropdown">
-        <a
-          class="nav-link menu"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-bs-toggle=""
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-        <i class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"><img class="rounded-pill" src="" alt=""></i>
-      </a>
-        <div class="dropdown-menu userSettings " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item logout" href="#">Logout</a>
-          <a class="dropdown-item" href="profile.html">Edit Profile</a>
-          <a class="dropdown-item" href="orderhistory.html">Order History</a>
-      </div>
-    </div>
-      <a href="login.html" class="text-decoration-none text-white userName mx-2">Login</a>
-    </div>
-    <select name="currency" id="currency" class="rounded-2">
-      <option hidden value="">Choose a currency</option>
-      <option value="Egy">Egy</option>
-      <option value="dolar">USD</option>
-      <option value="Euro">Euro</option>
-      <option value="CAD">CAD</option>
-    </select>
-  </nav>
-  <!-- NavBar -->
-  <nav class="navbar navbar-expand-lg navbar-dark px-3" id="nav">
-    <div class="navbar-brand fs-2 logo position-relative">
-        Modern <span class="position-absolute">Tech</span>
-    </div>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon  navbar-dark"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent">
-      <ul class="navbar-nav m-auto">
-        <li class="nav-item m-2 active">
-          <a class="nav-link position-relative" href="index.html"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item m-2 dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            Categories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="category.html">All Categories</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="category.html?category=Motherboard">Motherboard</a>
-            <a class="dropdown-item" href="category.html?category=Processors">Processors</a>
-            <a class="dropdown-item" href="category.html?category=Ram">Ram</a>
-            <a class="dropdown-item" href="category.html?category=SSD">SSD & HDD</a>
-            <a class="dropdown-item" href="category.html?category=Graphic%20Card">Graphic Card</a>
-            <a class="dropdown-item" href="category.html?category=Cases">Cases</a>
-          </div>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link position-relative" href="#">Special Offer</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link position-relative" href="#">About Us</a>
-        </li>
-        <li class="nav-item m-2">
-          <a class="nav-link position-relative" href="#">Contact Us</a>
-        </li>
-      </ul>
-      <div class="cartCtn d-flex align-items-center gap-2 text-white">
-        <div class="shopIcon position-relative py-2">
-          <i class="fa-solid fa-cart-shopping text-secondary fs-4 text-white bg-transparent rounded-pill p-2 shoppingCartIcon"></i>
-          <span class="cartCount position-absolute rounded-pill"></span>
-        </div>
-        <div class="wishListIcon position-relative py-2">
-          <i class="fas fa-heart text-secondary fs-4 text-white bg-transparent rounded-pill p-2"></i>
-          <span class="WishListCount position-absolute rounded-pill"></span>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <!-- To Top Button -->
-  <button id="toTop" class="btn">
-    <i class="fas fa-arrow-up"></i>
-  </button>
-    <section class="row shoppingCartCtn container mt-5 mx-auto mb-5">
-        <div class="col-lg-8 order-lg-1 order-md-2">
-            <div class="cartsCtn ">
-            
-            </div>
-            <div class="total d-flex justify-content-between mx-5">
-                <h5>Total Price</h5>
-                <div>
-                    <h5 class="text-muted text-center"><span class="totalPrice">0</span> EGP</h5>
-                    <a href="checkout.html" class="btn btn-success w-100">Checkout</a>
-                </div>
-            </div>
-            </div>
-        </div>
-        <div class="right col-lg-4 order-lg-2 order-md-1">
-            <h4 class="text-center mb-5">Edit Your Shopping Cart Here!</h4>
-            <img src="Assets/images/product-hunt-concept-illustration_114360-791.avif" class="w-100">
-        </div>
-    </section>
-      <!-- Footer -->
-  <footer class="text-center text-lg-start text-white">
-    <!-- Social media -->
-    <section class="d-flex justify-content-between p-4 getConected">
-      <!-- Left -->
-      <div class="me-5">
-        <span>Get connected with us on social networks:</span>
-      </div>
-      <div>
-        <a href="#" class="text-white me-4 text-decoration-none">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="text-white me-4 text-decoration-none">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="#" class="text-white me-4 text-decoration-none">
-          <i class="fab fa-instagram"></i>
-        </a>
-      </div>
-    </section>
-    <section>
-      <div class="container text-center text-md-start mt-5">
-        <div class="row mt-3">
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold">Compu Tech</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              With more than 10 years of experience in computer components,
-              which helps us to meet your needs in purchasing
-              the best components at the lowest prices.
-            </p>
-          </div>
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 class="text-uppercase fw-bold">Useful links</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p>
-              <a href="#!" class="text-white text-decoration-none">Your Account</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white text-decoration-none">Become an Affiliate</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white text-decoration-none">Shipping Rates</a>
-            </p>
-            <p>
-              <a href="#!" class="text-white text-decoration-none">Help</a>
-            </p>
-          </div>
-          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 class="text-uppercase fw-bold">Contact</h6>
-            <hr
-                class="mb-4 mt-0 d-inline-block mx-auto"
-                style="width: 60px; background-color: #7c4dff; height: 2px"
-                />
-            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Copyright -->
-    <div
-         class="text-center p-3"
-         style="background-color: rgba(0, 0, 0, 0.2)"
-         >
-      © 2023 Copyright :
-      <span class="text-white mx-2 text-decoration-none">Yossif Ali</span>
-        <a href="#" class="text-white me-4 text-decoration-none">
-          <i class="fab fa-github"></i>
-        </a>
-    </div>
-  </footer>
+		<!-- Shoppingcart -->
+		<aside class="shoppingCart position-fixed d-none">
+			<div class="details position-absolute">
+				<div class="cartHeader p-3">
+					<div
+						class="d-flex align-items-center justify-content-between"
+					>
+						<h4 class="m-0">Your Cart</h4>
+						<i class="fas fa-x closeCart"></i>
+					</div>
+				</div>
+				<hr />
+				<div class="carts"></div>
+				<div class="btns p-3 w-100">
+					<hr />
+					<div
+						class="d-flex gap-2 align-items-center justify-content-end px-3"
+					>
+						<h6 class="text-muted">Total :</h6>
+						<h6 class="totalCartsPrice">0</h6>
+					</div>
+					<a
+						href="cart.html"
+						class="btn btn-outline-info w-100 my-2 text-decoration-none"
+						>Edit Cart</a
+					>
+					<a
+						href="checkout.html"
+						class="btn btn-outline-primary w-100 my-2 text-decoration-none"
+						>Checkout</a
+					>
+				</div>
+			</div>
+		</aside>
+		<!-- Wishlist -->
+		<aside class="wishListCtn position-fixed d-none">
+			<div class="details position-absolute">
+				<div class="cartHeader p-3">
+					<div
+						class="d-flex align-items-center justify-content-between"
+					>
+						<h4 class="m-0">Wishlist</h4>
+						<i class="fas fa-x closeCart"></i>
+					</div>
+				</div>
+				<hr />
+				<div class="Wishes"></div>
+			</div>
+		</aside>
+		<!-- Loading Icon -->
+		<div class="loadingIcon">
+			<img src="Assets/images/load.gif" alt="" />
+		</div>
+		<!-- First Nav -->
+		<nav
+			class="firstNav text-white w-100 d-flex align-items-center justify-content-between px-4 py-2"
+		>
+			<div class="login position-relative d-flex align-items-center">
+				<div class="nav-item dropdown">
+					<a
+						class="nav-link menu"
+						href="#"
+						id="navbarDropdown"
+						role="button"
+						data-bs-toggle=""
+						aria-haspopup="true"
+						aria-expanded="false"
+					>
+						<i
+							class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"
+							><img class="rounded-pill" src="" alt=""
+						/></i>
+					</a>
+					<div
+						class="dropdown-menu userSettings"
+						aria-labelledby="navbarDropdown"
+					>
+						<a class="dropdown-item logout" href="#">Logout</a>
+						<a class="dropdown-item" href="profile.html"
+							>Edit Profile</a
+						>
+						<a class="dropdown-item" href="orderhistory.html"
+							>Order History</a
+						>
+					</div>
+				</div>
+				<a
+					href="login.html"
+					class="text-decoration-none text-white userName mx-2"
+					>Login</a
+				>
+			</div>
+			<select name="currency" id="currency" class="rounded-2 p-1">
+				<option hidden value="">Choose a currency</option>
+				<option value="Egy">Egy</option>
+				<option value="dolar">USD</option>
+				<option value="Euro">Euro</option>
+				<option value="CAD">CAD</option>
+			</select>
+		</nav>
+		<!-- NavBar -->
+		<nav class="navbar navbar-expand-lg navbar-dark px-3" id="nav">
+			<div class="navbar-brand fs-2 logo position-relative">
+				Modern <span class="position-absolute">Tech</span>
+			</div>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent"
+				aria-expanded="false"
+				aria-label="Toggle navigation"
+			>
+				<span class="navbar-toggler-icon navbar-dark"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item m-2 active">
+						<a class="nav-link position-relative" href="index.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item m-2 dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Categories
+						</a>
+						<div
+							class="dropdown-menu"
+							aria-labelledby="navbarDropdown"
+						>
+							<a class="dropdown-item" href="category.html"
+								>All Categories</a
+							>
+							<div class="dropdown-divider"></div>
+							<a
+								class="dropdown-item"
+								href="category.html?category=Motherboard"
+								>Motherboard</a
+							>
+							<a
+								class="dropdown-item"
+								href="category.html?category=Processors"
+								>Processors</a
+							>
+							<a
+								class="dropdown-item"
+								href="category.html?category=Ram"
+								>Ram</a
+							>
+							<a
+								class="dropdown-item"
+								href="category.html?category=SSD"
+								>SSD & HDD</a
+							>
+							<a
+								class="dropdown-item"
+								href="category.html?category=Graphic%20Card"
+								>Graphic Card</a
+							>
+							<a
+								class="dropdown-item"
+								href="category.html?category=Cases"
+								>Cases</a
+							>
+							<a class="dropdown-item" href="#"></a>
+						</div>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="#"
+							>Special Offer</a
+						>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="#"
+							>About Us</a
+						>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="#"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+				<div class="cartCtn d-flex align-items-center gap-2 text-white">
+					<div class="shopIcon position-relative py-2">
+						<i
+							class="fa-solid fa-cart-shopping text-secondary fs-4 text-white bg-transparent rounded-pill p-2 shoppingCartIcon"
+						></i>
+						<span
+							class="cartCount position-absolute rounded-pill"
+						></span>
+					</div>
+					<div class="wishListIcon position-relative py-2">
+						<i
+							class="fas fa-heart text-secondary fs-4 text-white bg-transparent rounded-pill p-2"
+						></i>
+						<span
+							class="WishListCount position-absolute rounded-pill"
+						></span>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- To Top Button -->
+		<button id="toTop" class="btn">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+		<!-- Shopping Ctn -->
+		<section class="row shoppingCartCtn container mt-5 mx-auto mb-5">
+			<div class="col-lg-8 order-lg-1 order-md-2">
+				<div class="cartsCtn ">
+				
+				</div>
+				<div class="total d-flex justify-content-between mx-5">
+					<h5>Total Price</h5>
+					<div>
+						<h5 class="text-muted text-center"><span class="totalPrice">0</span> EGP</h5>
+						<a href="checkout.html" class="btn btn-success w-100">Checkout</a>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="right col-lg-4 order-lg-2 order-md-1">
+				<h4 class="text-center mb-5">Edit Your Shopping Cart Here!</h4>
+				<img src="Assets/images/product-hunt-concept-illustration_114360-791.avif" class="w-100">
+			</div>
+		</section>
+		<!-- Footer -->
+		<footer class="text-center text-lg-start text-white">
+			<div class="d-flex justify-content-between p-4 getConected">
+				<div>
+					<span>Get connected with us on social networks :</span>
+				</div>
+				<div class="d-flex gap-3">
+					<a href="#" class="text-white text-decoration-none">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+					<a href="#" class="text-white text-decoration-none">
+						<i class="fab fa-twitter"></i>
+					</a>
+					<a href="#" class="text-white text-decoration-none">
+						<i class="fab fa-instagram"></i>
+					</a>
+				</div>
+			</div>
+			<div>
+				<div class="container text-center text-md-start mt-5">
+					<div class="row mt-3">
+						<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+							<h6 class="text-uppercase fw-bold">Compu Tech</h6>
+							<hr
+								class="mb-4 mt-0 d-inline-block mx-auto"
+								style="
+									width: 60px;
+									background-color: #7c4dff;
+									height: 2px;
+								"
+							/>
+							<p>
+								With more than 10 years of experience in
+								computer components, which helps us to meet your
+								needs in purchasing the best components at the
+								lowest prices.
+							</p>
+						</div>
+						<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+							<h6 class="text-uppercase fw-bold">Useful links</h6>
+							<hr
+								class="mb-4 mt-0 d-inline-block mx-auto"
+								style="
+									width: 60px;
+									background-color: #7c4dff;
+									height: 2px;
+								"
+							/>
+							<p>
+								<a
+									href="profile.html"
+									class="text-white text-decoration-none"
+									>Your Account</a
+								>
+							</p>
+							<p>
+								<a
+									href="orderhistory.html"
+									class="text-white text-decoration-none"
+									>Order History</a
+								>
+							</p>
+							<p>
+								<a
+									href="#!"
+									class="text-white text-decoration-none"
+									>Become an Affiliate</a
+								>
+							</p>
+							<p>
+								<a
+									href="#!"
+									class="text-white text-decoration-none"
+									>Help</a
+								>
+							</p>
+						</div>
+						<div
+							class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4"
+						>
+							<h6 class="text-uppercase fw-bold">Contact</h6>
+							<hr
+								class="mb-4 mt-0 d-inline-block mx-auto"
+								style="
+									width: 60px;
+									background-color: #7c4dff;
+									height: 2px;
+								"
+							/>
+							<p>
+								<i class="fas fa-home mr-3"></i> New York, NY
+								10012, US
+							</p>
+							<p>
+								<i class="fas fa-envelope mr-3"></i>
+								info@example.com
+							</p>
+							<p>
+								<i class="fas fa-phone mr-3"></i> + 01 234 567
+								88
+							</p>
+							<p>
+								<i class="fas fa-print mr-3"></i> + 01 234 567
+								89
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div
+				class="text-center p-3"
+				style="background-color: rgba(0, 0, 0, 0.2)"
+			>
+				© 2023 Copyright :
+				<span class="text-white mx-2 text-decoration-none"
+					>Yossif Ali</span
+				>
+				<a
+					href="https://github.com/yossifali360"
+					class="text-white me-4 text-decoration-none"
+				>
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+		</footer>
     <!-- Bootstrap js -->
     <script src="Assets/javascript/bootstrap.bundle.min.js"></script>
     <!-- WOW -->

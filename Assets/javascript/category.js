@@ -3,7 +3,12 @@ const urlParameter = new URLSearchParams(window.location.search);
 const productsData = JSON.parse(localStorage.getItem("products"));
 let viewIcons = document.querySelectorAll(".viewIcon");
 let heartIcons = document.querySelectorAll(".heartIcon");
-let addToCartBtn = document.querySelectorAll(".addToCart");
+let addToCartBtn = document.querySelectorAll(".addToCartBtn");
+document.addEventListener("DOMContentLoaded", function () {
+	addToCartBtn = document.querySelectorAll(".addToCartBtn");
+	console.log(addToCartBtn);
+});
+
 const listViewproducts = document.querySelector(".listView .products");
 const gridViewproducts = document.querySelector(".gridView .products");
 const minPriceInput = document.getElementById("minPrice");
@@ -67,7 +72,7 @@ function gridView(product) {
 				}</a>
 			  </div>
 			  <div class="text-center">
-				<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted"><span class=" price">${
+				<div class="text-danger fs-3 d-flex justify-content-around align-items-center"><div class="d-inline text-decoration-line-through text-muted oldPrice"><span class=" price">${
 					product.price
 				}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
 			product.price - product.price * product.discount
@@ -148,7 +153,7 @@ function listView(product) {
 		  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${
 				product.Brand
 			}</a>
-		  <div class="text-danger fs-3 d-flex flex-column"><div class="d-inline text-decoration-line-through text-muted"><span class="price">${
+		  <div class="text-danger fs-3 d-flex flex-column"><div class="d-inline text-decoration-line-through text-muted oldPrice"><span class="price">${
 				product.price
 			}</span><span class="priceSign"> EGP</span></div><div class="d-inline"><span class="price">${
 			product.price - product.price * product.discount
@@ -263,11 +268,12 @@ brandNames.forEach((brandName) => {
 	selectElement.appendChild(option);
 });
 function reloadIcons() {
+	addToCartBtn = document.querySelectorAll(".addToCartBtn");
 	viewIcons = document.querySelectorAll(".viewIcon");
 	heartIcons = document.querySelectorAll(".heartIcon");
-	addToCartBtn = document.querySelectorAll(".addToCart");
 	viewIconsFunction(viewIcons);
 	heartIconFunction(heartIcons);
+	console.log(addToCartBtn);
 	addToCart(addToCartBtn);
 	SearchStock(".addToCartBtn");
 }

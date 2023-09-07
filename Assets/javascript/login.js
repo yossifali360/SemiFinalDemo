@@ -58,10 +58,10 @@ slidesignUpBtn.addEventListener("click", function () {
 });
 // Click on Login Button
 slideLoginBtn.addEventListener("click", function () {
-	resetSignupInputs()
-	loginBtnClick()
+	resetSignupInputs();
+	loginBtnClick();
 });
-function  loginBtnClick(){
+function loginBtnClick() {
 	slide.style.left = "0";
 	slideLoginBtn.style.display = "none";
 	slidesignUpBtn.style.display = "block";
@@ -104,7 +104,13 @@ function formValidate(mail__Input, signUpPass, signUpPass2, fName, lName) {
 				"Please Fill Data Completely",
 				"error"
 			);
-			let inputList = [mail__Input, signUpPass, signUpPass2, fName, lName];
+			let inputList = [
+				mail__Input,
+				signUpPass,
+				signUpPass2,
+				fName,
+				lName,
+			];
 			inputList.forEach((item) => {
 				if (item.value == "") {
 					item.style.border = "2px solid red";
@@ -137,41 +143,40 @@ function formValidate(mail__Input, signUpPass, signUpPass2, fName, lName) {
 				"Please Make Sure That Password and Confirm Password matches",
 				"error"
 			);
-		}
-		else{
-			var signUpData= ""
+		} else {
+			var signUpData = "";
 			var signUpData = {
-				fName:fName.value,
-				lName:lName.value,
-				email:signUpEmail.value,
+				fName: fName.value,
+				lName: lName.value,
+				email: signUpEmail.value,
 				pass: signUpPass.value,
-				imageSrc:"",
-				Address:"",
-				Status:"Active",
-				Role:"Member"
-			}
-			signUpArray.push(signUpData)
-			signUpSetData(signUpArray)
-			resetSignupInputs()
-			loginBtnClick()
+				imageSrc: "",
+				Address: "",
+				Status: "Active",
+				Role: "Member",
+			};
+			signUpArray.push(signUpData);
+			signUpSetData(signUpArray);
+			resetSignupInputs();
+			loginBtnClick();
 			Toast.fire({
-				icon: 'success',
-				title: 'Account Created, <br>  Now you can sign in'
-			  })
+				icon: "success",
+				title: "Account Created, <br>  Now you can sign in",
+			});
 		}
 	});
 }
 
-function resetLoginInputs(){
-	loginEmail.value=""
-	loginPass.value=""
+function resetLoginInputs() {
+	loginEmail.value = "";
+	loginPass.value = "";
 }
-function resetSignupInputs(){
-	fName.value=""
-	lName.value=""
-	signUpEmail.value=""
-	signUpPass.value=""
-	signUpPass2.value=""
+function resetSignupInputs() {
+	fName.value = "";
+	lName.value = "";
+	signUpEmail.value = "";
+	signUpPass.value = "";
+	signUpPass2.value = "";
 }
 // Responsive Design
 const newMember = document.querySelector(".newMember a");
@@ -209,54 +214,63 @@ function loginGetData() {
 	return JSON.parse(localStorage.getItem("signUpData"));
 }
 
-loginBtn.addEventListener("click",function(){
+loginBtn.addEventListener("click", function () {
 	let userEmail = loginEmail.value;
 	let userPass = pass.value;
-	let loginObject = ""
-	loginValidate()
-	function loginValidate(){
-		if (loginGetData().find((data) => data.email == userEmail)){
-			loginObject = loginGetData().find((data) => data.email == userEmail);
-			if (loginObject.Status == "Active"){
-				validatePass()
-			}
-			else{
+	let loginObject = "";
+	loginValidate();
+	function loginValidate() {
+		if (loginGetData().find((data) => data.email == userEmail)) {
+			loginObject = loginGetData().find(
+				(data) => data.email == userEmail
+			);
+			if (loginObject.Status == "Active") {
+				validatePass();
+			} else {
 				Toast.fire({
-					icon: 'error',
-					title: 'Your Account is Suspended !  <a href="#">Contact us</a>'
-				  })
+					icon: "error",
+					title: 'Your Account is Suspended !  <a href="#">Contact us</a>',
+				});
 			}
-		}else{
+		} else {
 			Toast.fire({
-				icon: 'error',
-				title: 'Wrong Mail'
-			  })
+				icon: "error",
+				title: "Wrong Mail",
+			});
 		}
-		function validatePass(){
-			if(loginObject.pass == userPass){
-				if (loginObject.Role == "Member"){
-					const urlParameter = new URLSearchParams(window.location.search);
+		function validatePass() {
+			if (loginObject.pass == userPass) {
+				if (loginObject.Role == "Member") {
+					const urlParameter = new URLSearchParams(
+						window.location.search
+					);
 					const redirect = urlParameter.get("redirect");
-						if (redirect == "checkout") {
-							localStorage.setItem("session", JSON.stringify(loginObject));
-							location.href = 'checkout.html';
-						}
-						else{
-							location.href = 'index.html';
-						}
+					if (redirect == "checkout") {
+						localStorage.setItem(
+							"session",
+							JSON.stringify(loginObject)
+						);
+						location.href = "checkout.html";
+					} else {
+						localStorage.setItem(
+							"session",
+							JSON.stringify(loginObject)
+						);
+						location.href = "index.html";
+					}
+				} else {
+					location.href = "dash.html";
+					localStorage.setItem(
+						"session",
+						JSON.stringify(loginObject)
+					);
 				}
-				else{
-					location.href = 'dash.html';
-					localStorage.setItem("session", JSON.stringify(loginObject));
-				}
-			}
-			else{
+			} else {
 				Toast.fire({
-					icon: 'error',
-					title: 'Wrong Password'
-				  })
+					icon: "error",
+					title: "Wrong Password",
+				});
 			}
 		}
 	}
-
-})
+});

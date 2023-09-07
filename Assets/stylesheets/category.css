@@ -1,66 +1,66 @@
 .row {
-    margin-right: 0 !important;
+	margin-right: 0 !important;
 }
 .tooltip1 .tooltiptext1,
 .tooltip2 .tooltiptext2 {
-  visibility: hidden;
-  font-size: 14px;
-  text-align: center;
-  border-radius: 6px;
-  top: -25px;
-  left: -19px;
-  white-space: nowrap;
-  z-index: 1;
+	visibility: hidden;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 6px;
+	top: -25px;
+	left: -19px;
+	white-space: nowrap;
+	z-index: 1;
 }
 .tooltip1:hover .tooltiptext1,
 .tooltip2:hover .tooltiptext2 {
-  visibility: visible;
+	visibility: visible;
 }
 
-.filter{
-  height: 100vh;
-  top: 80px;
-  border-right: 1px rgba(226,226,226,1) solid;
+.filter {
+	height: 100vh;
+	top: 80px;
+	border-right: 1px rgba(226, 226, 226, 1) solid;
 }
-.searchbar{
-  width: 100%;
-  border: rgba(226,226,226,1) 1px solid;
-  border-radius: 3px;
-  padding: 9px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.searchbar {
+	width: 100%;
+	border: rgba(226, 226, 226, 1) 1px solid;
+	border-radius: 3px;
+	padding: 9px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
-input{
-  border: none;
-  outline: none;
-  background: none;
+input {
+	border: none;
+	outline: none;
+	background: none;
 }
-.form-control:focus{
-  border: rgba(0, 0, 0, 0.249) 1px solid;
-  box-shadow: 0 0 2px -2px grey !important;
+.form-control:focus {
+	border: rgba(0, 0, 0, 0.249) 1px solid;
+	box-shadow: 0 0 2px -2px grey !important;
 }
-.filter input{
-  border: rgba(226,226,226,1) 1px solid;
+.filter input {
+	border: rgba(226, 226, 226, 1) 1px solid;
 }
-.searchbar input{
-  border: none;
+.searchbar input {
+	border: none;
 }
-.searchIcon:hover{
-  color: orangered;
-  cursor: pointer;
+.searchIcon:hover {
+	color: orangered;
+	cursor: pointer;
 }
 .displayIcons i {
-  font-size: 20px;
+	font-size: 20px;
 }
-.listImg{
-width: 30%;
+.listImg {
+	width: 30%;
 }
-.addToCart{
-  width: fit-content;
+.addToCart {
+	width: fit-content;
 }
-.listView .btnSpan{
-  margin: 0;
+.listView .btnSpan {
+	margin: 0;
 }
 .listView .productCard:hover .card-img-top {
 	transform: scale(1, 1);
@@ -73,27 +73,27 @@ width: 30%;
 	right: 88% !important;
 	opacity: 1 !important;
 }
-.byPrice label{
-  padding: 0 10px;
+.byPrice label {
+	padding: 0 10px;
 }
-.box .active{
-  background-color: transparent !important;
+.box .active {
+	background-color: transparent !important;
 }
 
 @media screen and (max-width: 768px) {
-  .filter{
-    height: auto;
-  }
-  .listView .card-title {
-    font-size: 14px !important;
-  }
-  .listView .card-body{
-    width: 50%;
-  }
-  .listView .card-img-top{
-    width: 100% !important;
-  }
-  .listImg{
-    width: 50%;
-  }
-  }
+	.filter {
+		height: auto;
+	}
+	.listView .card-title {
+		font-size: 14px !important;
+	}
+	.listView .card-body {
+		width: 50%;
+	}
+	.listView .card-img-top {
+		width: 100% !important;
+	}
+	.listImg {
+		width: 50%;
+	}
+}

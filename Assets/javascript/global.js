@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	productClick(".cartItem");
 	checkWishList(productCards);
 });
+
 // Invoke To Top and Fixed nav on Scroll Functions
 window.onscroll = function () {
 	toTop();
@@ -266,19 +267,36 @@ function cartItemData(item) {
 }
 // Create Wishlist Items  Function
 function wishItemData(item) {
-	return `<div class="cartItem px-3 py-2 overflow-hidden" data-id="${
-		item.id
-	}" data-stock="${item.stock}" data-discount="${item.discount}">
-	<div class="d-flex align-items-center justify-content-between position-relative productLabel">
-	  <i class="fas fa-x position-absolute deleteFromWishList"></i>
-	  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
-	  <div class="card-title px-3">
-	  <h4>${splitCardTitle(item).cardTitle}</h4>
-	  </div>
-	  <span class="btnSpan"><button class = "btn btn-outline-success p-2 text-capitalize  addToCartFromWishListBtn">add to cart</button></span>
-	</div>
-	<hr>
-  </div>`;
+	if (item.discount){
+		return `<div class="cartItem px-3 py-2 overflow-hidden" data-id="${
+			item.id
+		}" data-stock="${item.stock}" data-discount="${item.discount}">
+		<div class="d-flex align-items-center justify-content-between position-relative productLabel">
+		  <i class="fas fa-x position-absolute deleteFromWishList"></i>
+		  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
+		  <div class="card-title px-3">
+		  <h4>${splitCardTitle(item).cardTitle}</h4>
+		  </div>
+		  <span class="btnSpan"><button class = "btn btn-outline-success p-2 text-capitalize  addToCartFromWishListBtn">add to cart</button></span>
+		</div>
+		<hr>
+	  </div>`;
+	}else{
+		return `<div class="cartItem px-3 py-2 overflow-hidden" data-id="${
+			item.id
+		}" data-stock="${item.stock}">
+		<div class="d-flex align-items-center justify-content-between position-relative productLabel">
+		  <i class="fas fa-x position-absolute deleteFromWishList"></i>
+		  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
+		  <div class="card-title px-3">
+		  <h4>${splitCardTitle(item).cardTitle}</h4>
+		  </div>
+		  <span class="btnSpan"><button class = "btn btn-outline-success p-2 text-capitalize  addToCartFromWishListBtn">add to cart</button></span>
+		</div>
+		<hr>
+	  </div>`;
+	}
+
 }
 // Success Msg (Add to card And Wish List) Function
 function success(url, title, msg) {
@@ -588,7 +606,6 @@ function fixedNav() {
 		navbar.classList.remove("fixed-top");
 	}
 }
-
 // Search Stock Function
 function SearchStock(btnOfDiv) {
 	productCards = document.querySelectorAll(".productCard");
@@ -654,4 +671,6 @@ export {
 	splitCardTitle,
 	SearchStock,
 	loadShoppingCarts,
+	checkLogin,
+	CheckUserImage,
 };

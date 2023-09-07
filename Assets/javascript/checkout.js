@@ -126,13 +126,13 @@ ccExpiration.addEventListener("input",function(){
 fName.value=loginGetData().fName;
 lName.value=loginGetData().lName;
 if (loginGetData().Address != ""){
-    address.value=loginGetData().address;
+    address.value=loginGetData().Address;
 }else{
     address.value="";
 }
 email.value=loginGetData().email;
 function validateForm(){
-    let inputList = [fName, lName, email, address, address2, country, Governorate, zip];
+    let inputList = [fName, lName, email, address, country, Governorate, zip];
     let creditData = [ccName, ccNumber, ccExpiration, ccCvv]
     submitBtn.addEventListener("click",function(e){
         e.preventDefault()
