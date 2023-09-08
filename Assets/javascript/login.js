@@ -158,11 +158,21 @@ function formValidate(mail__Input, signUpPass, signUpPass2, fName, lName) {
 			signUpArray.push(signUpData);
 			signUpSetData(signUpArray);
 			resetSignupInputs();
-			loginBtnClick();
 			Toast.fire({
 				icon: "success",
 				title: "Account Created, <br>  Now you can sign in",
 			});
+			if (window.innerWidth <= 992) {
+				signUp.style.opacity="0"
+					setTimeout(function () {
+						signUp.style.display="none"
+						login.style.display="flex"
+						login.style.opacity="1"
+					}, 2000);
+			}else{
+				loginBtnClick();
+			}
+			
 		}
 	});
 }
@@ -197,6 +207,7 @@ oldMember.addEventListener("click", function () {
 	resetSignupInputs();
 	console.log(oldMember);
 	signUp.style.opacity = "0";
+	console.log("done");
 	setTimeout(function () {
 		signUp.style.setProperty("display", "none", "important");
 		login.style.setProperty("display", "flex", "important");
