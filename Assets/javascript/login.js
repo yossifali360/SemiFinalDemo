@@ -220,9 +220,9 @@ loginBtn.addEventListener("click", function () {
 	let loginObject = "";
 	loginValidate();
 	function loginValidate() {
-		if (loginGetData().find((data) => data.email == userEmail)) {
+		if (loginGetData().find((data) => data.email.toLowerCase() == userEmail.toLowerCase())) {
 			loginObject = loginGetData().find(
-				(data) => data.email == userEmail
+				(data) => data.email.toLowerCase() == userEmail.toLowerCase()
 			);
 			if (loginObject.Status == "Active") {
 				validatePass();
@@ -274,3 +274,23 @@ loginBtn.addEventListener("click", function () {
 		}
 	}
 });
+
+document.getElementById("liveToastBtn").addEventListener("click", function () {
+	var liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
+	liveToast.show();
+	setTimeout(function () {
+		liveToast.hide();
+	}, 7000);
+});
+const urlParameter = new URLSearchParams(
+	window.location.search
+);
+const redirect = urlParameter.get("redirect");
+if (redirect == "checkout") {
+	document.addEventListener("DOMContentLoaded", function () {
+		const liveToastBtn = document.getElementById("liveToastBtn");
+		liveToastBtn.click();
+		const orderHistory = document.querySelector(".orderHistory");
+		orderHistory.style.border = "red 1px solid";		
+	});
+}

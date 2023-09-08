@@ -9,12 +9,13 @@
 	--white: #fff;
 	--black: #000;
 	--footer: #1c2331;
+	--footer2: rgb(19, 30, 40);
 }
 * {
 	font-family: "Signika Negative", sans-serif;
 }
 .firstNav {
-	background-color: rgb(19, 30, 40);
+	background-color: var(--footer2);
 }
 .firstNav select {
 	background-color: var(--footer);
@@ -45,7 +46,10 @@ nav .logo span {
 	color: #fff;
 }
 .nav-item a:hover {
-	color: #d1d3d4;
+	color: var(--primary);
+}
+.dropdown-item:focus, .dropdown-item:hover {
+	background-color: var(--footer2);
 }
 .navbar ul li a::before {
 	content: "";
@@ -64,7 +68,7 @@ nav .logo span {
 	transform: scaleX(0.9);
 }
 nav .dropdown-menu {
-	background-color: var(--primary);
+	background-color: var(--footer2);
 }
 #navbarDropdown {
 	cursor: default;

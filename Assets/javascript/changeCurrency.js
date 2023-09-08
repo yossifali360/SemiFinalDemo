@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
 async function fetchExchangeRates() {
 	// New Api For test
 	// https://api.currencyapi.com/v3/latest?apikey=cur_live_dYzgfLQHA87DUaN7GENi9XWwIIm4SKzCzaT3NkGt
-	const response = await fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_ivEkhCs0xMvwRdzUPBHx5uZ5DokxDsbutb40zLIS");
+	// https://billing.currencyfreaks.com/
+	const response = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=1367955d6b684edd9a5d8754a98207a7");
 	const data = await response.json();
 	return data;
 }
@@ -60,7 +61,7 @@ async function changeCurrency(currency){
 						sign.textContent = " $";
 					});
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
+					originalPrice = originalPrice/exchangeRates.rates.EGP
 					let discount = (originalPrice * product.dataset.discount)
 					let newPrice = (originalPrice - discount);
 					priceElement[0].textContent = originalPrice.toFixed(2);
@@ -70,7 +71,7 @@ async function changeCurrency(currency){
 					const priceSign = product.querySelector(".priceSign");
 					priceSign.textContent = " $";
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
+					originalPrice = originalPrice/exchangeRates.rates.EGP
 					priceElement.forEach(element => {
 						element.textContent = originalPrice.toFixed(2);
 					});
@@ -81,14 +82,13 @@ async function changeCurrency(currency){
 			productCards.forEach((product, index) => {
 				if(product.dataset.discount){
 					const priceElement = product.querySelectorAll(".price");
-					console.log(priceElement);
 					const priceSign = product.querySelectorAll(".priceSign");
 					priceSign.forEach(sign => {
 						sign.textContent = " €";
 					});
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
-					let afterChange = (originalPrice / exchangeRates.data.EUR.value)
+					originalPrice = originalPrice/exchangeRates.rates.EGP
+					let afterChange = (originalPrice / exchangeRates.rates.EUR)
 					let discount = (afterChange * product.dataset.discount)
 					let newPrice = (afterChange - discount);
 					priceElement[0].textContent = afterChange.toFixed(2);
@@ -98,8 +98,8 @@ async function changeCurrency(currency){
 					const priceSign = product.querySelector(".priceSign");
 					priceSign.textContent = " €";
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
-					let newPrice = (originalPrice / exchangeRates.data.EUR.value);
+					originalPrice = originalPrice/exchangeRates.rates.EGP
+					let newPrice = (originalPrice / exchangeRates.rates.EUR);
 					priceElement.forEach(element => {
 						element.textContent = newPrice.toFixed(2);
 					});
@@ -115,8 +115,8 @@ async function changeCurrency(currency){
 						sign.textContent = " c$";
 					});
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
-					let afterChange = (originalPrice / exchangeRates.data.CAD.value)
+					originalPrice = originalPrice/exchangeRates.rates.EGP
+					let afterChange = (originalPrice / exchangeRates.rates.CAD)
 					let discount = (afterChange * product.dataset.discount)
 					let newPrice = (afterChange - discount);
 					priceElement[0].textContent = afterChange.toFixed(2);
@@ -126,8 +126,8 @@ async function changeCurrency(currency){
 					const priceSign = product.querySelector(".priceSign");
 					priceSign.textContent = " c$";
 					let originalPrice = originalPrices[index];
-					originalPrice = originalPrice/exchangeRates.data.EGP.value
-					let newPrice = originalPrice / exchangeRates.data.CAD.value;
+					originalPrice = originalPrice/exchangeRates.rates.EGP
+					let newPrice = originalPrice / exchangeRates.rates.CAD;
 					priceElement.forEach(element => {
 						element.textContent = newPrice.toFixed(2);
 					});

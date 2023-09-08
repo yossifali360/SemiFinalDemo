@@ -64,8 +64,8 @@
 			</div>
 		</aside>
 		<!-- Wishlist -->
-		<aside class="wishListCtn position-fixed d-none">
-			<div class="details position-absolute">
+		<aside class="wishListCtn position-fixed d-none" data-bs-scroll="false" data-bs-backdrop="true">
+			<div class="details position-absolute" data-bs-scroll="false" data-bs-backdrop="true">
 				<div class="cartHeader p-3">
 					<div
 						class="d-flex align-items-center justify-content-between"
@@ -98,8 +98,9 @@
 						aria-expanded="false"
 					>
 						<i
-							class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"
-							><img class="rounded-pill" src="" alt=""
+							class="fas fa-user bg-dark text-white userImg position-relative p-2 rounded-pill"
+							>
+							<img class="rounded-pill" src="" alt=""
 						/></i>
 					</a>
 					<div
@@ -110,7 +111,7 @@
 						<a class="dropdown-item" href="profile.html"
 							>Edit Profile</a
 						>
-						<a class="dropdown-item" href="orderhistory.html"
+						<a class="dropdown-item orderHistory" href="orderhistory.html"
 							>Order History</a
 						>
 					</div>
@@ -335,6 +336,7 @@
 				data-wow-offset="200"
 			></div>
 		</div>
+		
 		<!-- Why Modern Tech -->
 		<div class="my-5">
 			<div class="why my-5 m-auto">
@@ -462,13 +464,107 @@
 				</div>
 			</div>
 		</div>
+		<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop" aria-labelledby="offcanvasWithBackdropLabel">
+			<div class="offcanvas-header">
+			  <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">Offcanvas with backdrop</h5>
+			  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+			  <p>.....</p>
+			</div>
+		  </div>
 		<!-- Category -->
 		<div class="m-5 pt-5 Categories">
 			<div class="sectionHeader position-relative mx-auto mb-5">
 				<h4 class="text-uppercase fw-bold">Our Categories</h4>
 				<hr class="mb-4 mt-0 d-inline-block position-absolute" />
 			</div>
-			<nav>
+			<button class="d-block d-md-none btn btn-primary m-auto mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Change Category</button>
+			<div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+				<div class="offcanvas-header">
+				  <h5 class="offcanvas-title text-dark" id="offcanvasScrollingLabel">Choose Category</h5>
+				  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+				</div>
+				<div class="offcanvas-body">
+						  <nav>
+						  <div class="d-flex flex-column" id="nav-tab" role="tablist">
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2 active"
+								  id="Motherboard-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#Motherboard"
+								  type="button"
+								  role="tab"
+								  aria-controls="Motherboard"
+								  aria-selected="true"
+							  >
+								  Motherboard
+							  </button>
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2"
+								  id="Processors-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#Processors"
+								  type="button"
+								  role="tab"
+								  aria-controls="Processors"
+								  aria-selected="false"
+							  >
+								  Processors
+							  </button>
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2"
+								  id="Ram-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#Ram"
+								  type="button"
+								  role="tab"
+								  aria-controls="Ram"
+								  aria-selected="false"
+							  >
+								  Ram
+							  </button>
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2"
+								  id="SSD-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#SSD"
+								  type="button"
+								  role="tab"
+								  aria-controls="SSD"
+								  aria-selected="false"
+							  >
+								  SSD & HDD
+							  </button>
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2"
+								  id="Graphic_Card-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#Graphic_Card"
+								  type="button"
+								  role="tab"
+								  aria-controls="Graphic_Card"
+								  aria-selected="false"
+							  >
+								  Graphic Card
+							  </button>
+							  <button
+								  class="btn btn-primary categoryTab p-2 m-2"
+								  id="Cases-tab"
+								  data-bs-toggle="tab"
+								  data-bs-target="#Cases"
+								  type="button"
+								  role="tab"
+								  aria-controls="Cases"
+								  aria-selected="false"
+							  >
+								  Cases
+							  </button>
+						  </div>
+					  </nav>
+				</div>
+			  </div>
+			<nav class="d-none d-md-block">
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button
 						class="nav-link active"
@@ -552,6 +648,7 @@
 					aria-labelledby="Motherboard"
 					tabindex="0"
 				>
+				<h4 class="text-center d-block d-md-none mb-5">Motherboard</h4>
 					<div
 						class="row productList g-3 motherboard pb-5 position-relative"
 					>
@@ -570,6 +667,7 @@
 					aria-labelledby="Processors-tab"
 					tabindex="0"
 				>
+				<h4 class="text-center d-block d-md-none">Processors</h4>
 					<div class="row g-3 processors pb-5 position-relative">
 						<a
 							href="#"
@@ -586,6 +684,7 @@
 					aria-labelledby="Ram-tab"
 					tabindex="0"
 				>
+					<h4 class="text-center d-block d-md-none">Ram</h4>
 					<div class="row g-3 ram pb-5 position-relative">
 						<a
 							href="#"
@@ -602,6 +701,7 @@
 					aria-labelledby="SSD-tab"
 					tabindex="0"
 				>
+				<h4 class="text-center d-block d-md-none">SSD & HDD</h4>
 					<div class="row g-3 SSD pb-5 position-relative">
 						<a
 							href="#"
@@ -618,6 +718,7 @@
 					aria-labelledby="Graphic_Card-tab"
 					tabindex="0"
 				>
+				<h4 class="text-center d-block d-md-none">Graphic Cards</h4>
 					<div class="row g-3 graphicCard pb-5 position-relative">
 						<a
 							href="#"
@@ -634,6 +735,7 @@
 					aria-labelledby="Cases"
 					tabindex="0"
 				>
+				<h4 class="text-center d-block d-md-none">Cases</h4>
 					<div class="row g-3 cases pb-5 position-relative">
 						<a
 							href="#"
@@ -645,6 +747,19 @@
 				</div>
 			</div>
 		</div>
+		<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+		<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+			<div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+			  <div class="toast-header">
+				<strong class="me-auto">Modern Tech</strong>
+				<small>Now</small>
+				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+			  </div>
+			  <div class="toast-body">
+				Thanks For Making Order , View Order History For Details
+			  </div>
+			</div>
+		  </div>
 		<!-- Products Overlay -->
 		<section class="Products">
 			<div class="container">

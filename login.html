@@ -26,6 +26,7 @@
 					class="signUp col-12 col-lg-6 h-100 d-lg-flex align-items-center justify-content-center flex-column rounded-3"
 				>
 					<div class="signUpCtn position-relative">
+						<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
 						<i
 							class="fa-solid fa-user-plus position-absolute rounded-pill p-3 text-white fs-1"
 						></i>
@@ -160,6 +161,18 @@
 					</button>
 				</div>
 			</div>
+			<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+			  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+				  <strong class="me-auto">Modern Tech</strong>
+				  <small>Now</small>
+				  <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body">
+				  Hello , Please Login First
+				</div>
+			  </div>
+			</div>
 		</div>
 	</body>
 	<!-- Sweet Aleart -->
@@ -167,4 +180,6 @@
 	<!-- Sweet Aleart Toast -->
 	<script src="Assets/javascript/toastSweetalert.js"></script>
 	<script type="module" src="Assets/javascript/login.js"></script>
+			<!-- Bootstrap js -->
+			<script src="Assets/javascript/bootstrap.bundle.min.js"></script>
 </html>

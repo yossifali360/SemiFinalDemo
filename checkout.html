@@ -240,7 +240,7 @@
 		<!-- Checkout -->
 		<div class="container pt-5 pb-5">
 			<div class="row pt-5">
-				<div class="col-md-4 order-md-2 mb-4 cartDiv">
+				<div class="col-md-12 col-lg-4 order-lg-2 mb-4 cartDiv">
 					<h4
 						class="d-flex justify-content-between align-items-center mb-3"
 					>
@@ -453,19 +453,41 @@
 						<hr class="mb-4" />
 						<div class="d-block my-3 payment">
 							<h4 class="mb-3">Payment</h4>
-							<div class="d-flex gap-5">
-								<div class="creditCard text-center">
-									<img
-										src="Assets/images/pngimg.com - mastercard_PNG7.png"
-										class="masterCardImg"
-									/>
+						</div>
+						<div class="cardImg d-none d-md-flex my-4">
+							<div class="position-relative frontCard">
+								<img src="Assets/images/frontCard.png" alt="" class="shadow cardPng">
+								<div class="position-absolute cardNums d-flex justify-content-around fs-3 text-white align-items-center w-100">
+									<span class="first4Nums">0000</span>
+									<span class="sec4Nums">0000</span>
+									<span class="third4Nums">0000</span>
+									<span class="forth4Nums">0000</span>
 								</div>
-								<div class="Visa text-center">
-									<img
-										src="Assets/images/visa-logo-png-2025.png"
-										class="visaImg"
-									/>
+								<div class="position-absolute cardExpDate text-white fs-5">
+									00/00
 								</div>
+								<div class="position-absolute cardName text-white fs-5">
+									Modern Tech
+								</div>
+								<div class="position-absolute cardLogo">
+									<img src="Assets/images/question_471664.png" class="question">
+									<div class="creditCard text-center">
+										<img
+											src="Assets/images/pngimg.com - mastercard_PNG7.png"
+											class="masterCardImg"
+										/>
+									</div>
+									<div class="Visa text-center">
+										<img
+											src="Assets/images/visa-logo-png-2025.png"
+											class="visaImg"
+										/>
+									</div>
+								</div>
+							</div>
+							<div class="position-relative backCard">
+								<img src="Assets/images/bg-card-back.png" alt="" class="shadow cardPng">
+									<span class="position-absolute cardCCV fs-5">000</span>
 							</div>
 						</div>
 						<div class="row">
@@ -668,6 +690,8 @@
 		<script src="Assets/javascript/splide.min.js"></script>
 		<!-- Global JS -->
 		<script type="module" src="Assets/javascript/global.js" defer></script>
+		<!-- Bootstrap JS -->
+		<script type="module" src="Assets/javascript/bootstrap.bundle.min.js"></script>
 		<!-- Checkout Js -->
 		<script type="module" src="Assets/javascript/checkout.js"></script>
 	</body>

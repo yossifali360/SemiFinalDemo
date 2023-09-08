@@ -196,3 +196,13 @@ body {
 		transform: translateY(0px);
 	}
 }
+
+.redDot{
+	width: 10px;
+	height: 10px;
+	bottom: 0;
+	right: 0;
+}
+#liveToastBtn{
+	visibility: hidden;
+}

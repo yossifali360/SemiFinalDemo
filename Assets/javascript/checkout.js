@@ -9,9 +9,8 @@ const totalPrice = document.querySelector(".totalPrice");
 const discount = document.querySelector(".discount");
 const redeem = document.querySelector(".redeem");
 const discountRate = document.querySelector(".discountRate");
-
-const visaPattern = /^4[0-9]{12}(?:[0-9]{3})?$/;
-const mastercardPattern = /^5[1-5][0-9]{14}$/;
+const visaPattern = /^4[0-9]{3}/;
+const mastercardPattern = /^5[1-5][0-9]{2}/;
 if (!loginGetData()){
     const path = "checkout";
     const url = `/login.html?redirect=${encodeURIComponent(path )}`;
@@ -78,25 +77,8 @@ redeem.addEventListener("click",function(e){
     }
 })
 
-// Validate Card
-cardNumber.addEventListener("input",function(e){
-    if (e.target.value.length<16){
-        masterCardImg.style.filter="grayscale(100)"
-        visaImg.style.filter="grayscale(100)"
-    }
-    if (!cardNumber.value.match(mastercardPattern) && (!cardNumber.value.match(visaPattern))){
-        masterCardImg.style.filter="grayscale(100)"
-        visaImg.style.filter="grayscale(100)"
-    }else{
-        if (cardNumber.value.match(visaPattern)) {
-            visaImg.style.filter="none"
-            console.log("Visa");
-        }
-        else if (cardNumber.value.match(mastercardPattern)) {
-            masterCardImg.style.filter="none"
-        }
-    }
-})
+
+
 const fName = document.getElementById("fName")
 const lName = document.getElementById("lName")
 const email = document.getElementById("email")
@@ -188,7 +170,9 @@ function validateForm(){
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(function() {
-                window.location.href = "/index.html"
+                const path = "checkedout";
+                const url = `/index.html?redirect=${encodeURIComponent(path)}`;
+                location.href = url;
               })
               let userOrder = ({ cartItems:getCartData(), email :loginGetData().email, totalPrice : totalPrice.textContent , time : getDate()});
               AllOrders.push(userOrder)
@@ -230,4 +214,62 @@ function getDate(){
 	let formattedTime = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes;
 	let dateAndTime = formattedDate + " " + "(" + formattedTime + ")"
 	return dateAndTime
+}
+const backCard = document.querySelector(".backCard");
+const frontCard = document.querySelector(".frontCard");
+const cardName = document.querySelector(".cardName");
+const first4Nums = document.querySelector(".first4Nums");
+const sec4Nums = document.querySelector(".sec4Nums");
+const third4Nums = document.querySelector(".third4Nums");
+const forth4Nums = document.querySelector(".forth4Nums");
+const cardCCV = document.querySelector(".cardCCV");
+const cardExpDate = document.querySelector(".cardExpDate");
+const questionImg = document.querySelector(".question");
+
+document.addEventListener("DOMContentLoaded", function() {
+    backCard.style.animation="cardAnimationReverse 1s forwards";
+    frontCard.style.animation="cardAnimationfrontReverse 2s forwards";
+});
+ccCvv.addEventListener("input",function(){
+    backCard.style.animation="cardAnimation 1s forwards";
+    frontCard.style.animation="cardAnimationfront 2s forwards";
+    cardCCV.textContent = ccCvv.value;
+})
+ccName.addEventListener("input",function(){
+    reverseAnimation()
+    cardName.textContent = ccName.value;
+})
+ccNumber.addEventListener("input",function(){
+    reverseAnimation()
+    first4Nums.textContent = ccNumber.value.slice(0,4)
+    sec4Nums.textContent = ccNumber.value.slice(4,8)
+    third4Nums.textContent = ccNumber.value.slice(8,12)
+    forth4Nums.textContent = ccNumber.value.slice(12,16)
+    // Validate Card
+    if (!cardNumber.value.match(mastercardPattern) && (!cardNumber.value.match(visaPattern))){
+        questionImg.style.display="block"
+        masterCardImg.style.display="none"
+        visaImg.style.display="none"
+    }else{
+        if (cardNumber.value.match(visaPattern)) {
+            questionImg.style.display="none"
+            masterCardImg.style.display="none"
+            visaImg.style.display="block"
+        }
+        else if (cardNumber.value.match(mastercardPattern)) {
+            questionImg.style.display="none"
+            console.log("matchMaster");
+            console.log(masterCardImg);
+            masterCardImg.style.display="block"
+            visaImg.style.display="none"
+        }
+    }
+})
+ccExpiration.addEventListener("input",function(){
+    reverseAnimation()
+    cardExpDate.textContent = ccExpiration.value;
+})
+function reverseAnimation(){
+    backCard.style.animation="cardAnimationReverse 1s forwards";
+    frontCard.style.animation="cardAnimationfrontReverse 2s forwards";
 }

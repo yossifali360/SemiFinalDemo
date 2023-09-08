@@ -133,3 +133,6 @@ input {
 		top: -30px;
 	}
 }
+#liveToastBtn{
+	visibility: hidden;
+}

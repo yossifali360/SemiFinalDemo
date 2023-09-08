@@ -7,20 +7,17 @@ getOrdersData().forEach(function (element) {
 		ordersTest.push(element);
 	}
 });
-ordersTest.forEach(function (element, index) {
-	OrdersCtn.innerHTML += Order(index + 1, element);
-	const productCtn = OrdersCtn.querySelectorAll(".productsFromOrder");
-	const carts = element.cartItems;
-	carts.forEach((cart) => {
-		productCtn[index].innerHTML += loadOrderProducts(cart);
-	});
-});
-// if (getSessionData().email == element.email){
-// element.cartItems.forEach(orderItem => {
-// const test = OrdersCtn.querySelectorAll(".productsFromOrder")
-// test[index].innerHTML+=loadOrderProducts(orderItem)
-// });
-// }
+if (ordersTest.length>=1){
+    OrdersCtn.innerHTML="";
+    ordersTest.forEach(function (element, index) {
+        OrdersCtn.innerHTML += Order(index + 1, element);
+        const productCtn = OrdersCtn.querySelectorAll(".productsFromOrder");
+        const carts = element.cartItems;
+        carts.forEach((cart) => {
+            productCtn[index].innerHTML += loadOrderProducts(cart);
+        });
+    });
+}
 
 function getOrdersData() {
 	return JSON.parse(localStorage.getItem("AllOrders"));

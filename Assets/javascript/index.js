@@ -63,7 +63,7 @@ function productSlider(product) {
 	if (product.discount) {
 		return `<div class="productCard  h-100 border-4 rounded-2" data-id="${
 			product.id
-		}" data-stock="${product.stock}" >
+		}" data-stock="${product.stock}" data-discount="${product.discount}" >
 		<div class="overflow-hidden card h-100 d-flex flex-column align-items-stretch justify-content-between">
 			<div class="position-relative h-100 productLabel">
 			<span class="bg-danger px-2 discount position-absolute rounded-2 text-white"><span>- </span class="discountRate">${
@@ -323,3 +323,34 @@ $(document).ready(function () {
 });
 // Import From Another Js Files
 import { splitCardTitle } from "./global.js";
+const urlParameter = new URLSearchParams(
+	window.location.search
+);
+const redirect = urlParameter.get("redirect");
+document.getElementById("liveToastBtn").addEventListener("click", function () {
+	var liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
+	liveToast.show();
+	setTimeout(function () {
+		liveToast.hide();
+	}, 7000);
+});
+if (redirect == "checkedout") {
+	document.addEventListener("DOMContentLoaded", function () {
+		const liveToastBtn = document.getElementById("liveToastBtn");
+		console.log(liveToastBtn);
+		liveToastBtn.click();
+		const newDiv = document.createElement("div")
+		newDiv.innerHTML=`<span class="bg-danger redDot position-absolute rounded-pill"></span>`
+		let userImg = document.querySelector(".userImg")
+		userImg.appendChild(newDiv)
+		const orderHistory = document.querySelector(".orderHistory");
+		orderHistory.classList.add("text-danger")
+	});
+}
+const offcanvas = document.querySelectorAll(".text-reset");
+const categoryTabs = document.querySelectorAll(".categoryTab");
+categoryTabs.forEach(tab => {
+	tab.addEventListener("click",function(){
+		offcanvas[1].click()
+	})
+});

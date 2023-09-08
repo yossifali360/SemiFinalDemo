@@ -5,3 +5,7 @@
 .total {
 	white-space: nowrap;
 }
+.noOrderText{
+	height: 50vh;
+	width: 100%;
+}

@@ -1,12 +1,6 @@
 .cartDiv .sticky-top {
 	top: 80px;
 }
-.payment img {
-	width: 110px;
-	height: 50px;
-	filter: grayscale(100);
-	transition: 1s;
-}
 th,
 td {
 	padding: 15px;
@@ -33,5 +27,96 @@ td {
 	.swal2-container {
 		width: 100% !important;
 		height: 100% !important;
+	}
+}
+.cardImg {
+	width: 500px;
+	margin: auto;
+}
+.cardPng{
+	width: 400px;
+}
+.cardLogo{
+	top: 20px;
+	left: 20px;
+}
+.cardLogo img{
+	width: 90px;
+}
+.cardNums{
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.cardExpDate{
+	bottom: 15px;
+	right: 20px;
+}
+.cardName{
+	bottom: 15px;
+	left: 20px;
+}
+.cardCCV{
+	top: 49%;
+	left: 82%;
+	transform: translate(-50%,-50%);
+}
+.question{
+	height: 60px;
+}
+.masterCardImg,
+.visaImg{
+	display: none;
+}
+.frontCard{
+	z-index: 99;
+	width: fit-content;
+}
+.backCard{
+	transform: translateX(-280px);
+	width: fit-content;
+}
+@keyframes cardAnimation{
+	0%{
+		transform: translateX(-280px);
+		z-index: 1;
+	}
+	50%{
+		transform: translateX(10px);
+		z-index: 100;
+	}
+	100%{
+		transform: translateX(-410px);
+		z-index: 100;
+	}
+}
+@keyframes cardAnimationfront{
+	0%{
+		transform: translateX(0px);
+	}
+	100%{
+		transform: translateX(90px);
+	}
+}
+@keyframes cardAnimationReverse{
+	0%{
+		transform: translateX(-410px);
+		z-index: 100;
+	}
+	50%{
+		transform: translateX(50px);
+		z-index: 100;
+	}
+	100%{
+		transform: translateX(-280px);
+		z-index: 1;
+	}
+}
+@keyframes cardAnimationfrontReverse{
+	0%{
+		transform: translateX(90px);
+	}
+	100%{
+		transform: translateX(0px);
 	}
 }
