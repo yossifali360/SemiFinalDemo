@@ -2,6 +2,9 @@ let shoppingcartData = JSON.parse(localStorage.getItem("cart"))
 const cartsCtn = document.querySelector(".cartsCtn")
 const totalPrice = document.querySelector(".totalPrice")
 let WishlistData = JSON.parse(localStorage.getItem("Wishlist")) ?? [];
+if (shoppingcartData.length > 0 ){
+    cartsCtn.innerHTML=""
+}
 shoppingcartData.forEach(cart => {
     cartsCtn.innerHTML+= loadCarts(cart)
 });
@@ -127,7 +130,4 @@ function CalcTotal(){
         total += item.price * item.quantity
         totalPrice.innerHTML= total.toLocaleString('en-US');
     });
-    if (shoppingcartData.length == 0){
-        totalPrice.innerHTML= 0;
-    }
 }
