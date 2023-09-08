@@ -200,7 +200,7 @@ function productDetails(product) {
 		<div class = "left p-3 w-75 h-100">
             <div class="h-100 d-flex flex-column justify-content-between">
                 <div class="h-50 productLabel">
-                    <img src = "${product.images[0]}" alt = "Product Image" class="w-75 h-100 d-block m-auto rounded-2 mainImg">
+                    <img src = "${product.images[0]}" alt = "Product Image" class="h-100 d-block m-auto rounded-2 mainImg">
                 </div>
                 <div class="hover-container d-flex flex-wrap align-items-center justify-content-center mt-2">
                 ${images}  
