@@ -334,6 +334,7 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
 		liveToast.hide();
 	}, 7000);
 });
+// Display Message If User Makes Order
 if (redirect == "checkedout") {
 	document.addEventListener("DOMContentLoaded", function () {
 		const liveToastBtn = document.getElementById("liveToastBtn");
@@ -347,10 +348,11 @@ if (redirect == "checkedout") {
 		orderHistory.classList.add("text-danger")
 	});
 }
-const offcanvas = document.querySelectorAll(".Categories text-reset");
+// Category Offcanvas
+const offcanvas = document.querySelector(".text-reset");
 const categoryTabs = document.querySelectorAll(".categoryTab");
 categoryTabs.forEach(tab => {
 	tab.addEventListener("click",function(){
-		offcanvas[1].click()
+		offcanvas.click()
 	})
 });
