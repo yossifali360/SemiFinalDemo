@@ -240,7 +240,7 @@ loginBtn.addEventListener("click", function () {
 			} else {
 				Toast.fire({
 					icon: "error",
-					title: 'Your Account is Suspended !  <a href="#">Contact us</a>',
+					title: 'Your Account is Suspended !  <a href="contactus.html">Contact us</a>',
 				});
 			}
 		} else {

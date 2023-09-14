@@ -49,7 +49,7 @@ closeShopAndWish(shoppingCart, shoppingCartDetails, shoppingCartCloseCart);
 ShopAndWishClick(wishList, wishListDetails, wishListIcon);
 closeShopAndWish(wishList, wishListDetails, wishListCtnCloseCart);
 addToCartWish(addToCartFromWishListBtn);
-
+checkNavState()
 // Invoke Startup Functions After Load Of Page
 document.addEventListener("DOMContentLoaded", function () {
 	viewIconsFunction(viewIcons);
@@ -112,7 +112,6 @@ function heartIconFunction(heartIcons) {
 				iconI.style.color = "black";
 				loadWishlist();
 				cartAndWishCount(WishlistData, WishListCount);
-				deleteFromWishListFunction();
 				addToCartWish();
 			} else {
 				const iconCtn = icon.closest(".cardIcons");
@@ -122,7 +121,6 @@ function heartIconFunction(heartIcons) {
 				view.style.display = "none";
 				iconCtn.style.backgroundColor = "transparent";
 				hiddenHeart.textContent = "Remove from Wishlist";
-				deleteFromWishListFunction();
 				addToCartWish();
 				setTimeout(() => {
 					heartClickDelay(icon);
@@ -140,17 +138,29 @@ function ShopAndWishClick(div, details, icon) {
 		div.classList.add("d-block");
 		setTimeout(() => {
 			details.style.right = "0";
+			setTimeout(() => {
+				document.documentElement.style.overflow = "hidden";
+			}, 200);
 		}, 100);
 	});
 }
 // Shop And Wish Close Icons Function
 function closeShopAndWish(div, details, close) {
 	close.addEventListener("click", function () {
+		closeDiv()
+	});
+	document.addEventListener('click', function(event) {
+		if (div.contains(event.target) && !details.contains(event.target)) {
+			closeDiv()
+		}
+	});
+	function closeDiv(){
 		details.style.right = "-700px";
 		setTimeout(() => {
+			document.documentElement.style.overflow = "auto";
 			div.classList.add("d-none");
 		}, 600);
-	});
+	}
 }
 // Shop And Wish Counter
 function cartAndWishCount(list, counter) {
@@ -257,7 +267,7 @@ function cartItemData(item) {
 	<div class="d-flex align-items-center justify-content-between">
 	  <img src="${item.images[0]}" alt="Product img" class="rounded-2">
 	  <div class="card-title px-3">
-		<h4>${item.title}</h4>
+	  <h4>${splitCardTitle(item).cardTitle}</h4>
 	  </div>
 	  <span class="text-muted">${item.quantity}X</span>
 	  <div class="price px-3">${item.price.toLocaleString("en-US")}EGP</div>
@@ -674,3 +684,35 @@ export {
 	checkLogin,
 	CheckUserImage,
 };
+
+function checkNavState(){
+	const mobileBottomBar = document.querySelector(".mobileBottomBar")
+	const cartCtn = document.querySelector(".cartCtn")
+	const firstNav = document.querySelector(".firstNav")
+	const mainNav = document.querySelector(".mainNav")
+	const navOffcanvas = document.querySelector(".navOffcanvas")
+	const login= document.querySelector(".login")
+	if (window.matchMedia("(max-width: 992px)").matches) {
+		mobileBottomBar.appendChild(firstNav);
+		firstNav.appendChild(cartCtn);
+		mobileBottomBar.style.display="block"
+		navOffcanvas.insertBefore(login, navOffcanvas.firstChild);
+		
+	}
+	window.addEventListener("resize", function(){
+		if (window.matchMedia("(max-width: 992px)").matches) {
+			mobileBottomBar.appendChild(firstNav);
+			firstNav.appendChild(cartCtn);
+			mobileBottomBar.style.display="block"
+			navOffcanvas.insertBefore(login, navOffcanvas.firstChild);
+		} else {
+			document.body.insertBefore(firstNav, document.body.firstChild);
+			mainNav.appendChild(cartCtn);
+			console.log(firstNav);
+			firstNav.insertBefore(login, firstNav.firstChild);
+			document.firstNav.insertBefore(login, document.firstNav.firstChild);
+		}
+	});
+}
+
+

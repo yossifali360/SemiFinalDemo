@@ -470,3 +470,14 @@ footer .getConected {
 	top: 11px;
 	z-index: 999;
 }
+.offcanvas {
+	z-index: 9999;
+}
+.navCanvas{
+	color: #fff !important;
+}
+.mobileBottomBar{
+	height: 70px;
+	width: 100%;
+	background-color: var(--footer);
+}

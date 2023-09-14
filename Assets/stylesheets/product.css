@@ -34,6 +34,9 @@
 .btnSpan{
 	margin: 0;
 }
+.hover-container{
+	z-index: 999;
+}
 @media screen and (max-width: 768px) {
 	.details {
 		width: 90%;

@@ -21,7 +21,7 @@ function returnProductData(data) {
 				<span class="bg-danger px-2 discount position-absolute rounded-2 text-white"><span>- </span class="discountRate">${
 					(data.discount * 100).toFixed(0) + " %"
 				}</span>
-                    <div>
+                    <div class="imgCtn">
                         <img src = "${
 							data.images[0]
 						}" alt = "Product Image" class="d-block m-auto rounded-2 mainImg">
@@ -69,7 +69,7 @@ function returnProductData(data) {
     <div class = "overflow-hidden d-flex flex-lg-row flex-column bg-white rounded-2 w-100 p-4 ProductCtn align-items-stretch justify-content-between productCard" data-id="${data.id}" data-stock="${data.stock}">
         <div class = "left p-3 w-75 position-relative">
             <div class="h-100 d-flex flex-column justify-content-between productLabel">
-                <div>
+                <div class="imgCtn">
                     <img src = "${data.images[0]}" alt = "Product Image" class="d-block m-auto rounded-2 mainImg">
                 </div>
                 <div class="hover-container d-flex flex-wrap align-items-center justify-content-center mt-2">

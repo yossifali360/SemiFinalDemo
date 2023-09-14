@@ -10,7 +10,7 @@ async function fetchExchangeRates() {
 	// New Api For test
 	// https://api.currencyapi.com/v3/latest?apikey=cur_live_dYzgfLQHA87DUaN7GENi9XWwIIm4SKzCzaT3NkGt
 	// https://billing.currencyfreaks.com/
-	const response = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=1367955d6b684edd9a5d8754a98207a7");
+	const response = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=b54e7ab274b74a6caf85de40306fbd1d");
 	const data = await response.json();
 	return data;
 }
