@@ -347,7 +347,7 @@ if (redirect == "checkedout") {
 		orderHistory.classList.add("text-danger")
 	});
 }
-const offcanvas = document.querySelectorAll(".text-reset");
+const offcanvas = document.querySelectorAll(".Categories text-reset");
 const categoryTabs = document.querySelectorAll(".categoryTab");
 categoryTabs.forEach(tab => {
 	tab.addEventListener("click",function(){
