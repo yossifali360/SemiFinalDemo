@@ -5,7 +5,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.container {
+.main .container {
 	backdrop-filter: blur(0);
 	height: 600px;
 }
@@ -24,7 +24,7 @@
 	opacity: 0;
 	transition: 2s;
 }
-.login {
+.main .login {
 	background-image: url(../images/f0939cb4-78b3-412a-9727-fe55fefca0cb.jpg);
 	border-top-left-radius: 0 !important;
 	border-bottom-left-radius: 0 !important;
@@ -64,14 +64,14 @@ input {
 	background-color: transparent;
 	width: 100%;
 }
-.fa-user-plus {
+.main .fa-user-plus {
 	background-color: rgba(168, 165, 165, 0.861);
 }
-.fa-user {
+.main .fa-user {
 	background-color: rgba(168, 165, 165, 0.861);
 }
-.fa-user-plus,
-.fa-user {
+.main .fa-user-plus,
+.main .fa-user {
 	left: 50%;
 	transform: translateX(-50%);
 	top: -40px;

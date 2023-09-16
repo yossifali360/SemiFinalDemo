@@ -64,8 +64,8 @@
 			</div>
 		</aside>
 		<!-- Wishlist -->
-		<aside class="wishListCtn position-fixed d-none">
-			<div class="details position-absolute">
+		<aside class="wishListCtn position-fixed d-none" data-bs-scroll="false" data-bs-backdrop="true">
+			<div class="details position-absolute" data-bs-scroll="false" data-bs-backdrop="true">
 				<div class="cartHeader p-3">
 					<div
 						class="d-flex align-items-center justify-content-between"
@@ -98,8 +98,9 @@
 						aria-expanded="false"
 					>
 						<i
-							class="fas fa-user bg-dark text-white userImg p-2 rounded-pill"
-							><img class="rounded-pill" src="" alt=""
+							class="fas fa-user bg-dark text-white userImg position-relative p-2 rounded-pill"
+							>
+							<img class="rounded-pill" src="" alt=""
 						/></i>
 					</a>
 					<div
@@ -110,7 +111,7 @@
 						<a class="dropdown-item" href="profile.html"
 							>Edit Profile</a
 						>
-						<a class="dropdown-item" href="orderhistory.html"
+						<a class="dropdown-item orderHistory" href="orderhistory.html"
 							>Order History</a
 						>
 					</div>
@@ -130,10 +131,10 @@
 			</select>
 		</nav>
 		<!-- NavBar -->
-		<nav class="navbar navbar-expand-lg navbar-dark px-3" id="nav">
-			<div class="navbar-brand fs-2 logo position-relative">
+		<nav class="mainNav navbar navbar-expand-lg navbar-dark px-3 d-none d-lg-flex" id="nav">
+			<a href="index.html" class="navbar-brand fs-2 logo position-relative">
 				Modern <span class="position-absolute">Tech</span>
-			</div>
+			</a>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -216,7 +217,7 @@
 						>
 					</li>
 					<li class="nav-item m-2">
-						<a class="nav-link position-relative" href="#"
+						<a class="nav-link position-relative" href="contactus.html"
 							>Contact Us</a
 						>
 					</li>
@@ -241,6 +242,104 @@
 				</div>
 			</div>
 		</nav>
+		<!-- Mobile NavBar -->
+		<nav class="sticky-top navbar navbar-expand-lg navbar-dark px-3 d-flex d-lg-none" id="nav">
+			<div class="navbar-brand fs-2 logo position-relative">
+				Modern <span class="position-absolute">Tech</span>
+			</div>
+			<i class="fas fa-bars text-white fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+
+			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+			  <div class="offcanvas-header bg-dark">
+				<h5 id="offcanvasRightLabel"><div class="navbar-brand fs-2 logo position-relative">
+					Modern <span class="position-absolute">Tech</span>
+				</div></h5>
+				<i type="button" class="fas fa-x text-white bg-dark " data-bs-dismiss="offcanvas" aria-label="Close"></i>
+			  </div>
+			  <div class="offcanvas-body bg-dark navOffcanvas">
+				<ul class="navbar-nav m-auto bg-dark">
+					<li class="nav-item m-2 active">
+						<a class="nav-link position-relative" href="index.html"
+							>Home <span class="sr-only">(current)</span></a
+						>
+					</li>
+					<li class="nav-item m-2 dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbarDropdown"
+							role="button"
+							data-bs-toggle="dropdown"
+							aria-haspopup="true"
+							aria-expanded="false"
+						>
+							Categories
+						</a>
+						<div
+							class="dropdown-menu bg-dark border-0"
+							aria-labelledby="navbarDropdown border-0"
+						>
+							<a class="dropdown-item border-0" href="category.html"
+								>All Categories</a
+							>
+							<div class="dropdown-divider border-0"></div>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=Motherboard"
+								>Motherboard</a
+							>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=Processors"
+								>Processors</a
+							>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=Ram"
+								>Ram</a
+							>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=SSD"
+								>SSD & HDD</a
+							>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=Graphic%20Card"
+								>Graphic Card</a
+							>
+							<a
+								class="dropdown-item border-0"
+								href="category.html?category=Cases"
+								>Cases</a
+							>
+							<a class="dropdown-item border-0" href="#"></a>
+						</div>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="#"
+							>Special Offer</a
+						>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="#"
+							>About Us</a
+						>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link position-relative" href="contactus.html"
+							>Contact Us</a
+						>
+					</li>
+				</ul>
+			  </div>
+			</div>
+
+
+		</nav>
+		<!-- Mobile Bottom Bar -->
+		<div class="mobileBottomBar fixed-bottom d-flex d-lg-none">
+		</div>
 		<!-- To Top Button -->
 		<button id="toTop" class="btn">
 			<i class="fas fa-arrow-up"></i>

@@ -1,10 +1,15 @@
+import { WishListCount , loadWishlist ,loadShoppingCarts} from './global.js';
 let shoppingcartData = JSON.parse(localStorage.getItem("cart"))
 const cartsCtn = document.querySelector(".cartsCtn")
 const totalPrice = document.querySelector(".totalPrice")
+
 let WishlistData = JSON.parse(localStorage.getItem("Wishlist")) ?? [];
+
+// Check Carts Length
 if (shoppingcartData.length > 0 ){
     cartsCtn.innerHTML=""
 }
+// Display Carts
 shoppingcartData.forEach(cart => {
     cartsCtn.innerHTML+= loadCarts(cart)
 });
@@ -12,6 +17,7 @@ const plus = document.querySelectorAll(".fa-plus")
 const minus = document.querySelectorAll(".fa-minus")
 const remove = document.querySelectorAll(".fa-trash")
 const heart  = document.querySelectorAll(".cartHeart")
+// Plus
 plus.forEach(sign => {
     sign.addEventListener("click",function(){
         const parent = sign.closest(".itemCtn");
@@ -32,6 +38,7 @@ plus.forEach(sign => {
         });
     })
 });
+// Minus
 minus.forEach(sign => {
     sign.addEventListener("click",function(){
         const parent = sign.closest(".itemCtn");
@@ -58,6 +65,7 @@ minus.forEach(sign => {
         }
     })
 });
+// Remove
 remove.forEach(icon => {
     icon.addEventListener("click",function(){
         const parent = icon.closest(".itemCtn");
@@ -73,6 +81,7 @@ remove.forEach(icon => {
         });
     })
 });
+// Heart
 heart.forEach(icon => {
     icon.addEventListener("click",function(){
         const parent = icon.closest(".itemCtn");
@@ -91,8 +100,7 @@ heart.forEach(icon => {
         loadWishlist()
     })
 });
-import { WishListCount , loadWishlist ,loadShoppingCarts} from './global.js';
-
+// Loadcarts Function
 function loadCarts(cart){
     return`<div class="itemCtn" data-id="${cart.id}">
     <div class="item d-flex align-items-center justify-content-between flex-column flex-sm-row">
@@ -123,6 +131,7 @@ function loadCarts(cart){
 function getProductsData() {
 	return JSON.parse(localStorage.getItem("products"));
 }
+// Calc total Function
 CalcTotal()
 function CalcTotal(){
     let total = 0;

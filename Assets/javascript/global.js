@@ -49,7 +49,9 @@ closeShopAndWish(shoppingCart, shoppingCartDetails, shoppingCartCloseCart);
 ShopAndWishClick(wishList, wishListDetails, wishListIcon);
 closeShopAndWish(wishList, wishListDetails, wishListCtnCloseCart);
 addToCartWish(addToCartFromWishListBtn);
-checkNavState()
+checkNavState();
+hideCurrency();
+
 // Invoke Startup Functions After Load Of Page
 document.addEventListener("DOMContentLoaded", function () {
 	viewIconsFunction(viewIcons);
@@ -69,7 +71,6 @@ window.onscroll = function () {
 };
 
 // Functions
-
 // View Icons function
 function viewIconsFunction(viewIcons) {
 	viewIcons = document.querySelectorAll(".viewIcon");
@@ -669,22 +670,7 @@ function productClick(titleName) {
 		});
 	});
 }
-// Export Functions To another JS Files
-export {
-	heartIconFunction,
-	viewIconsFunction,
-	addToCart,
-	addToWishList,
-	success,
-	WishListCount,
-	loadWishlist,
-	splitCardTitle,
-	SearchStock,
-	loadShoppingCarts,
-	checkLogin,
-	CheckUserImage,
-};
-
+// Check Nav State Function
 function checkNavState(){
 	const mobileBottomBar = document.querySelector(".mobileBottomBar")
 	const cartCtn = document.querySelector(".cartCtn")
@@ -714,5 +700,30 @@ function checkNavState(){
 		}
 	});
 }
-
-
+// Hide Currency in Some Pages Function
+function hideCurrency (){
+	let currentUrl = window.location.href;
+	let currency = document.getElementById("currency")
+	if (currentUrl.includes("index")) {
+		currency.style.display="block" 
+	} else if (currentUrl.includes("category")) {
+		currency.style.display="block"
+	} else {
+		currency.style.display="none"
+	}
+}
+// Export Functions To another JS Files
+export {
+	heartIconFunction,
+	viewIconsFunction,
+	addToCart,
+	addToWishList,
+	success,
+	WishListCount,
+	loadWishlist,
+	splitCardTitle,
+	SearchStock,
+	loadShoppingCarts,
+	checkLogin,
+	CheckUserImage,
+};
