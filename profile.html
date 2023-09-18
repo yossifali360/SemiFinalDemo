@@ -73,11 +73,11 @@
 		</aside>
 		<!-- Loading Icon -->
 		<div class="loadingIcon">
-			<img src="Assets/images/load.gif" alt="" />
+			<img src="Assets/images/load.gif" alt="Loading Logo" />
 		</div>
 		<!-- First Nav -->
 		<nav
-			class="firstNav text-white w-100 d-flex align-items-center justify-content-between px-4 py-2"
+			class="firstNav text-white w-100 d-none d-lg-flex align-items-center justify-content-between px-4 py-2"
 		>
 			<div class="login position-relative d-flex align-items-center">
 				<div class="nav-item dropdown">
@@ -93,7 +93,7 @@
 						<i
 							class="fas fa-user bg-dark text-white userImg position-relative p-2 rounded-pill"
 							>
-							<img class="rounded-pill" src="" alt=""
+							<img class="rounded-pill" src="" alt="User Img"
 						/></i>
 					</a>
 					<div
@@ -236,12 +236,13 @@
 			</div>
 		</nav>
 		<!-- Mobile NavBar -->
-		<nav class="sticky-top navbar navbar-expand-lg navbar-dark px-3 d-flex d-lg-none" id="nav">
+		<nav class="mobileNav sticky-top navbar navbar-expand-lg navbar-dark px-3 d-flex d-lg-none" id="nav">
 			<div class="navbar-brand fs-2 logo position-relative">
 				Modern <span class="position-absolute">Tech</span>
 			</div>
-			<i class="fas fa-bars text-white fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
-
+			<div class="mobileBars d-flex align-items-center justify-content-center">
+				<i class="fas fa-bars text-white fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+			</div>
 			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 			  <div class="offcanvas-header bg-dark">
 				<h5 id="offcanvasRightLabel"><div class="navbar-brand fs-2 logo position-relative">
@@ -330,9 +331,6 @@
 
 
 		</nav>
-		<!-- Mobile Bottom Bar -->
-		<div class="mobileBottomBar fixed-bottom d-flex d-lg-none">
-		</div>
 		<!-- To Top Button -->
 		<button id="toTop" class="btn">
 			<i class="fas fa-arrow-up"></i>

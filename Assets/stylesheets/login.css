@@ -6,8 +6,8 @@
 	background-size: cover;
 }
 .main .container {
-	backdrop-filter: blur(0);
 	height: 600px;
+	backdrop-filter: blur(0);
 }
 .slide {
 	background-image: url(../images/f0939cb4-78b3-412a-9727-fe55fefca0cb.jpg);

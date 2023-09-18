@@ -6,7 +6,6 @@ let heartIcons = document.querySelectorAll(".heartIcon");
 let addToCartBtn = document.querySelectorAll(".addToCartBtn");
 document.addEventListener("DOMContentLoaded", function () {
 	addToCartBtn = document.querySelectorAll(".addToCartBtn");
-	console.log(addToCartBtn);
 });
 
 const listViewproducts = document.querySelector(".listView .products");
@@ -273,7 +272,6 @@ function reloadIcons() {
 	heartIcons = document.querySelectorAll(".heartIcon");
 	viewIconsFunction(viewIcons);
 	heartIconFunction(heartIcons);
-	console.log(addToCartBtn);
 	addToCart(addToCartBtn);
 	SearchStock(".addToCartBtn");
 }

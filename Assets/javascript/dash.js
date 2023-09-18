@@ -242,14 +242,14 @@ deleteUserBtn.forEach(deletebtn => {
     function displayAdminData(admin){
         return`
         <tr data-mail="${admin.email}" class="bg-danger">
-        <td class="bg-danger text-white">${admin.fName + " " + admin.lName}</td>
-        <td class="bg-danger text-white">${admin.email}</td>
+        <td class="bg-danger text-dark">${admin.fName + " " + admin.lName}</td>
+        <td class="bg-danger text-dark">${admin.email}</td>
         <td class="bg-danger">
-            <select name="Status">
-                <option value="" disabled selected hidden>${admin.Status}</option>
+            <select name="Status" class="form-select bg-danger">
+                <option value="" disabled selected hidden>Active</option>
             </select>
-            <button class="btn btn-danger updateUserBtn" disabled >Update</button>
         </td>
+        <td class="bg-danger"><button class="btn btn-danger updateUserBtn disabled">Update</button></td>
         <td class="bg-danger"><button class="btn btn-danger deleteUserBtn" disabled>Delete</button></td>
     </tr>`
     }
@@ -257,16 +257,16 @@ deleteUserBtn.forEach(deletebtn => {
     function displayUsersData(user){
         return`
         <tr data-mail="${user.email}">
-        <td class="text-white">${user.fName + " " + user.lName}</td>
-        <td class="text-white">${user.email}</td>
+        <td class="text-dark">${user.fName + " " + user.lName}</td>
+        <td class="text-dark">${user.email}</td>
         <td>
-            <select name="Status">
+            <select name="Status" class="form-select">
                 <option value="" disabled selected hidden>${user.Status}</option>
                 <option value="Active">Active</option>
                 <option value="Suspended">Suspended</option>
             </select>
-            <button class="btn btn-danger updateUserBtn">Update</button>
         </td>
+        <td><button class="btn btn-danger updateUserBtn">Update</button></td>
         <td><button class="btn btn-danger deleteUserBtn">Delete</button></td>
     </tr>`
     }
@@ -295,7 +295,7 @@ deleteUserBtn.forEach(deletebtn => {
         <h4>Order #${index} Details</h4>
         <div class="productsFromOrder">
         </div>
-        <div class="d-flex align-items-center justify-content-between mx-4>
+        <div class="d-flex align-items-center flex-column flex-md-row justify-content-between mx-4>
         <span class="text-Dark">Order by : ${element.email}</span>
         <span class="text-muted">Date of order : ${element.time}</span>
         <span class="text-muted">Order Total price : ${element.totalPrice}</span>
@@ -313,7 +313,7 @@ deleteUserBtn.forEach(deletebtn => {
         return `<div class="card m-2">
         <div class="itemCtn p-4" data-id="${item.id}">
             <div class="item d-flex align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="d-flex align-items-center gap-4 w-100">
+                <div class="d-flex align-items-center gap-4 w-100 flex-column flex-sm-row">
                     <img src="${item.images[0]}" alt="" class="rounded-4 pr-2">
                     <div class="info">
                         <h6 class="text-info">${item.title}</h6>

@@ -6,50 +6,51 @@
 body {
 	font-family: sans-serif;
 }
-.title {
+.dashCont .title {
 	background-color: #0481ff;
 	padding: 10px;
 	border-radius: 10px;
 	margin: 10px 0;
 }
-.title p {
+.dashCont .title p {
 	margin-top: 15px;
 }
-.title span {
+.dashCont .title span {
 	margin-bottom: 50px;
 }
-.count p {
+.dashCont .count p {
 	margin: 0;
 }
-.box {
+.dashCont .box {
 	height: 150px;
 	flex-basis: 150px;
 	flex-grow: 1;
 	border-radius: 10px;
 }
-.box i {
+.dashCont .box i {
 	font-size: 40px;
 }
-.box span {
+.dashCont .box span {
 	font-size: 30px;
 }
-table {
+.dashCont table {
 	width: 100%;
 	border-collapse: separate;
 	border-spacing: 8px;
 	overflow-x: auto;
 }
+.dashCont .usersTable{
+	vertical-align: middle !important;
+}
 th {
 	border-radius: 8px;
-	background-color: #0080ff;
 }
 td,
 tr {
-	background-color: rgb(43, 69, 96);
 	height: 50px;
 	border-radius: 8px;
 }
-.price {
+.dashCont .price {
 	background-color: #008000;
 	padding: 5px;
 	border-radius: 10px;
@@ -60,7 +61,7 @@ tr {
 .content {
 	width: 100%;
 }
-.itemCtn img {
+.dashCont .itemCtn img {
 	width: 150px;
 	height: 150px;
 }

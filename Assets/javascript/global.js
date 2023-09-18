@@ -439,23 +439,26 @@ function logout(btn) {
 }
 // Check Wishlist Items
 function checkWishList(producsArray) {
-	producsArray.forEach((product) => {
-		const productId = product.dataset.id;
-		const heart = product.querySelector(".heart");
-		let checkWishlist = false;
-		WishlistData.forEach((item) => {
-			if (item.id == productId) {
-				checkWishlist = true;
+	let currentUrl = window.location.href;
+	if (!currentUrl.includes("product")) {
+		producsArray.forEach((product) => {
+			const productId = product.dataset.id;
+			const heart = product.querySelector(".heart");
+			let checkWishlist = false;
+			WishlistData.forEach((item) => {
+				if (item.id == productId) {
+					checkWishlist = true;
+				}
+			});
+	
+			if (checkWishlist) {
+				let hiddenHeart = heart.querySelector(".hiddenHeart");
+				let heartIcon = heart.querySelector(".heartIcon i");
+				heartIcon.style.color = "red";
+				hiddenHeart.textContent = "Remove from Wishlist";
 			}
 		});
-
-		if (checkWishlist) {
-			let hiddenHeart = heart.querySelector(".hiddenHeart");
-			let heartIcon = heart.querySelector(".heartIcon i");
-			heartIcon.style.color = "red";
-			hiddenHeart.textContent = "Remove from Wishlist";
-		}
-	});
+	}
 }
 // Check User Image Function
 function CheckUserImage() {
@@ -672,31 +675,32 @@ function productClick(titleName) {
 }
 // Check Nav State Function
 function checkNavState(){
-	const mobileBottomBar = document.querySelector(".mobileBottomBar")
 	const cartCtn = document.querySelector(".cartCtn")
 	const firstNav = document.querySelector(".firstNav")
 	const mainNav = document.querySelector(".mainNav")
+	const mobileBars = document.querySelector(".mobileBars")
 	const navOffcanvas = document.querySelector(".navOffcanvas")
+	let currency = document.getElementById("currency")
 	const login= document.querySelector(".login")
 	if (window.matchMedia("(max-width: 992px)").matches) {
-		mobileBottomBar.appendChild(firstNav);
-		firstNav.appendChild(cartCtn);
-		mobileBottomBar.style.display="block"
+		mobileBars.appendChild(cartCtn);
+		mobileBars.insertBefore(cartCtn, mobileBars.firstChild);
+		cartCtn.classList.add("mx-3")
 		navOffcanvas.insertBefore(login, navOffcanvas.firstChild);
-		
+		navOffcanvas.appendChild(currency);
 	}
 	window.addEventListener("resize", function(){
 		if (window.matchMedia("(max-width: 992px)").matches) {
-			mobileBottomBar.appendChild(firstNav);
 			firstNav.appendChild(cartCtn);
-			mobileBottomBar.style.display="block"
 			navOffcanvas.insertBefore(login, navOffcanvas.firstChild);
+			mobileBars.insertBefore(cartCtn, mobileBars.firstChild);
+			navOffcanvas.appendChild(currency);
+			cartCtn.classList.add("mx-3")
 		} else {
-			document.body.insertBefore(firstNav, document.body.firstChild);
 			mainNav.appendChild(cartCtn);
-			console.log(firstNav);
+			firstNav.appendChild(currency);
+			cartCtn.classList.add("mx-3")
 			firstNav.insertBefore(login, firstNav.firstChild);
-			document.firstNav.insertBefore(login, document.firstNav.firstChild);
 		}
 	});
 }
