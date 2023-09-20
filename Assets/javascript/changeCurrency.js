@@ -7,10 +7,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // API
 async function fetchExchangeRates() {
-	// New Api For test
-	// https://api.currencyapi.com/v3/latest?apikey=cur_live_dYzgfLQHA87DUaN7GENi9XWwIIm4SKzCzaT3NkGt
+	// Mail & Pass = 2513eed2f3@emailboxa.online
 	// https://billing.currencyfreaks.com/
-	const response = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=b54e7ab274b74a6caf85de40306fbd1d");
+	const response = await fetch("https://api.currencyfreaks.com/v2.0/rates/latest?apikey=4e4cbf8bdd764f7599905593d468f6c0");
 	const data = await response.json();
 	return data;
 }

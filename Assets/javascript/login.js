@@ -1,6 +1,6 @@
 import { users } from "./Accounts.js";
 const signUp = document.querySelector(".signUp");
-const login = document.querySelector(".login");
+const login = document.querySelector(".container .login");
 const slide = document.querySelector(".slide");
 const slideH3 = document.querySelector(".slide h3");
 const slidep = document.querySelector(".slide p");
@@ -195,7 +195,10 @@ newMember.addEventListener("click", function () {
 	resetLoginInputs();
 	login.style.opacity = "0";
 	setTimeout(function () {
-		login.style.setProperty("display", "none", "important");
+		login.classList.remove="d-flex"
+		login.classList.add="d-flex"
+		console.log(login);
+		login.style.display="none"
 		signUp.style.setProperty("display", "block", "important");
 	}, 1000);
 	setTimeout(function () {

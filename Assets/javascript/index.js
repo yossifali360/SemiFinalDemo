@@ -323,12 +323,13 @@ $(document).ready(function () {
 });
 // Import From Another Js Files
 import { splitCardTitle } from "./global.js";
+// Search in Url Parameter
 const urlParameter = new URLSearchParams(
 	window.location.search
 );
 const redirect = urlParameter.get("redirect");
 document.getElementById("liveToastBtn").addEventListener("click", function () {
-	var liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
+	let liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
 	liveToast.show();
 	setTimeout(function () {
 		liveToast.hide();

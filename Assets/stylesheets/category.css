@@ -18,7 +18,6 @@
 }
 
 .filter {
-	height: 100vh;
 	top: 80px;
 	border-right: 1px rgba(226, 226, 226, 1) solid;
 }

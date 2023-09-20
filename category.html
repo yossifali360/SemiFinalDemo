@@ -370,6 +370,7 @@
 								id="minPrice"
 								name="minPrice"
 								type="number"
+								placeholder="0"
 							/>
 						</div>
 						<div class="item">
@@ -379,6 +380,7 @@
 								id="maxPrice"
 								name="maxPrice"
 								type="number"
+								placeholder="100,000"
 							/>
 						</div>
 						<button
@@ -397,6 +399,21 @@
 						>
 							<option value="All">All</option>
 						</select>
+					</div>
+					<div class="sort my-4 p-2 rounded-2 card">
+					<!-- Sort -->
+						<h4>Sort by</h4>
+						<select
+						name="sortPrice"
+						id="sortPrice"
+						class="rounded-2 form-select"
+					>
+						<option hidden value="Choose">Choose</option>
+						<option value="HighPrices">High Prices</option>
+						<option value="LowPrices">Low Prices</option>
+						<option value="Hasdiscount">Discount</option>
+						<option value="instock">Stock Availability</option>
+					</select>
 					</div>
 					<ul
 						class="pt-2 d-flex flex-row nav-pills mb-3 gap-4 align-items-center justify-content-center"

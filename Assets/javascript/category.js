@@ -18,24 +18,34 @@ const searchBar = document.querySelector(".searchBar");
 const searchIcon = document.querySelector(".searchIcon ");
 const brandNames = [];
 
+let sortPrice = document.getElementById("sortPrice")
+sortPrice.addEventListener("change",() =>{
+	if (sortPrice.value === "HighPrices"){
+		HighPrice();
+		console.log("high");
+	}
+	else if (sortPrice.value === "LowPrices"){
+		lowPrice();
+		console.log("low");
+	}
+	else if (sortPrice.value === "Hasdiscount"){
+		discountSort();
+		console.log("Hasdiscount");
+	}
+	else if (sortPrice.value === "instock"){
+		stockSort()
+		console.log("instock");
+	}
+})
+
 // Get Category Name
 const category = urlParameter.get("category");
 let data = productsData.filter((product) => product.category == category);
 if (category == null) {
 	data = productsData;
 }
+loadDivContent()
 
-// Grid View Products
-loadProducts(gridViewproducts, gridView);
-search(gridViewproducts, gridView);
-filterByPrice(gridViewproducts, gridView);
-filterByBrand(gridViewproducts, gridView);
-
-// List View Products
-loadProducts(listViewproducts, listView);
-search(listViewproducts, listView);
-filterByPrice(listViewproducts, listView);
-filterByBrand(listViewproducts, listView);
 
 // Function
 
@@ -67,7 +77,7 @@ function gridView(product) {
 			</div>
 			  <div class="card-body text-center px-2">
 				<a href="#" class="card-title h4 fs-3 text-decoration-none ">${
-					product.title
+					splitCardTitle(product).cardTitle
 				}</a>
 			  </div>
 			  <div class="text-center">
@@ -147,7 +157,7 @@ function listView(product) {
 		<div class="card-body px-2">
 		  <div class="h-100 d-flex flex-column justify-content-around">
 		  <a href="#" class="card-title h4 fs-3 text-decoration-none">${
-				product.title
+				splitCardTitle(product).cardTitle
 			}</a>
 		  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${
 				product.Brand
@@ -182,7 +192,7 @@ function listView(product) {
 			</div>
 			<div class="card-body px-2">
 			  <div class="h-100 d-flex flex-column justify-content-around">
-			  <a href="#" class="card-title h4 fs-3 text-decoration-none">${product.title}</a>
+			  <a href="#" class="card-title h4 fs-3 text-decoration-none">${splitCardTitle(product).cardTitle}</a>
 			  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${product.Brand}</a>
 				<h6 class="text-danger fs-3"><span class="price">${product.price}</span><span class="priceSign"> EGP</span></h6>
 				<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
@@ -274,6 +284,8 @@ function reloadIcons() {
 	heartIconFunction(heartIcons);
 	addToCart(addToCartBtn);
 	SearchStock(".addToCartBtn");
+	productClick(".productCard");
+	productClick(".cartItem");
 }
 // Import From Another Js Files
 import {
@@ -282,4 +294,73 @@ import {
 	addToCart,
 	splitCardTitle,
 	SearchStock,
+	productClick,
 } from "./global.js";
+// Sort by Low Price
+function lowPrice(){
+	data.sort((a,b)=>{
+		if (a.price>b.price)
+		return 1 ; 
+		if (b.price>a.price)
+		return -1 ;
+	})
+	loadDivContent()
+	reloadIcons()
+}
+function HighPrice(){
+	data.sort((a,b)=>{
+		if (a.price<b.price)
+		return 1 ; 
+		if (b.price<a.price)
+		return -1 ;
+	})
+	loadDivContent()
+	reloadIcons()
+}
+function discountSort() {
+    data.sort((a) => {
+        if (a.discount) {
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    });
+    loadDivContent();
+    reloadIcons();
+}
+function stockSort() {
+    data.sort((a, b) => {
+        if (a.stock > b.stock) {
+            return -1; // Sort in descending order
+        }
+        if (a.stock < b.stock) {
+            return 1;
+        }
+    });
+    loadDivContent();
+    reloadIcons();
+}
+
+// let loadElements = "";
+// data.forEach((product) => {
+// 	if (selectedBrand === "All") {
+// 		loadElements += viewtype(product);
+// 	} else if (product.Brand === selectedBrand) {
+// 		loadElements += viewtype(product);
+// 	}
+// });
+// divName.innerHTML = loadElements;
+function loadDivContent(){
+	// Grid View Products
+	loadProducts(gridViewproducts, gridView);
+	search(gridViewproducts, gridView);
+	filterByPrice(gridViewproducts, gridView);
+	filterByBrand(gridViewproducts, gridView);
+	
+	// List View Products
+	loadProducts(listViewproducts, listView);
+	search(listViewproducts, listView);
+	filterByPrice(listViewproducts, listView);
+	filterByBrand(listViewproducts, listView);
+	}

@@ -11,7 +11,7 @@ const logoutBtn = document.querySelector(".logout");
 let viewIcons = document.querySelectorAll(".viewIcon");
 let heartIcons = document.querySelectorAll(".heartIcon");
 const navbar = document.querySelector(".navbar");
-var toTopButton = document.getElementById("toTop");
+let toTopButton = document.getElementById("toTop");
 // Wish List
 let WishlistData = JSON.parse(localStorage.getItem("Wishlist")) ?? [];
 const WishListCount = document.querySelector(".WishListCount");
@@ -730,4 +730,5 @@ export {
 	loadShoppingCarts,
 	checkLogin,
 	CheckUserImage,
+	productClick,
 };
