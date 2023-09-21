@@ -18,25 +18,22 @@ const searchBar = document.querySelector(".searchBar");
 const searchIcon = document.querySelector(".searchIcon ");
 const brandNames = [];
 
-let sortPrice = document.getElementById("sortPrice")
-sortPrice.addEventListener("change",() =>{
-	if (sortPrice.value === "HighPrices"){
+let sortPrice = document.getElementById("sortPrice");
+sortPrice.addEventListener("change", () => {
+	if (sortPrice.value === "HighPrices") {
 		HighPrice();
 		console.log("high");
-	}
-	else if (sortPrice.value === "LowPrices"){
+	} else if (sortPrice.value === "LowPrices") {
 		lowPrice();
 		console.log("low");
-	}
-	else if (sortPrice.value === "Hasdiscount"){
+	} else if (sortPrice.value === "Hasdiscount") {
 		discountSort();
 		console.log("Hasdiscount");
-	}
-	else if (sortPrice.value === "instock"){
-		stockSort()
+	} else if (sortPrice.value === "instock") {
+		stockSort();
 		console.log("instock");
 	}
-})
+});
 
 // Get Category Name
 const category = urlParameter.get("category");
@@ -44,8 +41,7 @@ let data = productsData.filter((product) => product.category == category);
 if (category == null) {
 	data = productsData;
 }
-loadDivContent()
-
+loadDivContent();
 
 // Function
 
@@ -173,12 +169,16 @@ function listView(product) {
 	  </div>
 	</div>
   </div>`;
-	}else{
+	} else {
 		return `<div class="col-12 listView">
-		<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${product.stock}">
+		<div class="productCard rounded-2 h-100" data-id="${product.id}" data-stock="${
+			product.stock
+		}">
 		  <div class="overflow-hidden card flex-row h-100 d-flex">
 			<div class="position-relative h-100 listImg productLabel">
-			  <img class="card-img-top rounded-2 p-3" src="${product.images[0]}" alt="Card image cap">
+			  <img class="card-img-top rounded-2 p-3" src="${
+					product.images[0]
+				}" alt="Card image cap">
 				  <div class="cardIcons position-absolute">
 					<div class="heart position-relative">
 					  <span class="heartIcon"><i class="fa-regular fa-heart p-2"></i></span>
@@ -192,9 +192,15 @@ function listView(product) {
 			</div>
 			<div class="card-body px-2">
 			  <div class="h-100 d-flex flex-column justify-content-around">
-			  <a href="#" class="card-title h4 fs-3 text-decoration-none">${splitCardTitle(product).cardTitle}</a>
-			  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${product.Brand}</a>
-				<h6 class="text-danger fs-3"><span class="price">${product.price}</span><span class="priceSign"> EGP</span></h6>
+			  <a href="#" class="card-title h4 fs-3 text-decoration-none">${
+					splitCardTitle(product).cardTitle
+				}</a>
+			  <a href="#" class="card-title h4 fs-3 text-decoration-none"> Brand : ${
+					product.Brand
+				}</a>
+				<h6 class="text-danger fs-3"><span class="price">${
+					product.price
+				}</span><span class="priceSign"> EGP</span></h6>
 				<span class="btnSpan"><button class="btn btn-info d-block m-auto mb-4 addToCartBtn">Add To Cart</button></span>
 			  </div>
 			</div>
@@ -297,49 +303,44 @@ import {
 	productClick,
 } from "./global.js";
 // Sort by Low Price
-function lowPrice(){
-	data.sort((a,b)=>{
-		if (a.price>b.price)
-		return 1 ; 
-		if (b.price>a.price)
-		return -1 ;
-	})
-	loadDivContent()
-	reloadIcons()
+function lowPrice() {
+	data.sort((a, b) => {
+		if (a.price > b.price) return 1;
+		if (b.price > a.price) return -1;
+	});
+	loadDivContent();
+	reloadIcons();
 }
-function HighPrice(){
-	data.sort((a,b)=>{
-		if (a.price<b.price)
-		return 1 ; 
-		if (b.price<a.price)
-		return -1 ;
-	})
-	loadDivContent()
-	reloadIcons()
+function HighPrice() {
+	data.sort((a, b) => {
+		if (a.price < b.price) return 1;
+		if (b.price < a.price) return -1;
+	});
+	loadDivContent();
+	reloadIcons();
 }
 function discountSort() {
-    data.sort((a) => {
-        if (a.discount) {
-            return -1;
-        }
-        else{
-            return 1;
-        }
-    });
-    loadDivContent();
-    reloadIcons();
+	data.sort((a) => {
+		if (a.discount) {
+			return -1;
+		} else {
+			return 1;
+		}
+	});
+	loadDivContent();
+	reloadIcons();
 }
 function stockSort() {
-    data.sort((a, b) => {
-        if (a.stock > b.stock) {
-            return -1; // Sort in descending order
-        }
-        if (a.stock < b.stock) {
-            return 1;
-        }
-    });
-    loadDivContent();
-    reloadIcons();
+	data.sort((a, b) => {
+		if (a.stock > b.stock) {
+			return -1; // Sort in descending order
+		}
+		if (a.stock < b.stock) {
+			return 1;
+		}
+	});
+	loadDivContent();
+	reloadIcons();
 }
 
 // let loadElements = "";
@@ -351,16 +352,16 @@ function stockSort() {
 // 	}
 // });
 // divName.innerHTML = loadElements;
-function loadDivContent(){
+function loadDivContent() {
 	// Grid View Products
 	loadProducts(gridViewproducts, gridView);
 	search(gridViewproducts, gridView);
 	filterByPrice(gridViewproducts, gridView);
 	filterByBrand(gridViewproducts, gridView);
-	
+
 	// List View Products
 	loadProducts(listViewproducts, listView);
 	search(listViewproducts, listView);
 	filterByPrice(listViewproducts, listView);
 	filterByBrand(listViewproducts, listView);
-	}
+}

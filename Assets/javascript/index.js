@@ -324,9 +324,7 @@ $(document).ready(function () {
 // Import From Another Js Files
 import { splitCardTitle } from "./global.js";
 // Search in Url Parameter
-const urlParameter = new URLSearchParams(
-	window.location.search
-);
+const urlParameter = new URLSearchParams(window.location.search);
 const redirect = urlParameter.get("redirect");
 document.getElementById("liveToastBtn").addEventListener("click", function () {
 	let liveToast = new bootstrap.Toast(document.getElementById("liveToast"));
@@ -341,19 +339,19 @@ if (redirect == "checkedout") {
 		const liveToastBtn = document.getElementById("liveToastBtn");
 		console.log(liveToastBtn);
 		liveToastBtn.click();
-		const newDiv = document.createElement("div")
-		newDiv.innerHTML=`<span class="bg-danger redDot position-absolute rounded-pill"></span>`
-		let userImg = document.querySelector(".userImg")
-		userImg.appendChild(newDiv)
+		const newDiv = document.createElement("div");
+		newDiv.innerHTML = `<span class="bg-danger redDot position-absolute rounded-pill"></span>`;
+		let userImg = document.querySelector(".userImg");
+		userImg.appendChild(newDiv);
 		const orderHistory = document.querySelector(".orderHistory");
-		orderHistory.classList.add("text-danger")
+		orderHistory.classList.add("text-danger");
 	});
 }
 // Category Offcanvas
 const offcanvas = document.querySelector(".text-reset");
 const categoryTabs = document.querySelectorAll(".categoryTab");
-categoryTabs.forEach(tab => {
-	tab.addEventListener("click",function(){
-		offcanvas.click()
-	})
+categoryTabs.forEach((tab) => {
+	tab.addEventListener("click", function () {
+		offcanvas.click();
+	});
 });

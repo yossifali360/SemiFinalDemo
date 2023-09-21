@@ -26,7 +26,11 @@
 		<!-- Title -->
 		<title>Home | Modern Tech</title>
 		<!-- Icon -->
-		<link rel="icon" type="image/x-icon" href="Assets/images/blacklogo.png"/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="Assets/images/blacklogo.png"
+		/>
 	</head>
 	<body>
 		<!-- Shoppingcart -->
@@ -64,8 +68,16 @@
 			</div>
 		</aside>
 		<!-- Wishlist -->
-		<aside class="wishListCtn position-fixed d-none" data-bs-scroll="false" data-bs-backdrop="true">
-			<div class="details position-absolute" data-bs-scroll="false" data-bs-backdrop="true">
+		<aside
+			class="wishListCtn position-fixed d-none"
+			data-bs-scroll="false"
+			data-bs-backdrop="true"
+		>
+			<div
+				class="details position-absolute"
+				data-bs-scroll="false"
+				data-bs-backdrop="true"
+			>
 				<div class="cartHeader p-3">
 					<div
 						class="d-flex align-items-center justify-content-between"
@@ -99,7 +111,7 @@
 					>
 						<i
 							class="fas fa-user bg-dark text-white userImg position-relative p-2 rounded-pill"
-							>
+						>
 							<img class="rounded-pill" src="none" alt="User Img"
 						/></i>
 					</a>
@@ -111,7 +123,9 @@
 						<a class="dropdown-item" href="profile.html"
 							>Edit Profile</a
 						>
-						<a class="dropdown-item orderHistory" href="orderhistory.html"
+						<a
+							class="dropdown-item orderHistory"
+							href="orderhistory.html"
 							>Order History</a
 						>
 					</div>
@@ -131,8 +145,14 @@
 			</select>
 		</nav>
 		<!-- NavBar -->
-		<nav class="mainNav navbar navbar-expand-lg navbar-dark px-3 d-none d-lg-flex" id="nav">
-			<a href="index.html" class="navbar-brand fs-2 logo position-relative">
+		<nav
+			class="mainNav navbar navbar-expand-lg navbar-dark px-3 d-none d-lg-flex"
+			id="nav"
+		>
+			<a
+				href="index.html"
+				class="navbar-brand fs-2 logo position-relative"
+			>
 				Modern <span class="position-absolute">Tech</span>
 			</a>
 			<button
@@ -217,7 +237,9 @@
 						>
 					</li>
 					<li class="nav-item m-2">
-						<a class="nav-link position-relative" href="contactus.html"
+						<a
+							class="nav-link position-relative"
+							href="contactus.html"
 							>Contact Us</a
 						>
 					</li>
@@ -243,100 +265,127 @@
 			</div>
 		</nav>
 		<!-- Mobile NavBar -->
-		<nav class="mobileNav sticky-top navbar navbar-expand-lg navbar-dark px-3 d-flex d-lg-none" id="nav">
+		<nav
+			class="mobileNav sticky-top navbar navbar-expand-lg navbar-dark px-3 d-flex d-lg-none"
+			id="nav"
+		>
 			<div class="navbar-brand fs-2 logo position-relative">
 				Modern <span class="position-absolute">Tech</span>
 			</div>
-			<div class="mobileBars d-flex align-items-center justify-content-center">
-				<i class="fas fa-bars text-white fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></i>
+			<div
+				class="mobileBars d-flex align-items-center justify-content-center"
+			>
+				<i
+					class="fas fa-bars text-white fs-3"
+					type="button"
+					data-bs-toggle="offcanvas"
+					data-bs-target="#offcanvasRight"
+					aria-controls="offcanvasRight"
+				></i>
 			</div>
-			<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-			  <div class="offcanvas-header bg-dark">
-				<h5 id="offcanvasRightLabel"><span class="navbar-brand fs-2 logo position-relative">
-					Modern <span class="position-absolute">Tech</span>
-				</span></h5>
-				<i type="button" class="fas fa-x text-white bg-dark " data-bs-dismiss="offcanvas" aria-label="Close"></i>
-			  </div>
-			  <div class="offcanvas-body bg-dark navOffcanvas">
-				<ul class="navbar-nav m-auto bg-dark">
-					<li class="nav-item m-2 active">
-						<a class="nav-link position-relative" href="index.html"
-							>Home <span class="sr-only">(current)</span></a
-						>
-					</li>
-					<li class="nav-item m-2 dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="navbarDropdown"
-							role="button"
-							data-bs-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-						>
-							Categories
-						</a>
-						<div
-							class="dropdown-menu bg-dark border-0"
-							aria-labelledby="navbarDropdown"
-						>
-							<a class="dropdown-item border-0" href="category.html"
-								>All Categories</a
-							>
-							<div class="dropdown-divider border-0"></div>
+			<div
+				class="offcanvas offcanvas-end"
+				tabindex="-1"
+				id="offcanvasRight"
+				aria-labelledby="offcanvasRightLabel"
+			>
+				<div class="offcanvas-header bg-dark">
+					<h5 id="offcanvasRightLabel">
+						<span class="navbar-brand fs-2 logo position-relative">
+							Modern <span class="position-absolute">Tech</span>
+						</span>
+					</h5>
+					<i
+						type="button"
+						class="fas fa-x text-white bg-dark"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></i>
+				</div>
+				<div class="offcanvas-body bg-dark navOffcanvas">
+					<ul class="navbar-nav m-auto bg-dark">
+						<li class="nav-item m-2 active">
 							<a
-								class="dropdown-item border-0"
-								href="category.html?category=Motherboard"
-								>Motherboard</a
+								class="nav-link position-relative"
+								href="index.html"
+								>Home <span class="sr-only">(current)</span></a
 							>
+						</li>
+						<li class="nav-item m-2 dropdown">
 							<a
-								class="dropdown-item border-0"
-								href="category.html?category=Processors"
-								>Processors</a
+								class="nav-link dropdown-toggle"
+								href="#"
+								id="navbarDropdown"
+								role="button"
+								data-bs-toggle="dropdown"
+								aria-haspopup="true"
+								aria-expanded="false"
 							>
+								Categories
+							</a>
+							<div
+								class="dropdown-menu bg-dark border-0"
+								aria-labelledby="navbarDropdown"
+							>
+								<a
+									class="dropdown-item border-0"
+									href="category.html"
+									>All Categories</a
+								>
+								<div class="dropdown-divider border-0"></div>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=Motherboard"
+									>Motherboard</a
+								>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=Processors"
+									>Processors</a
+								>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=Ram"
+									>Ram</a
+								>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=SSD"
+									>SSD & HDD</a
+								>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=Graphic%20Card"
+									>Graphic Card</a
+								>
+								<a
+									class="dropdown-item border-0"
+									href="category.html?category=Cases"
+									>Cases</a
+								>
+								<a class="dropdown-item border-0" href="#"></a>
+							</div>
+						</li>
+						<li class="nav-item m-2">
+							<a class="nav-link position-relative" href="#"
+								>Special Offer</a
+							>
+						</li>
+						<li class="nav-item m-2">
+							<a class="nav-link position-relative" href="#"
+								>About Us</a
+							>
+						</li>
+						<li class="nav-item m-2">
 							<a
-								class="dropdown-item border-0"
-								href="category.html?category=Ram"
-								>Ram</a
+								class="nav-link position-relative"
+								href="contactus.html"
+								>Contact Us</a
 							>
-							<a
-								class="dropdown-item border-0"
-								href="category.html?category=SSD"
-								>SSD & HDD</a
-							>
-							<a
-								class="dropdown-item border-0"
-								href="category.html?category=Graphic%20Card"
-								>Graphic Card</a
-							>
-							<a
-								class="dropdown-item border-0"
-								href="category.html?category=Cases"
-								>Cases</a
-							>
-							<a class="dropdown-item border-0" href="#"></a>
-						</div>
-					</li>
-					<li class="nav-item m-2">
-						<a class="nav-link position-relative" href="#"
-							>Special Offer</a
-						>
-					</li>
-					<li class="nav-item m-2">
-						<a class="nav-link position-relative" href="#"
-							>About Us</a
-						>
-					</li>
-					<li class="nav-item m-2">
-						<a class="nav-link position-relative" href="contactus.html"
-							>Contact Us</a
-						>
-					</li>
-				</ul>
-			  </div>
+						</li>
+					</ul>
+				</div>
 			</div>
-
-
 		</nav>
 		<!-- To Top Button -->
 		<button id="toTop" class="btn">
@@ -432,7 +481,7 @@
 				data-wow-offset="200"
 			></div>
 		</div>
-		
+
 		<!-- Why Modern Tech -->
 		<div class="my-5">
 			<div class="why my-5 m-auto">
@@ -566,91 +615,120 @@
 				<h4 class="text-uppercase fw-bold">Our Categories</h4>
 				<hr class="mb-4 mt-0 d-inline-block position-absolute" />
 			</div>
-			<button class="d-block d-md-none btn btn-primary m-auto mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Change Category</button>
-			<div class="offcanvas offcanvas-start" data-bs-scroll="false" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+			<button
+				class="d-block d-md-none btn btn-primary m-auto mb-3"
+				type="button"
+				data-bs-toggle="offcanvas"
+				data-bs-target="#offcanvasScrolling"
+				aria-controls="offcanvasScrolling"
+			>
+				Change Category
+			</button>
+			<div
+				class="offcanvas offcanvas-start"
+				data-bs-scroll="false"
+				data-bs-backdrop="false"
+				tabindex="-1"
+				id="offcanvasScrolling"
+				aria-labelledby="offcanvasScrollingLabel"
+			>
 				<div class="offcanvas-header">
-				  <h5 class="offcanvas-title text-dark" id="offcanvasScrollingLabel">Choose Category</h5>
-				  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					<h5
+						class="offcanvas-title text-dark"
+						id="offcanvasScrollingLabel"
+					>
+						Choose Category
+					</h5>
+					<button
+						type="button"
+						class="btn-close text-reset"
+						data-bs-dismiss="offcanvas"
+						aria-label="Close"
+					></button>
 				</div>
 				<div class="offcanvas-body">
-						  <nav>
-						  <div class="d-flex flex-column" id="nav-tab" role="tablist">
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2 active"
-								  id="Motherboard-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#Motherboard"
-								  type="button"
-								  role="tab"
-								  aria-controls="Motherboard"
-								  aria-selected="true"
-							  >
-								  Motherboard
-							  </button>
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2"
-								  id="Processors-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#Processors"
-								  type="button"
-								  role="tab"
-								  aria-controls="Processors"
-								  aria-selected="false"
-							  >
-								  Processors
-							  </button>
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2"
-								  id="Ram-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#Ram"
-								  type="button"
-								  role="tab"
-								  aria-controls="Ram"
-								  aria-selected="false"
-							  >
-								  Ram
-							  </button>
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2"
-								  id="SSD-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#SSD"
-								  type="button"
-								  role="tab"
-								  aria-controls="SSD"
-								  aria-selected="false"
-							  >
-								  SSD & HDD
-							  </button>
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2"
-								  id="Graphic_Card-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#Graphic_Card"
-								  type="button"
-								  role="tab"
-								  aria-controls="Graphic_Card"
-								  aria-selected="false"
-							  >
-								  Graphic Card
-							  </button>
-							  <button
-								  class="btn btn-primary categoryTab p-2 m-2"
-								  id="Cases-tab"
-								  data-bs-toggle="tab"
-								  data-bs-target="#Cases"
-								  type="button"
-								  role="tab"
-								  aria-controls="Cases"
-								  aria-selected="false"
-							  >
-								  Cases
-							  </button>
-						  </div>
-					  </nav>
+					<nav>
+						<div
+							class="d-flex flex-column"
+							id="nav-tab"
+							role="tablist"
+						>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2 active"
+								id="Motherboard-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#Motherboard"
+								type="button"
+								role="tab"
+								aria-controls="Motherboard"
+								aria-selected="true"
+							>
+								Motherboard
+							</button>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2"
+								id="Processors-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#Processors"
+								type="button"
+								role="tab"
+								aria-controls="Processors"
+								aria-selected="false"
+							>
+								Processors
+							</button>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2"
+								id="Ram-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#Ram"
+								type="button"
+								role="tab"
+								aria-controls="Ram"
+								aria-selected="false"
+							>
+								Ram
+							</button>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2"
+								id="SSD-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#SSD"
+								type="button"
+								role="tab"
+								aria-controls="SSD"
+								aria-selected="false"
+							>
+								SSD & HDD
+							</button>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2"
+								id="Graphic_Card-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#Graphic_Card"
+								type="button"
+								role="tab"
+								aria-controls="Graphic_Card"
+								aria-selected="false"
+							>
+								Graphic Card
+							</button>
+							<button
+								class="btn btn-primary categoryTab p-2 m-2"
+								id="Cases-tab"
+								data-bs-toggle="tab"
+								data-bs-target="#Cases"
+								type="button"
+								role="tab"
+								aria-controls="Cases"
+								aria-selected="false"
+							>
+								Cases
+							</button>
+						</div>
+					</nav>
 				</div>
-			  </div>
+			</div>
 			<nav class="d-none d-md-block">
 				<div class="nav nav-tabs" id="nav-tab" role="tablist">
 					<button
@@ -735,7 +813,9 @@
 					aria-labelledby="Motherboard"
 					tabindex="0"
 				>
-				<h4 class="text-center d-block d-md-none mb-5">Motherboard</h4>
+					<h4 class="text-center d-block d-md-none mb-5">
+						Motherboard
+					</h4>
 					<div
 						class="row productList g-3 motherboard pb-5 position-relative"
 					>
@@ -754,7 +834,7 @@
 					aria-labelledby="Processors-tab"
 					tabindex="0"
 				>
-				<h4 class="text-center d-block d-md-none">Processors</h4>
+					<h4 class="text-center d-block d-md-none">Processors</h4>
 					<div class="row g-3 processors pb-5 position-relative">
 						<a
 							href="#"
@@ -788,7 +868,7 @@
 					aria-labelledby="SSD-tab"
 					tabindex="0"
 				>
-				<h4 class="text-center d-block d-md-none">SSD & HDD</h4>
+					<h4 class="text-center d-block d-md-none">SSD & HDD</h4>
 					<div class="row g-3 SSD pb-5 position-relative">
 						<a
 							href="#"
@@ -805,7 +885,7 @@
 					aria-labelledby="Graphic_Card-tab"
 					tabindex="0"
 				>
-				<h4 class="text-center d-block d-md-none">Graphic Cards</h4>
+					<h4 class="text-center d-block d-md-none">Graphic Cards</h4>
 					<div class="row g-3 graphicCard pb-5 position-relative">
 						<a
 							href="#"
@@ -822,7 +902,7 @@
 					aria-labelledby="Cases"
 					tabindex="0"
 				>
-				<h4 class="text-center d-block d-md-none">Cases</h4>
+					<h4 class="text-center d-block d-md-none">Cases</h4>
 					<div class="row g-3 cases pb-5 position-relative">
 						<a
 							href="#"
@@ -834,19 +914,32 @@
 				</div>
 			</div>
 		</div>
-		<button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+		<button type="button" class="btn btn-primary" id="liveToastBtn">
+			Show live toast
+		</button>
 		<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
-			<div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
-			  <div class="toast-header">
-				<strong class="me-auto">Modern Tech</strong>
-				<small>Now</small>
-				<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-			  </div>
-			  <div class="toast-body">
-				Thanks For Making Order , View Order History For Details
-			  </div>
+			<div
+				id="liveToast"
+				class="toast hide"
+				role="alert"
+				aria-live="assertive"
+				aria-atomic="true"
+			>
+				<div class="toast-header">
+					<strong class="me-auto">Modern Tech</strong>
+					<small>Now</small>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="toast"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="toast-body">
+					Thanks For Making Order , View Order History For Details
+				</div>
 			</div>
-		  </div>
+		</div>
 		<!-- Products Overlay -->
 		<section class="Products">
 			<div class="container">

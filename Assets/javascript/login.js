@@ -91,7 +91,7 @@ function changeInputBorder(item) {
 // Function To validate form
 function formValidate(mail__Input, signUpPass, signUpPass2, fName, lName) {
 	signUpBtn.addEventListener("click", function () {
-		var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+		let mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
 		if (
 			signUpPass.value == "" ||
 			signUpPass2.value == "" ||
@@ -135,44 +135,69 @@ function formValidate(mail__Input, signUpPass, signUpPass2, fName, lName) {
 				"Please Type email in a correct way",
 				"error"
 			);
-		} else if (signUpPass.value != signUpPass2.value) {
-			signUpPass.style.border = "2px solid red";
-			signUpPass2.style.border = "2px solid red";
-			Swal.fire(
-				"Password don't match",
-				"Please Make Sure That Password and Confirm Password matches",
-				"error"
-			);
-		} else {
-			var signUpData = "";
-			var signUpData = {
-				fName: fName.value,
-				lName: lName.value,
-				email: signUpEmail.value,
-				pass: signUpPass.value,
-				imageSrc: "",
-				Address: "",
-				Status: "Active",
-				Role: "Member",
-			};
-			signUpArray.push(signUpData);
-			signUpSetData(signUpArray);
-			resetSignupInputs();
-			Toast.fire({
-				icon: "success",
-				title: "Account Created, <br>  Now you can sign in",
-			});
-			if (window.innerWidth <= 992) {
-				signUp.style.opacity="0"
-					setTimeout(function () {
-						signUp.style.display="none"
-						login.style.display="flex"
-						login.style.opacity="1"
-					}, 2000);
-			}else{
-				loginBtnClick();
+		} else if (mail__Input.value.match(mailformat)) {
+			if (
+				signUpArray.find(
+					(user) =>
+						user.email.toLowerCase() ==
+						mail__Input.value.toLowerCase()
+				)
+			) {
+				Toast.fire({
+					icon: "error",
+					title: "Email Already Used !, <br>  Please sign in",
+				});
+			} else {
+				if (signUpPass.value != signUpPass2.value) {
+					signUpPass.style.border = "2px solid red";
+					signUpPass2.style.border = "2px solid red";
+					Swal.fire(
+						"Password don't match",
+						"Please Make Sure That Password and Confirm Password matches",
+						"error"
+					);
+				} else {
+					if (signUpPass.value == signUpPass2.value) {
+						if (signUpPass.value.length >= 6) {
+							var signUpData = "";
+							var signUpData = {
+								fName: fName.value,
+								lName: lName.value,
+								email: signUpEmail.value,
+								pass: signUpPass.value,
+								imageSrc: "",
+								Address: "",
+								Status: "Active",
+								Role: "Member",
+							};
+							signUpArray.push(signUpData);
+							signUpSetData(signUpArray);
+							resetSignupInputs();
+							Toast.fire({
+								icon: "success",
+								title: "Account Created, <br>  Now you can sign in",
+							});
+							if (window.innerWidth <= 992) {
+								signUp.style.opacity = "0";
+								setTimeout(function () {
+									signUp.style.display = "none";
+									login.style.display = "flex";
+									login.style.opacity = "1";
+								}, 2000);
+							} else {
+								loginBtnClick();
+							}
+						} else {
+							Toast.fire({
+								icon: "error",
+								title: "Choose A Storng Password ! <br> (must be greater than 6 inputs)",
+							});
+							signUpPass.style.border = "2px solid red";
+							signUpPass2.style.border = "2px solid red";
+						}
+					}
+				}
 			}
-			
 		}
 	});
 }
@@ -195,29 +220,24 @@ newMember.addEventListener("click", function () {
 	resetLoginInputs();
 	login.style.opacity = "0";
 	setTimeout(function () {
-		login.classList.remove="d-flex"
-		login.classList.add="d-flex"
-		console.log(login);
-		login.style.display="none"
+		login.classList.remove = "d-flex";
+		login.classList.add = "d-flex";
+		login.style.display = "none";
 		signUp.style.setProperty("display", "block", "important");
 	}, 1000);
 	setTimeout(function () {
 		signUp.style.opacity = "1";
-		console.log(newMember);
 	}, 1000);
 });
 oldMember.addEventListener("click", function () {
 	resetSignupInputs();
-	console.log(oldMember);
 	signUp.style.opacity = "0";
-	console.log("done");
 	setTimeout(function () {
 		signUp.style.setProperty("display", "none", "important");
 		login.style.setProperty("display", "flex", "important");
 	}, 1000);
 	setTimeout(function () {
 		login.style.opacity = "1";
-		console.log(oldMember);
 	}, 1000);
 });
 // Store sign up and login data
@@ -234,7 +254,11 @@ loginBtn.addEventListener("click", function () {
 	let loginObject = "";
 	loginValidate();
 	function loginValidate() {
-		if (loginGetData().find((data) => data.email.toLowerCase() == userEmail.toLowerCase())) {
+		if (
+			loginGetData().find(
+				(data) => data.email.toLowerCase() == userEmail.toLowerCase()
+			)
+		) {
 			loginObject = loginGetData().find(
 				(data) => data.email.toLowerCase() == userEmail.toLowerCase()
 			);
@@ -255,21 +279,17 @@ loginBtn.addEventListener("click", function () {
 		function validatePass() {
 			if (loginObject.pass == userPass) {
 				if (loginObject.Role == "Member") {
+					localStorage.setItem(
+						"session",
+						JSON.stringify(loginObject)
+					);
 					const urlParameter = new URLSearchParams(
 						window.location.search
 					);
 					const redirect = urlParameter.get("redirect");
 					if (redirect == "checkout") {
-						localStorage.setItem(
-							"session",
-							JSON.stringify(loginObject)
-						);
 						location.href = "checkout.html";
 					} else {
-						localStorage.setItem(
-							"session",
-							JSON.stringify(loginObject)
-						);
 						location.href = "index.html";
 					}
 				} else {
@@ -296,15 +316,13 @@ document.getElementById("liveToastBtn").addEventListener("click", function () {
 		liveToast.hide();
 	}, 7000);
 });
-const urlParameter = new URLSearchParams(
-	window.location.search
-);
+const urlParameter = new URLSearchParams(window.location.search);
 const redirect = urlParameter.get("redirect");
 if (redirect == "checkout") {
 	document.addEventListener("DOMContentLoaded", function () {
 		const liveToastBtn = document.getElementById("liveToastBtn");
 		liveToastBtn.click();
 		const orderHistory = document.querySelector(".orderHistory");
-		orderHistory.style.border = "red 1px solid";		
+		orderHistory.style.border = "red 1px solid";
 	});
 }
