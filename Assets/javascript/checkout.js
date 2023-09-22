@@ -1,3 +1,9 @@
+// Check Login State
+if (!loginGetData()) {
+	const path = "checkout";
+	const url = `/login.html?redirect=${encodeURIComponent(path)}`;
+	location.href = url;
+}
 // Global Variables
 let AllOrders = JSON.parse(localStorage.getItem("AllOrders")) ?? [];
 const submitBtn = document.querySelector(".submitBtn");
@@ -41,12 +47,7 @@ const cardCCV = document.querySelector(".cardCCV");
 const cardExpDate = document.querySelector(".cardExpDate");
 const questionImg = document.querySelector(".question");
 
-// Check Login State
-if (!loginGetData()) {
-	const path = "checkout";
-	const url = `/login.html?redirect=${encodeURIComponent(path)}`;
-	location.href = url;
-}
+
 // Invoke Validate Form Function
 validateForm();
 // Load Cart Data From Storage

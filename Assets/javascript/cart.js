@@ -136,3 +136,19 @@ function CalcTotal(){
         totalPrice.innerHTML= total.toLocaleString('en-US');
     });
 }
+let checkoutBtn = document.querySelector(".checkoutBtn")
+console.log(checkoutBtn);
+checkoutBtn.addEventListener("click",function(){
+	// Check Login State
+if (!loginGetData()) {
+	const path = "checkout";
+	const url = `/login.html?redirect=${encodeURIComponent(path)}`;
+	location.href = url;
+}else{
+    location.href = "/checkout.html";
+}
+})
+// Get Login Data Function
+function loginGetData() {
+	return JSON.parse(localStorage.getItem("session"));
+}
