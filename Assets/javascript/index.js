@@ -2,13 +2,13 @@
 import { products } from "./productsdata.js";
 // Check The Products in Storage
 checkStorageProducts();
-// Variables
 
-// Filter Products
+// Filter Products Categories
 let allProducts = getData();
 
 const topProductsList = allProducts.filter((item) => item.top == "true");
 const mostViewedList = allProducts.filter((item) => item.mostViewed == "true");
+
 const motherboardList = allProducts.filter(
 	(item) => item.category == "Motherboard"
 );

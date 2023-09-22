@@ -732,4 +732,5 @@ export {
 	checkLogin,
 	CheckUserImage,
 	productClick,
+	getProductsData,
 };

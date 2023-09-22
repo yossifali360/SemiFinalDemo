@@ -302,7 +302,7 @@ import {
 	SearchStock,
 	productClick,
 } from "./global.js";
-// Sort by Low Price
+// Sort by Low Price Function
 function lowPrice() {
 	data.sort((a, b) => {
 		if (a.price > b.price) return 1;
@@ -311,6 +311,7 @@ function lowPrice() {
 	loadDivContent();
 	reloadIcons();
 }
+// Sort by High Price Function
 function HighPrice() {
 	data.sort((a, b) => {
 		if (a.price < b.price) return 1;
@@ -319,6 +320,7 @@ function HighPrice() {
 	loadDivContent();
 	reloadIcons();
 }
+// Sort by Discount Function
 function discountSort() {
 	data.sort((a) => {
 		if (a.discount) {
@@ -330,6 +332,7 @@ function discountSort() {
 	loadDivContent();
 	reloadIcons();
 }
+// Sort by Stock Function
 function stockSort() {
 	data.sort((a, b) => {
 		if (a.stock > b.stock) {
@@ -342,23 +345,13 @@ function stockSort() {
 	loadDivContent();
 	reloadIcons();
 }
-
-// let loadElements = "";
-// data.forEach((product) => {
-// 	if (selectedBrand === "All") {
-// 		loadElements += viewtype(product);
-// 	} else if (product.Brand === selectedBrand) {
-// 		loadElements += viewtype(product);
-// 	}
-// });
-// divName.innerHTML = loadElements;
+// Load Content Function
 function loadDivContent() {
 	// Grid View Products
 	loadProducts(gridViewproducts, gridView);
 	search(gridViewproducts, gridView);
 	filterByPrice(gridViewproducts, gridView);
 	filterByBrand(gridViewproducts, gridView);
-
 	// List View Products
 	loadProducts(listViewproducts, listView);
 	search(listViewproducts, listView);
