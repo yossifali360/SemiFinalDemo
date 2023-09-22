@@ -123,6 +123,3 @@ function removeActive(imgs) {
 		item.classList.remove("active");
 	});
 }
-import { addToCart } from "./global.js";
-const addToCartBtn = document.querySelectorAll(".addToCart");
-addToCart(addToCartBtn);

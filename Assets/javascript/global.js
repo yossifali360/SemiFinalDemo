@@ -206,7 +206,7 @@ function productDetails(product) {
 		images += `<div class="p-1 rounded-2 m-1"><img class="pImage" src="${imageUrl}"></div>`;
 	});
 	return `<div class = "container d-flex align-items-center justify-content-center overlay h-100">
-	<div class = "d-flex flex-column flex-lg-row bg-white rounded-2 w-100 p-4 overflow-hidden ProductCtn productCard position-relative" data-id="${product.id}" data-stock="${product.stock}" data-discount="${product.discount}">
+	<div class = "d-flex flex-column flex-lg-row bg-white rounded-2 w-100 p-4 overflow-auto ProductCtn productCard position-relative" data-id="${product.id}" data-stock="${product.stock}" data-discount="${product.discount}">
 	<a id="closeProduct" class="fas fa-x closeProduct"></a>
 		<div class = "left p-3 w-75 h-100">
             <div class="h-100 d-flex flex-column justify-content-between">
@@ -258,6 +258,7 @@ function heartClickDelay(icon) {
 	iconI.classList.add("fs-5");
 	icon.style.position = "relative";
 }
+// Get Products Data Function
 // Get Products Data Function
 function getProductsData() {
 	return JSON.parse(localStorage.getItem("products"));

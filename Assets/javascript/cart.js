@@ -1,4 +1,4 @@
-import { WishListCount , loadWishlist ,loadShoppingCarts} from './global.js';
+import { WishListCount , loadWishlist ,loadShoppingCarts , getProductsData} from './global.js';
 let shoppingcartData = JSON.parse(localStorage.getItem("cart"))
 const cartsCtn = document.querySelector(".cartsCtn")
 const totalPrice = document.querySelector(".totalPrice")
@@ -126,10 +126,6 @@ function loadCarts(cart){
     </div>
     <hr  class="mx-5">
 </div>`
-}
-// Get Products Data Function
-function getProductsData() {
-	return JSON.parse(localStorage.getItem("products"));
 }
 // Calc total Function
 CalcTotal()

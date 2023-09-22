@@ -136,3 +136,7 @@ input {
 #liveToastBtn{
 	visibility: hidden;
 }
+.swal2-container{
+	width: 100% !important;
+	height: 100% !important;
+}
